@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\projekty unity\\MobileGame\\UnityGame\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6287BEF0-7CF4-BF9F-814C-A803E2206BB8}|Assembly-CSharp.csproj|c:\\projekty unity\\mobilegame\\unitygame\\assets\\scripts\\ui\\exitgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6287BEF0-7CF4-BF9F-814C-A803E2206BB8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\exitgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6287BEF0-7CF4-BF9F-814C-A803E2206BB8}|Assembly-CSharp.csproj|c:\\projekty unity\\mobilegame\\unitygame\\assets\\scripts\\ui\\versiontotext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6287BEF0-7CF4-BF9F-814C-A803E2206BB8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\versiontotext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -19,6 +23,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "exitGame.cs",
+              "DocumentMoniker": "C:\\projekty unity\\MobileGame\\UnityGame\\Assets\\Scripts\\UI\\exitGame.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\exitGame.cs",
+              "ToolTip": "C:\\projekty unity\\MobileGame\\UnityGame\\Assets\\Scripts\\UI\\exitGame.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\exitGame.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T20:50:38.629Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "versionToText.cs",
               "DocumentMoniker": "C:\\projekty unity\\MobileGame\\UnityGame\\Assets\\Scripts\\UI\\versionToText.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\versionToText.cs",
