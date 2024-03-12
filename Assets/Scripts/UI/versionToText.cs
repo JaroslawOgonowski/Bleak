@@ -9,6 +9,6 @@ public class version : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        versionText.text += Application.version;
+        versionText.text ="version: " + Application.version;
     }
 }
