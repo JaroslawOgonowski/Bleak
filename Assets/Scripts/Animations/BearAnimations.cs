@@ -7,57 +7,41 @@ public class BearAnimations : MonoBehaviour
 {
     [SerializeField] private GameObject Bear;
     [SerializeField] private int walkPerSecond = 3;
-    [SerializeField] private int runPerSecond = 8;
+    [SerializeField] private int runPerSecond = 10;
     [SerializeField] private string idleAnimation = "Idle";
     [SerializeField] private string walkingAnimation = "WalkForward";
     [SerializeField] private string runningAnimation = "Run Forward";
+    [SerializeField] private string jumpAnimation = "Jump";
+    [SerializeField] private string attack1 = "Attack1";
+    [SerializeField] private string attack2 = "Attack2";
+    [SerializeField] private string attack3 = "Attack3";
+    [SerializeField] private string attack5 = "Attack5";
+    [SerializeField] private string buff = "Buff";
+    [SerializeField] private string eat = "Eat";
+    [SerializeField] private string sit = "Sit";
+    [SerializeField] private string sleep = "Sleep";
+    [SerializeField] private string death = "Death";
+    [SerializeField] private string getHit = "Get Hit Front";
+    [SerializeField] private string stun = "Stunned Loop";
+
+    private AnimationFunctions animationFunctions;
     private void Start()
     {
+        animationFunctions = new AnimationFunctions();
+
         Animator animator = Bear.GetComponent<Animator>();
-        StartCoroutine(MobGoE(walkingAnimation, runningAnimation, idleAnimation, Bear, walkPerSecond, runPerSecond, true));
 
-
+        StartCoroutine(animationFunctions.MobRunE(runningAnimation, idleAnimation, Bear, runPerSecond, 10));
+        //StartCoroutine(MobGoE(walkingAnimation, idleAnimation, Bear, walkPerSecond, 3f));
 
         //animator.SetBool("Attack1", true);
     }
 
-    private IEnumerator AnimalRestState(string animation, GameObject gameObject)
+    private IEnumerator AnimalRestState(string animation, string idleAnimation, GameObject gameObject)
     {
         Animator animator = gameObject.GetComponent<Animator>();
         animator.SetBool(animation, true);
-
+        new WaitForSeconds(1);
         return null;
-    }
-
-    private IEnumerator MobGoE(string walkingAnimation, string runningAnimation, string idleAnimation, GameObject gameObject, float walkPerSecond, float runPerSecond, bool run)
-    {
-        Animator animator = gameObject.GetComponent<Animator>();
-
-        animator.SetBool(idleAnimation, false);
-
-        if (run)
-        {
-            animator.SetBool(runningAnimation, true);   
-        }
-        else
-        {
-            animator.SetBool(walkingAnimation, true);
-        }
-           
-        while (true)
-        {
-            if(run)
-            {
-                Vector3 movement = Vector3.forward * walkPerSecond * Time.deltaTime;
-                gameObject.transform.Translate(movement);
-            }
-            else
-            {
-                Vector3 movement = Vector3.forward * runPerSecond * Time.deltaTime;
-                gameObject.transform.Translate(movement);
-            }
-
-            yield return null;
-        }
     }
 }

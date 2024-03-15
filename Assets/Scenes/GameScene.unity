@@ -1299,17 +1299,17 @@ PrefabInstance:
     - target: {fileID: 4908829504857925096, guid: 8ff3e5f23f69a554197f965b7a7e1251,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 210.6
+      value: 142.2
       objectReference: {fileID: 0}
     - target: {fileID: 4908829504857925096, guid: 8ff3e5f23f69a554197f965b7a7e1251,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4908829504857925096, guid: 8ff3e5f23f69a554197f965b7a7e1251,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 652.12
+      value: 651
       objectReference: {fileID: 0}
     - target: {fileID: 4908829504857925096, guid: 8ff3e5f23f69a554197f965b7a7e1251,
         type: 3}
@@ -1383,6 +1383,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7518728629720057604, guid: 8ff3e5f23f69a554197f965b7a7e1251,
         type: 3}
+      propertyPath: runPerSecond
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7518728629720057604, guid: 8ff3e5f23f69a554197f965b7a7e1251,
+        type: 3}
       propertyPath: idleAnimation
       value: Idle
       objectReference: {fileID: 0}
@@ -1390,6 +1395,11 @@ PrefabInstance:
         type: 3}
       propertyPath: walkPerSecond
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7518728629720057604, guid: 8ff3e5f23f69a554197f965b7a7e1251,
+        type: 3}
+      propertyPath: runningAnimation
+      value: Run Forward
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
