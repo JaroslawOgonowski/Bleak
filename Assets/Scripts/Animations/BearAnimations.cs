@@ -6,11 +6,15 @@ using Unity.Collections;
 public class BearAnimations : MonoBehaviour
 {
     [SerializeField] private GameObject Bear;
-    [SerializeField] private int walkPerSecond = 20;
+    [SerializeField] private int walkPerSecond = 3;
+    [SerializeField] private int runPerSecond = 8;
+    [SerializeField] private string idleAnimation = "Idle";
+    [SerializeField] private string walkingAnimation = "WalkForward";
+    [SerializeField] private string runningAnimation = "Run Forward";
     private void Start()
     {
         Animator animator = Bear.GetComponent<Animator>();
-        StartCoroutine(MobGoN("WalkForward", Bear, walkPerSecond));
+        StartCoroutine(MobGoE(walkingAnimation, runningAnimation, idleAnimation, Bear, walkPerSecond, runPerSecond, true));
 
 
 
@@ -25,51 +29,35 @@ public class BearAnimations : MonoBehaviour
         return null;
     }
 
-    private IEnumerator MobGoN(string walkingAnimation, GameObject gameObject, float walkPerSecond)
+    private IEnumerator MobGoE(string walkingAnimation, string runningAnimation, string idleAnimation, GameObject gameObject, float walkPerSecond, float runPerSecond, bool run)
     {
-        // Pobranie komponentu Animator
         Animator animator = gameObject.GetComponent<Animator>();
-        StopCurrentAnimation(animator);
 
-        // Ustawienie parametru animatora na true, aby odtworzyæ animacjê chodzenia
-        animator.SetBool(walkingAnimation, true);
+        animator.SetBool(idleAnimation, false);
 
-        // Pêtla poruszania siê obiektu z okreœlon¹ prêdkoœci¹
+        if (run)
+        {
+            animator.SetBool(runningAnimation, true);   
+        }
+        else
+        {
+            animator.SetBool(walkingAnimation, true);
+        }
+           
         while (true)
         {
-            // Obliczenie wektora przemieszczenia z uwzglêdnieniem prêdkoœci na sekundê i delta time
-            Vector3 movement = Vector3.forward * walkPerSecond * Time.deltaTime;
+            if(run)
+            {
+                Vector3 movement = Vector3.forward * walkPerSecond * Time.deltaTime;
+                gameObject.transform.Translate(movement);
+            }
+            else
+            {
+                Vector3 movement = Vector3.forward * runPerSecond * Time.deltaTime;
+                gameObject.transform.Translate(movement);
+            }
 
-            // Przesuniêcie obiektu
-            gameObject.transform.Translate(movement);
-
-            // Oczekiwanie na kolejn¹ klatkê
             yield return null;
         }
-    }
-
-
-    private string currentAnimationName;
-
-    // Zapamiêtaj bie¿¹c¹ animacjê
-    private void RememberCurrentAnimationName(Animator animator)
-    {
-        foreach (var clipInfo in animator.GetCurrentAnimatorClipInfo(0))
-        {
-            currentAnimationName = clipInfo.clip.name;
-        }
-    }
-
-    // Zatrzymaj bie¿¹c¹ animacjê
-    private void StopCurrentAnimation(Animator animator)
-    {
-        RememberCurrentAnimationName(animator);
-        animator.SetBool(currentAnimationName, false);
-    }
-
-    // Wznów ostatni¹ zapamiêtan¹ animacjê
-    private void ResumeLastAnimation(Animator animator)
-    {
-        animator.Play(currentAnimationName, 0, 0);
     }
 }
