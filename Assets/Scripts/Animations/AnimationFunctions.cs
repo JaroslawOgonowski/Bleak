@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using static BLINK.AnimationDemo;
 
 public class AnimationFunctions : MonoBehaviour
 {
@@ -87,9 +88,9 @@ public class AnimationFunctions : MonoBehaviour
         Animator animator = gameObject.GetComponent<Animator>();
         animator.SetBool(idleAnimation, false);
         animator.SetBool(restAnimation, true);
-        new WaitForSeconds(time);
-
-        return null;
+        yield return new WaitForSeconds(time);
+        animator.SetBool(restAnimation, false);
+        animator.SetBool(idleAnimation, true);
     }
 
     public void AnimalEventAnimation(string eventAnimation, GameObject gameObject)
