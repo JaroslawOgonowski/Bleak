@@ -99,4 +99,5 @@ public class AnimationFunctions : MonoBehaviour
         animator.SetBool(eventAnimation, true);
     }
 
+  
 }

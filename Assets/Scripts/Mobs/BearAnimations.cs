@@ -1,10 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using Unity.Collections;
-using Unity.VisualScripting;
-using UnityEngine.EventSystems;
+using System.Collections;
 public class BearAnimations : MonoBehaviour
 {
     [SerializeField] private GameObject Bear;
@@ -27,16 +22,21 @@ public class BearAnimations : MonoBehaviour
     [SerializeField] private string stun = "Stunned Loop";
     public bool isMoving;
     private bool vegan = true;
-
-    private AnimationFunctions animationFunctions;
+    AnimationFunctions animationFunctions;
+    GlobalStatesAndFunctions globalStatesAndFunctions;
     private void Start()
     {
         animationFunctions = new AnimationFunctions();
-
-        StartCoroutine(AiPeaceState(Bear, walkPerSecond));
+        globalStatesAndFunctions = new GlobalStatesAndFunctions();
+        InvokeRepeating("CheckThisObjectPosition", 0f, 1f);
+        StartCoroutine(AiPeaceState(Bear, walkPerSecond, vegan));
     }
- 
-    public IEnumerator AiPeaceState(GameObject target, int walkPerSecond)
+
+   private void CheckThisObjectPosition()
+    {
+        globalStatesAndFunctions.CheckPosition(Bear);
+    }
+    public IEnumerator AiPeaceState(GameObject target, int walkPerSecond, bool vegan)
     {
         string direction;
         string randomAnimation;
@@ -113,6 +113,6 @@ public class BearAnimations : MonoBehaviour
                 break;
         }
         yield return new WaitForSeconds(animationTime);
-        StartCoroutine(AiPeaceState(target, walkPerSecond));
+        StartCoroutine(AiPeaceState(target, walkPerSecond, vegan));
     }
 }
