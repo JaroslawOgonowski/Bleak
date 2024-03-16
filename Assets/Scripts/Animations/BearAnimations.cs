@@ -31,17 +31,59 @@ public class BearAnimations : MonoBehaviour
 
         Animator animator = Bear.GetComponent<Animator>();
 
-        StartCoroutine(animationFunctions.MobRunE(runningAnimation, idleAnimation, Bear, runPerSecond, 10));
+        //StartCoroutine(animationFunctions.MobGoTo(walkingAnimation, idleAnimation, Bear, walkPerSecond, 10, "E"));
         //StartCoroutine(MobGoE(walkingAnimation, idleAnimation, Bear, walkPerSecond, 3f));
 
         //animator.SetBool("Attack1", true);
     }
 
-    private IEnumerator AnimalRestState(string animation, string idleAnimation, GameObject gameObject)
+    private bool isMoving = false;
+
+    private void Update()
     {
-        Animator animator = gameObject.GetComponent<Animator>();
-        animator.SetBool(animation, true);
-        new WaitForSeconds(1);
-        return null;
+        if (!isMoving)
+        {
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                isMoving = true;
+                StartCoroutine(MoveCharacter("N"));
+            }
+            else if (Input.GetKeyDown(KeyCode.A))
+            {
+                isMoving = true;
+                StartCoroutine(MoveCharacter("W"));
+            }
+            else if (Input.GetKeyDown(KeyCode.S))
+            {
+                isMoving = true;
+                StartCoroutine(MoveCharacter("S"));
+            }
+            else if (Input.GetKeyDown(KeyCode.D))
+            {
+                isMoving = true;
+                StartCoroutine(MoveCharacter("E"));
+            }
+        }
+
+        // Obs³uga zatrzymywania ruchu po puszczeniu klawisza
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
+        {
+            isMoving = false;
+        }
     }
+
+    private IEnumerator MoveCharacter(string direction)
+    {
+        // Tutaj umieœæ kod odpowiedzialny za ruch postaci
+
+        // Zaczekaj na zakoñczenie animacji ruchu
+        while (isMoving)
+        {
+            StartCoroutine(animationFunctions.MobGoTo(walkingAnimation, Bear, walkPerSecond, 0.1f, direction));
+            yield return new WaitForSeconds(1f); // Czas oczekiwania na zakoñczenie animacji
+        }
+    }
+
+
+
 }
