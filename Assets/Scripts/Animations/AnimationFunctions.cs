@@ -38,7 +38,7 @@ public class AnimationFunctions : MonoBehaviour
                 case "E":
                     targetRotation = Quaternion.Euler(0f, 90f, 0f); // Obrót na wschód
                     break;
-                
+
                 case "NE":
                     targetRotation = Quaternion.Euler(0f, 45f, 0f); // Obrót na pó³nocny wschód
                     break;
@@ -74,7 +74,7 @@ public class AnimationFunctions : MonoBehaviour
             }
 
             // Oczekiwanie na kolejn¹ klatkê
-             yield return null;
+            yield return null;
         }
 
         // Po zakoñczeniu pêtli, przywróæ obiekt do stanu idle
@@ -82,13 +82,20 @@ public class AnimationFunctions : MonoBehaviour
         animator.SetBool(idleAnimation, true);
     }
 
-       private IEnumerator AnimalRestState(string animation, string idleAnimation, GameObject gameObject)
+    public IEnumerator AnimalRestState(string restAnimation, string idleAnimation, GameObject gameObject, float time)
     {
         Animator animator = gameObject.GetComponent<Animator>();
-        animator.SetBool(animation, true);
-        new WaitForSeconds(1);
+        animator.SetBool(idleAnimation, false);
+        animator.SetBool(restAnimation, true);
+        new WaitForSeconds(time);
+
         return null;
     }
 
+    public void AnimalEventAnimation(string eventAnimation, GameObject gameObject)
+    {
+        Animator animator = gameObject.GetComponent<Animator>();
+        animator.SetBool(eventAnimation, true);
+    }
 
 }

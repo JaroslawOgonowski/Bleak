@@ -33,10 +33,15 @@ public class BearAnimations : MonoBehaviour
 
         Animator animator = Bear.GetComponent<Animator>();
 
-        //StartCoroutine(animationFunctions.MobGoTo(walkingAnimation, idleAnimation, Bear, walkPerSecond, 10, "E"));
+        StartCoroutine(animationFunctions.MobGoTo(walkingAnimation, idleAnimation, Bear, walkPerSecond, 10, "E"));
+        animationFunctions.AnimalEventAnimation(jumpAnimation, Bear);
         //StartCoroutine(MobGoE(walkingAnimation, idleAnimation, Bear, walkPerSecond, 3f));
 
         //animator.SetBool("Attack1", true);
     }
 
+    public void AiPeaceState()
+    {
+
+    }
 }
