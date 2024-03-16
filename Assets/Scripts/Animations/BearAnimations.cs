@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Unity.Collections;
+using Unity.VisualScripting;
 public class BearAnimations : MonoBehaviour
 {
     [SerializeField] private GameObject Bear;
@@ -23,6 +24,7 @@ public class BearAnimations : MonoBehaviour
     [SerializeField] private string death = "Death";
     [SerializeField] private string getHit = "Get Hit Front";
     [SerializeField] private string stun = "Stunned Loop";
+    public bool isMoving;
 
     private AnimationFunctions animationFunctions;
     private void Start()
@@ -36,54 +38,5 @@ public class BearAnimations : MonoBehaviour
 
         //animator.SetBool("Attack1", true);
     }
-
-    private bool isMoving = false;
-
-    private void Update()
-    {
-        if (!isMoving)
-        {
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                isMoving = true;
-                StartCoroutine(MoveCharacter("N"));
-            }
-            else if (Input.GetKeyDown(KeyCode.A))
-            {
-                isMoving = true;
-                StartCoroutine(MoveCharacter("W"));
-            }
-            else if (Input.GetKeyDown(KeyCode.S))
-            {
-                isMoving = true;
-                StartCoroutine(MoveCharacter("S"));
-            }
-            else if (Input.GetKeyDown(KeyCode.D))
-            {
-                isMoving = true;
-                StartCoroutine(MoveCharacter("E"));
-            }
-        }
-
-        // Obs³uga zatrzymywania ruchu po puszczeniu klawisza
-        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
-        {
-            isMoving = false;
-        }
-    }
-
-    private IEnumerator MoveCharacter(string direction)
-    {
-        // Tutaj umieœæ kod odpowiedzialny za ruch postaci
-
-        // Zaczekaj na zakoñczenie animacji ruchu
-        while (isMoving)
-        {
-            StartCoroutine(animationFunctions.MobGoTo(walkingAnimation, Bear, walkPerSecond, 0.1f, direction));
-            yield return new WaitForSeconds(1f); // Czas oczekiwania na zakoñczenie animacji
-        }
-    }
-
-
 
 }
