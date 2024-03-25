@@ -1,9 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using static BLINK.AnimationDemo;
 
 public class AnimationFunctions : MonoBehaviour
 {
