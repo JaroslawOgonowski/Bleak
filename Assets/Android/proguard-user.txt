@@ -1,0 +1,43 @@
+# Ogólne regu³y optymalizacyjne
+-optimizationpasses 5
+-dontusemixedcaseclassnames
+-dontskipnonpubliclibraryclasses
+-dontpreverify
+-verbose
+
+# Zachowaj klasy zwi¹zane z Androidem
+-keep class androidx.core.content.FileProvider { *; }
+-keep class androidx.core.content.FileProvider$** { *; }
+
+# Zachowaj klasy zwi¹zane z Unity
+-keep class com.unity3d.** { *; }
+-keep class com.unity.** { *; }
+-keep class com.unity3d.player.** { *; }
+
+# Zachowaj w³asne klasy
+-keep class com.DefaultCompany.Appscripttest.** { *; }
+
+# Inne regu³y, które mog¹ byæ potrzebne w zale¿noœci od u¿ywanych bibliotek
+-keep class <tu wprowadŸ nazwê biblioteki>.** { *; }
+
+# Zabezpieczenia przed odwrotnym in¿ynieringiem
+-keepattributes SourceFile,LineNumberTable
+-renamesourcefileattribute SourceFile
+-keepattributes Signature
+
+# W przypadku problemów z klasami anonimowymi
+-keepclassmembers class * {
+    <methods>;
+}
+
+# Unikaj obfuskacji dla klasy Application
+-keepnames class com.unity3d.player.UnityPlayerActivity
+
+# Regu³y wymagane dla biblioteki Gson (przyk³ad)
+-keepattributes EnclosingMethod
+-keepattributes InnerClasses
+-keepattributes Signature
+-keepattributes Exceptions
+-keepattributes Annotation
+
+# Mo¿esz dodaæ dodatkowe regu³y w zale¿noœci od u¿ywanych bibliotek i potrzeb projektu
