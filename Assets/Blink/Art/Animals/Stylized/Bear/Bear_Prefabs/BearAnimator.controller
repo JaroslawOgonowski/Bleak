@@ -437,7 +437,7 @@ AnimatorState:
   m_Motion: {fileID: 4645524590424446077, guid: 11e6e2757ecd32547a5c9b857db7597c, type: 3}
   m_Tag: 
   m_SpeedParameter: 
-  m_MirrorParameter: 
+  m_MirrorParameter: Idle
   m_CycleOffsetParameter: 
   m_TimeParameter: 
 --- !u!1101 &-1015862310407708421
@@ -529,7 +529,7 @@ AnimatorController:
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 1
+    m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: Combat Idle
     m_Type: 4

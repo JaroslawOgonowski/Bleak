@@ -12,7 +12,7 @@ public class ChickenAnimations : MonoBehaviour
     [SerializeField] private string attack1 = "Armature|attack1 0";
     [SerializeField] private string attack2 = "Armature|attack2 0";
     [SerializeField] private string buff = "Armature|buff 0";
-    [SerializeField] private string eat = "Idle";
+    [SerializeField] private string eat = "Armature|EatAccion1";
     [SerializeField] private string sleep = "Armature|sleep 0";
     [SerializeField] private string death = "Death";
     [SerializeField] private string stun = "Armature|stun 0";
@@ -75,7 +75,7 @@ public class ChickenAnimations : MonoBehaviour
         {
             case < 55:
                 randomAnimation = "WalkForward";
-                StartCoroutine(animationFunctions.MobGoTo(randomAnimation, "Idle", target, walkPerSecond, animationTime, direction));
+                StartCoroutine(animationFunctions.MobGoTo(randomAnimation, "Armature|EatAccion1", target, walkPerSecond, animationTime, direction));
                 break;
             case int n when (n >= 55 && n < 60):
                 randomAnimation = "Buff";
@@ -84,28 +84,28 @@ public class ChickenAnimations : MonoBehaviour
                 break;
             case int n when (n >= 60 && n < 75):
                 randomAnimation = "Sit";
-                StartCoroutine(animationFunctions.AnimalRestState(randomAnimation, "Idle", target, animationTime));
+                StartCoroutine(animationFunctions.AnimalRestState(randomAnimation, "Armature|EatAccion1", target, animationTime));
                 break;
             case int n when (n >= 75 && n < 85):
                 randomAnimation = "Sleep";
                 animationTime = animationTime * 1.5f;
-                StartCoroutine(animationFunctions.AnimalRestState(randomAnimation, "Idle", target, animationTime));
+                StartCoroutine(animationFunctions.AnimalRestState(randomAnimation, "Armature|EatAccion1", target, animationTime));
                 break;
             case < 85:
                 if (vegan)
                 {
                     randomAnimation = "Eat";
-                    StartCoroutine(animationFunctions.AnimalRestState(randomAnimation, "Idle", target, animationTime));
+                    StartCoroutine(animationFunctions.AnimalRestState(randomAnimation, "Armature|EatAccion1", target, animationTime));
                 }
                 else
                 {
                     randomAnimation = "WalkForward";
-                    StartCoroutine(animationFunctions.MobGoTo(randomAnimation, "Idle", target, walkPerSecond, animationTime, direction));
+                    StartCoroutine(animationFunctions.MobGoTo(randomAnimation, "Armature|EatAccion1", target, walkPerSecond, animationTime, direction));
                 }
                 break;
             default:
                 randomAnimation = "WalkForward";
-                StartCoroutine(animationFunctions.MobGoTo(randomAnimation, "Idle", target, walkPerSecond, animationTime, direction));
+                StartCoroutine(animationFunctions.MobGoTo(randomAnimation, "Armature|EatAccion1", target, walkPerSecond, animationTime, direction));
                 break;
         }
         yield return new WaitForSeconds(animationTime);

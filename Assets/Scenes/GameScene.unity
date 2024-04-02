@@ -461,6 +461,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 774500302}
   m_CullTransparentMesh: 1
+--- !u!1 &947044314 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6716945409597864684, guid: 4b3b889289baa294aa15dde272f354a0, type: 3}
+  m_PrefabInstance: {fileID: 4973647590666146353}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &947044319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947044314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b520151aea171f94da69b4544cd858ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Chicken: {fileID: 947044314}
+  walkPerSecond: 2
+  runPerSecond: 5
+  idleAnimation: Armature|EatAccion1
+  walkingAnimation: Armature|walk
+  attack1: Armature|attack1 0
+  attack2: Armature|attack2 0
+  buff: Armature|buff 0
+  eat: Armature|EatAccion1
+  sleep: Armature|EatAccion1
+  death: Death
+  stun: Armature|stun 0
+  isMoving: 0
 --- !u!1 &1007161626
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,6 +632,10 @@ PrefabInstance:
     - target: {fileID: 2470998358021284923, guid: 8ff3e5f23f69a554197f965b7a7e1251, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5199691772239927049, guid: 8ff3e5f23f69a554197f965b7a7e1251, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6456378187315777973, guid: 8ff3e5f23f69a554197f965b7a7e1251, type: 3}
       propertyPath: m_IsTrigger
@@ -1409,7 +1443,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6716945409597864684, guid: 4b3b889289baa294aa15dde272f354a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 947044319}
   m_SourcePrefab: {fileID: 100100000, guid: 4b3b889289baa294aa15dde272f354a0, type: 3}
 --- !u!1001 &8813877542151172953
 PrefabInstance:
