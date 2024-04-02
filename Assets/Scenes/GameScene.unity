@@ -479,7 +479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Chicken: {fileID: 947044314}
-  walkPerSecond: 2
+  walkPerSecond: 1
   runPerSecond: 5
   idleAnimation: Armature|EatAccion1
   walkingAnimation: Armature|walk
