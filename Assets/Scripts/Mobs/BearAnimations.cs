@@ -21,7 +21,7 @@ public class BearAnimations : MonoBehaviour
     [SerializeField] private string getHit = "Get Hit Front";
     [SerializeField] private string stun = "Stunned Loop";
     public bool isMoving;
-    private bool vegan = true;
+    private bool vegan = false;
     AnimationFunctions animationFunctions;
     GlobalStatesAndFunctions globalStatesAndFunctions;
     private void Start()
