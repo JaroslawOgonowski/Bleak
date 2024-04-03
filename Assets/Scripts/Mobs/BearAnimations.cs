@@ -3,7 +3,6 @@ using System.Collections;
 
 public class BearAnimations : MonoBehaviour
 {
-    [SerializeField] private GameObject animationControllScriptGO;
     [SerializeField] private GameObject Bear;
     [SerializeField] private int walkPerSecond = 3;
     [SerializeField] private int runPerSecond = 10;
@@ -28,7 +27,7 @@ public class BearAnimations : MonoBehaviour
     GlobalStatesAndFunctions globalStatesAndFunctions;
     private void Start()
     {
-        animationFunctions = animationControllScriptGO.GetComponent<AnimationFunctions>();
+        animationFunctions = FindObjectOfType<AnimationFunctions>();
         globalStatesAndFunctions = new GlobalStatesAndFunctions();
         InvokeRepeating("CheckThisObjectPosition", 0f, 1f);
         PeaceState();

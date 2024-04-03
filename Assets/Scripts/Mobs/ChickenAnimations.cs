@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ChickenAnimations : MonoBehaviour
 {
-    [SerializeField] private GameObject animationControllScriptGO;
     [SerializeField] private GameObject Chicken;
     [SerializeField] private int walkPerSecond = 1;
     [SerializeField] private int runPerSecond = 5;
@@ -23,7 +22,7 @@ public class ChickenAnimations : MonoBehaviour
     GlobalStatesAndFunctions globalStatesAndFunctions;
     private void Start()
     {
-        animationFunctions = animationControllScriptGO.GetComponent<AnimationFunctions>();
+        animationFunctions = FindObjectOfType<AnimationFunctions>();
         globalStatesAndFunctions = new GlobalStatesAndFunctions();
         InvokeRepeating("CheckThisObjectPosition", 0f, 1f);
         PeaceState();
