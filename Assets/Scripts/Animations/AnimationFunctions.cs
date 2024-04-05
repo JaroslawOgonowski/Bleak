@@ -147,7 +147,7 @@ public class AnimationFunctions : MonoBehaviour
                 AnimalEventAnimation(randomAnimation, target);
                 break;
             case int n when (n >= 60 && n < 75):
-                randomAnimation = eat;
+                randomAnimation = sit;
                 StartCoroutine(AnimalRestState(randomAnimation, idle, target, animationTime));
                 break;
             case int n when (n >= 75 && n < 85):

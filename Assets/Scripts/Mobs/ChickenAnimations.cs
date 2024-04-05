@@ -16,6 +16,7 @@ public class ChickenAnimations : MonoBehaviour
     [SerializeField] private string sleep = "Sleep";
     [SerializeField] private string death = "Death";
     [SerializeField] private string stun = "Stun";
+    [SerializeField] private string sit = "Sit";
     public bool isMoving;
     private bool vegan = true;
     AnimationFunctions animationFunctions;
@@ -31,7 +32,7 @@ public class ChickenAnimations : MonoBehaviour
     private void PeaceState()
     {
         new WaitForSeconds(0.1f);
-        StartCoroutine(animationFunctions.AiPeaceState(Chicken, walkPerSecond, vegan, idle, walking, buff, eat, sleep, eat));
+        StartCoroutine(animationFunctions.AiPeaceState(Chicken, walkPerSecond, vegan, idle, walking, buff, eat, sleep, sit));
     }
     private void CheckThisObjectPosition()
     {
