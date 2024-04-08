@@ -1506,15 +1506,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7150029720203285957, guid: 6ad0e9c5738d90d4a85bc58b08d6c99c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 200.4
+      value: 133.1
       objectReference: {fileID: 0}
     - target: {fileID: 7150029720203285957, guid: 6ad0e9c5738d90d4a85bc58b08d6c99c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.1
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 7150029720203285957, guid: 6ad0e9c5738d90d4a85bc58b08d6c99c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 624.01
+      value: 628
       objectReference: {fileID: 0}
     - target: {fileID: 7150029720203285957, guid: 6ad0e9c5738d90d4a85bc58b08d6c99c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1618,6 +1618,18 @@ PrefabInstance:
       propertyPath: animationControllScriptGO
       value: 
       objectReference: {fileID: 803859510}
+    - target: {fileID: 7783530525638559600, guid: 8ff3e5f23f69a554197f965b7a7e1251, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.216117
+      objectReference: {fileID: 0}
+    - target: {fileID: 7783530525638559600, guid: 8ff3e5f23f69a554197f965b7a7e1251, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.216117
+      objectReference: {fileID: 0}
+    - target: {fileID: 7783530525638559600, guid: 8ff3e5f23f69a554197f965b7a7e1251, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4.216117
+      objectReference: {fileID: 0}
     - target: {fileID: 7783530525638559600, guid: 8ff3e5f23f69a554197f965b7a7e1251, type: 3}
       propertyPath: m_LocalPosition.x
       value: 224.06607
