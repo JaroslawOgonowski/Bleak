@@ -26,17 +26,13 @@ public class CameraFollow : MonoBehaviour
         // Interpolacja liniowa miêdzy aktualn¹ a docelow¹ pozycj¹ kamery
         transform.position = Vector3.Lerp(transform.position, targetPosition, followSpeed * Time.deltaTime);
 
-        // Obliczanie wektora ruchu postaci
-        Vector3 movementDirection = target.position - transform.position;
+        // Obliczanie docelowej rotacji kamery
+        Quaternion targetRotation = Quaternion.LookRotation(target.position - transform.position);
 
-        // Obracanie kamery w kierunku wektora ruchu postaci
-        if (movementDirection != Vector3.zero)
-        {
-            Quaternion targetRotation = Quaternion.LookRotation(movementDirection);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        // Obracanie kamery w kierunku postaci
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
-            // Ustawienie pierwotnej rotacji kamery w osi X
-            transform.rotation = Quaternion.Euler(originalRotationX, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
-        }
+        // Ustawienie pierwotnej rotacji kamery w osi X
+        transform.rotation = Quaternion.Euler(originalRotationX, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
     }
 }
