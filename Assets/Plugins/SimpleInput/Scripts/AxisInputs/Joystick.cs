@@ -15,7 +15,7 @@ namespace SimpleInputNamespace
 		private Graphic background;
 
 		public MovementAxes movementAxes = MovementAxes.XandY;
-		public float valueMultiplier = 1f;
+		public float valueMultiplier = 0.5f;
 
 #pragma warning disable 0649
 		[SerializeField]
@@ -50,7 +50,7 @@ namespace SimpleInputNamespace
 
 		private float opacity = 1f;
 
-		private Vector2 m_value = Vector2.zero;
+		private Vector2 m_value = Vector2.zero / 2;
 		public Vector2 Value { get { return m_value; } }
 
 		private void Awake()
@@ -207,9 +207,9 @@ namespace SimpleInputNamespace
 				return;
 
 			if( joystickHeld )
-				opacity = Mathf.Min( 1f, opacity + Time.unscaledDeltaTime * 4f );
+				opacity = Mathf.Min( 1f, opacity + Time.unscaledDeltaTime * 1f );
 			else
-				opacity = Mathf.Max( 0f, opacity - Time.unscaledDeltaTime * 4f );
+				opacity = Mathf.Max( 0f, opacity - Time.unscaledDeltaTime * 1f );
 
 			Color c = thumb.color;
 			c.a = opacity;
