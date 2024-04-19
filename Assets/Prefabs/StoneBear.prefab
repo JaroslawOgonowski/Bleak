@@ -1978,9 +1978,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c376338ef053f7438589b41ccaaabe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationControllScriptGO: {fileID: 0}
   Bear: {fileID: 7023358904448570565}
-  walkPerSecond: 3
+  walkPerSecond: 5
   runPerSecond: 10
   idle: Idle
   walking: WalkForward
