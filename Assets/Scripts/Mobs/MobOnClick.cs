@@ -1,17 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class MobOnClick : MonoBehaviour
+public class MobOnClick : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private GameObject mobInfoPanelManager;
-    [SerializeField] private MobInfoPanelManager mobInfoPanelManagerScript;
-    
+    private MobInfoPanelManager mobInfoPanelManagerScript;
+
     void Start()
     {
         mobInfoPanelManagerScript = mobInfoPanelManager.GetComponent<MobInfoPanelManager>();
-        GetComponent<Button>().onClick.AddListener(() => mobInfoPanelManagerScript.OpenMobPanel());
     }
 
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Debug.Log("Click detected!");
+        mobInfoPanelManagerScript.OpenMobPanel();
+    }
 }
