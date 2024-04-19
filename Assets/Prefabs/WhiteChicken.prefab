@@ -931,6 +931,7 @@ GameObject:
   - component: {fileID: 8854982264992814111}
   - component: {fileID: 6620423565155271720}
   - component: {fileID: 905036874397748383}
+  - component: {fileID: 1481592601444608392}
   m_Layer: 0
   m_Name: WhiteChicken
   m_TagString: Untagged
@@ -1051,6 +1052,19 @@ MonoBehaviour:
   stun: Stun
   sit: Sit
   isMoving: 0
+--- !u!114 &1481592601444608392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4787460235417147530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55acaedd63a1d2e46a3be604bce15037, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mobInfoPanelManager: {fileID: 0}
 --- !u!1 &4919157561829314172
 GameObject:
   m_ObjectHideFlags: 0

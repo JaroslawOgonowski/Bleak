@@ -1643,6 +1643,7 @@ GameObject:
   - component: {fileID: 4756730575906792822}
   - component: {fileID: 9196084248591028685}
   - component: {fileID: 7594313565415420412}
+  - component: {fileID: 5057969926109862300}
   m_Layer: 0
   m_Name: chickenUmbra
   m_TagString: Untagged
@@ -1761,7 +1762,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b520151aea171f94da69b4544cd858ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationControllScriptGO: {fileID: 0}
   Chicken: {fileID: 8758279248621912934}
   walkPerSecond: 1
   runPerSecond: 5
@@ -1774,7 +1774,21 @@ MonoBehaviour:
   sleep: Sleep
   death: Death
   stun: Stun
+  sit: Sit
   isMoving: 0
+--- !u!114 &5057969926109862300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8758279248621912934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55acaedd63a1d2e46a3be604bce15037, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mobInfoPanelManager: {fileID: 0}
 --- !u!1 &8768621376973256557
 GameObject:
   m_ObjectHideFlags: 0

@@ -938,6 +938,7 @@ GameObject:
   - component: {fileID: 8514052611048513375}
   - component: {fileID: 2871077354983883991}
   - component: {fileID: 4897746165040564087}
+  - component: {fileID: 6448214912346997177}
   m_Layer: 0
   m_Name: chicken
   m_TagString: Untagged
@@ -1044,7 +1045,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b520151aea171f94da69b4544cd858ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationControllScriptGO: {fileID: 0}
   Chicken: {fileID: 4192782172087074304}
   walkPerSecond: 1
   runPerSecond: 5
@@ -1057,7 +1057,21 @@ MonoBehaviour:
   sleep: Sleep
   death: Death
   stun: Stun
+  sit: Sit
   isMoving: 0
+--- !u!114 &6448214912346997177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4192782172087074304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55acaedd63a1d2e46a3be604bce15037, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mobInfoPanelManager: {fileID: 0}
 --- !u!1 &4411806194455835095
 GameObject:
   m_ObjectHideFlags: 0

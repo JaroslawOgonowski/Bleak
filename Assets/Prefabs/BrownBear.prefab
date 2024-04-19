@@ -1981,6 +1981,7 @@ GameObject:
   - component: {fileID: 5100808484127099508}
   - component: {fileID: 1068758105345019791}
   - component: {fileID: 1772237228349053779}
+  - component: {fileID: 3476929325713775425}
   m_Layer: 0
   m_Name: BrownBear
   m_TagString: Untagged
@@ -2108,7 +2109,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c376338ef053f7438589b41ccaaabe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationControllScriptGO: {fileID: 0}
   Bear: {fileID: 8458475738386502092}
   walkPerSecond: 3
   runPerSecond: 10
@@ -2128,6 +2128,19 @@ MonoBehaviour:
   getHit: Get Hit Front
   stun: Stunned Loop
   isMoving: 0
+--- !u!114 &3476929325713775425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8458475738386502092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55acaedd63a1d2e46a3be604bce15037, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mobInfoPanelManager: {fileID: 0}
 --- !u!1 &8463463877745211536
 GameObject:
   m_ObjectHideFlags: 0
