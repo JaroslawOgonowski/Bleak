@@ -1644,6 +1644,7 @@ GameObject:
   - component: {fileID: 9196084248591028685}
   - component: {fileID: 7594313565415420412}
   - component: {fileID: 5057969926109862300}
+  - component: {fileID: 3250564158524505278}
   m_Layer: 0
   m_Name: chickenUmbra
   m_TagString: Untagged
@@ -1789,6 +1790,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mobInfoPanelManager: {fileID: 0}
+--- !u!114 &3250564158524505278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8758279248621912934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 941150c4412ec754589d93b2684b21ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  rarity: 
+  group: 
+  hp: 0
+  maxhp: 0
+  armor: 0
+  magicArmor: 0
+  minDmg: 0
+  maxDmg: 0
+  speed: 0
+  tameable: 1
+  tameDificult: 0
+  owner: 
+  legend: 0
+  loot: []
 --- !u!1 &8768621376973256557
 GameObject:
   m_ObjectHideFlags: 0
