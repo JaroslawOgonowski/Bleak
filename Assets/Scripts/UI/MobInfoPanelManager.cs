@@ -26,6 +26,9 @@ public class MobInfoPanelManager : MonoBehaviour
 
 
         camera.GetComponent<CameraFollow>().target = clickedGO.GetComponent<Transform>();
+        MobStats stats = clickedGO.GetComponent<MobStats>();
+
+
         mobPanel.SetActive(true);
     }
 
