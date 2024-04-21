@@ -1852,6 +1852,7 @@ GameObject:
   - component: {fileID: 792059319158863348}
   - component: {fileID: 381118299481923999}
   - component: {fileID: 2935431377919373469}
+  - component: {fileID: 4805748146145305884}
   m_Layer: 0
   m_Name: StoneBear
   m_TagString: Untagged
@@ -2011,6 +2012,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mobInfoPanelManager: {fileID: 0}
+--- !u!114 &4805748146145305884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7023358904448570565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 941150c4412ec754589d93b2684b21ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Stone Bear
+  rarity: Rare
+  group: Animals Guardians
+  hp: 110
+  maxhp: 110
+  armor: 15
+  magicArmor: 15
+  minDmg: 30
+  maxDmg: 32
+  speed: 10
+  tameable: 1
+  tameDificult: 99
+  owner: 
+  legend: 0
+  loot: []
 --- !u!1 &7547696016558397641
 GameObject:
   m_ObjectHideFlags: 0

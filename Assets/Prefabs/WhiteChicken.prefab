@@ -932,6 +932,7 @@ GameObject:
   - component: {fileID: 6620423565155271720}
   - component: {fileID: 905036874397748383}
   - component: {fileID: 1481592601444608392}
+  - component: {fileID: 5204946255089053891}
   m_Layer: 0
   m_Name: WhiteChicken
   m_TagString: Untagged
@@ -1065,6 +1066,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mobInfoPanelManager: {fileID: 0}
+--- !u!114 &5204946255089053891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4787460235417147530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 941150c4412ec754589d93b2684b21ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Chicken
+  rarity: Common
+  group: Animals
+  hp: 20
+  maxhp: 20
+  armor: 1
+  magicArmor: 0
+  minDmg: 2
+  maxDmg: 3
+  speed: 5
+  tameable: 1
+  tameDificult: 15
+  owner: 
+  legend: 0
+  loot: []
 --- !u!1 &4919157561829314172
 GameObject:
   m_ObjectHideFlags: 0

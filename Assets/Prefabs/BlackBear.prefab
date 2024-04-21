@@ -2141,6 +2141,7 @@ GameObject:
   - component: {fileID: 4527304646293869732}
   - component: {fileID: 6855181282461752097}
   - component: {fileID: 5720594915228713182}
+  - component: {fileID: 530416877971552428}
   m_Layer: 0
   m_Name: BlackBear
   m_TagString: Untagged
@@ -2300,6 +2301,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mobInfoPanelManager: {fileID: 0}
+--- !u!114 &530416877971552428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8552311762353721894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 941150c4412ec754589d93b2684b21ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Black Bear
+  rarity: Common
+  group: Animals
+  hp: 60
+  maxhp: 60
+  armor: 6
+  magicArmor: 2
+  minDmg: 10
+  maxDmg: 12
+  speed: 10
+  tameable: 1
+  tameDificult: 30
+  owner: 
+  legend: 0
+  loot: []
 --- !u!1 &8637601095930273211
 GameObject:
   m_ObjectHideFlags: 0

@@ -1802,18 +1802,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 941150c4412ec754589d93b2684b21ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
-  rarity: 
-  group: 
-  hp: 0
-  maxhp: 0
-  armor: 0
-  magicArmor: 0
-  minDmg: 0
-  maxDmg: 0
-  speed: 0
+  name: Umbra Chicken
+  rarity: Uncommon
+  group: Animals Demon
+  hp: 80
+  maxhp: 80
+  armor: 6
+  magicArmor: 10
+  minDmg: 10
+  maxDmg: 12
+  speed: 5
   tameable: 1
-  tameDificult: 0
+  tameDificult: 66
   owner: 
   legend: 0
   loot: []
