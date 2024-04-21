@@ -13,10 +13,10 @@ TagManager:
   - Tree
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - CameraTarget
+  - Ground
+  - Mob
+  - Player
   - 
   - 
   - 
