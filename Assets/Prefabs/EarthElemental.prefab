@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5600569745137510389}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hand.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5827915786523204681}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: f_middle_01.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1079928057131202476}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: f_middle_01.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3651751635555509402}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: f_ring_03.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5868916819611155337}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: upper_arm.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9187627674661763337}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hipsSatellitel03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3226878365075528620}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thumb_03.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,7 +240,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7108429726778260474}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: footSatellite02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -272,7 +272,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8733908638300860847}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thumb_03.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -304,7 +304,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4995712459117053795}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: f_middle_03.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -336,7 +336,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2831580253011056292}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: footSatellite03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -368,7 +368,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8370306550264770090}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: footSatellite04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -400,7 +400,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6387767941584786515}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: upper_arm.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -433,7 +433,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4498050036558073507}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: f_ring_03.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -466,7 +466,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7630113740531823283}
   - component: {fileID: 969127803682303105}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: footSatellite01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -520,7 +520,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 627285547568258179}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: f_index_02.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -553,7 +553,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3069901005438210024}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hipsSatelliteRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -590,7 +590,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2235255890636669012}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: f_index_01.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -623,7 +623,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7210389671312764044}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: forearm.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -656,7 +656,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8814642104757445497}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hipsSatellitel02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -688,7 +688,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 306291920020133685}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: f_middle_02.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -721,7 +721,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8891631925062375133}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: jaw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -753,7 +753,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4654291623008114850}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: backSatellite01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -785,7 +785,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5330579542340581462}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shoulder.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -818,7 +818,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 350760202622727465}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: backSatellite06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -850,7 +850,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2451071918579087446}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: f_index_01.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -883,7 +883,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2066980535780437220}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thumb_02.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -916,7 +916,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3927389460507552521}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hipsSatellitel01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -948,7 +948,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8418435116510350216}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: f_ring_02.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -981,7 +981,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5192662399403846605}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: f_ring_01.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1014,7 +1014,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3940507397442556427}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: f_index_03.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1046,7 +1046,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1413567167074326636}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: backSatellite03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1078,7 +1078,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7918142084137863207}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hand.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1114,7 +1114,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4204501028222715588}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hipsSatellite04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1146,7 +1146,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9054028251916260695}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hipsSatellite06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1178,7 +1178,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 738608610692095031}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hipsSatellite05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1210,7 +1210,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4272817217761130232}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: f_index_03.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1242,7 +1242,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6542316177180343083}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: backSatellite02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1274,7 +1274,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5084083631367896070}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1310,7 +1310,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1148715975265775318}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1344,7 +1344,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5833864030533776584}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: f_middle_02.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1377,7 +1377,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5250938738754406535}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1409,7 +1409,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8816679017554493593}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1442,7 +1442,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 364569569758400714}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: f_middle_03.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1474,7 +1474,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6874651856193231338}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1507,7 +1507,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8978294756211975068}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thumb_01.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1540,7 +1540,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2478522166811472661}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: f_index_02.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1573,7 +1573,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7858567636244180405}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: f_ring_01.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1606,7 +1606,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4780539552194357568}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thumb_01.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1639,7 +1639,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6028949749658471820}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1675,7 +1675,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7041732683756772743}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: backSatellitesRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1712,7 +1712,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5822864711282815924}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shoulder.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1745,7 +1745,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8712880482411679944}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: backSatellite04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1781,7 +1781,7 @@ GameObject:
   - component: {fileID: 8504258926687417767}
   - component: {fileID: 2323259750178985617}
   - component: {fileID: 7907775644797628615}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EarthElemental
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1896,7 +1896,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3198820416905734152}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: backSatellite05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1928,7 +1928,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5852397341537772902}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thumb_02.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1961,7 +1961,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 942103861738533637}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: forearm.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1994,7 +1994,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2714214561732588728}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: f_ring_02.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2078,6 +2078,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 01.FootSatellite03
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b5df62e939466a04598099edd72860f6, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2143,6 +2147,10 @@ PrefabInstance:
     - target: {fileID: 6787914030639830550, guid: 3c98204f2a348a74dbcd2f4395af35d5, type: 3}
       propertyPath: m_Name
       value: 01.Middle01.R
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787914030639830550, guid: 3c98204f2a348a74dbcd2f4395af35d5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2214,6 +2222,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 01.BackSatellite01
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c0e7a0b0cf296114985ee88d0aa2ab83, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2284,6 +2296,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 01.HipsSatellite01
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4c6e3842501831a458dd459ee7dd35aa, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2350,6 +2366,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 01.Middle02.R
       objectReference: {fileID: 0}
+    - target: {fileID: 8948882759743417834, guid: 8390bb9d45418984eab98b6c474f5f94, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2371,6 +2391,10 @@ PrefabInstance:
     - target: {fileID: 7292780153140771087, guid: bce3dfba97c4eed4cac4c1a44eaaac0a, type: 3}
       propertyPath: m_Name
       value: 01.UpperArm.R
+      objectReference: {fileID: 0}
+    - target: {fileID: 7292780153140771087, guid: bce3dfba97c4eed4cac4c1a44eaaac0a, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7962074168861205429, guid: bce3dfba97c4eed4cac4c1a44eaaac0a, type: 3}
       propertyPath: m_RootOrder
@@ -2486,6 +2510,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 01.Thumb01.L
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f7d38f019a96b384495691d39fe884e0, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2556,6 +2584,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 01.Index02.L
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b005a6b01b9c4a24a818fce1172be17b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2577,6 +2609,10 @@ PrefabInstance:
     - target: {fileID: 6210998643120287533, guid: 87f038e8cb224cd4db03195328667730, type: 3}
       propertyPath: m_Name
       value: 01.Thumb02.R
+      objectReference: {fileID: 0}
+    - target: {fileID: 6210998643120287533, guid: 87f038e8cb224cd4db03195328667730, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6735756628599928215, guid: 87f038e8cb224cd4db03195328667730, type: 3}
       propertyPath: m_RootOrder
@@ -2692,6 +2728,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 01.Chest
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c685358f4fd50a645b0d34419ade2c21, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2713,6 +2753,10 @@ PrefabInstance:
     - target: {fileID: 8421321222749645282, guid: b46849aecd0bc8e40ba449370d2184b1, type: 3}
       propertyPath: m_Name
       value: 01.Ring02.R
+      objectReference: {fileID: 0}
+    - target: {fileID: 8421321222749645282, guid: b46849aecd0bc8e40ba449370d2184b1, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9193354975080821592, guid: b46849aecd0bc8e40ba449370d2184b1, type: 3}
       propertyPath: m_RootOrder
@@ -2828,6 +2872,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 01.Jaw
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d06f8f60e89e7f6488d78671fe17565d, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2897,6 +2945,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e2f9183891b49944b8d8587a7e8470f8, type: 3}
       propertyPath: m_Name
       value: 01.Hand.L
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e2f9183891b49944b8d8587a7e8470f8, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2968,6 +3020,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 01.UpperArm.L
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b435bf13fa431094a8c3aa76f18801de, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3038,6 +3094,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 01.BackSatellite01
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c0e7a0b0cf296114985ee88d0aa2ab83, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3103,6 +3163,10 @@ PrefabInstance:
     - target: {fileID: 8014243234354391138, guid: a2fa6ec089682134b94526198430d15f, type: 3}
       propertyPath: m_Name
       value: 01.Thumb01.R
+      objectReference: {fileID: 0}
+    - target: {fileID: 8014243234354391138, guid: a2fa6ec089682134b94526198430d15f, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3174,6 +3238,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 01.Shoulder.L
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f625559d317686340b62593cce5e03be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3239,6 +3307,10 @@ PrefabInstance:
     - target: {fileID: 658301569357008028, guid: c568f0f32fa1acd4292f1ead5e674c33, type: 3}
       propertyPath: m_Name
       value: 01.Index03.R
+      objectReference: {fileID: 0}
+    - target: {fileID: 658301569357008028, guid: c568f0f32fa1acd4292f1ead5e674c33, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3310,6 +3382,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 01.BackSatellite01
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c0e7a0b0cf296114985ee88d0aa2ab83, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3379,6 +3455,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c0e7a0b0cf296114985ee88d0aa2ab83, type: 3}
       propertyPath: m_Name
       value: 01.BackSatellite01
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c0e7a0b0cf296114985ee88d0aa2ab83, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3450,6 +3530,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 01.Index03.L
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 30e694860fa67e541a0e64f028349184, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3519,6 +3603,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e86db172f184c6e40ab7660b9edc0fdc, type: 3}
       propertyPath: m_Name
       value: 01.Shoulder.R
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e86db172f184c6e40ab7660b9edc0fdc, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3590,6 +3678,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 01.Thumb03.L
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c0084f4aec8a20844bf0ffc92768486b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3655,6 +3747,10 @@ PrefabInstance:
     - target: {fileID: 3428160803579459948, guid: 8b34926c2bc902c40b240a4e9b976913, type: 3}
       propertyPath: m_Name
       value: 01.Middle03.R
+      objectReference: {fileID: 0}
+    - target: {fileID: 3428160803579459948, guid: 8b34926c2bc902c40b240a4e9b976913, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3726,6 +3822,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 01.BackSatellite01
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c0e7a0b0cf296114985ee88d0aa2ab83, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3791,6 +3891,10 @@ PrefabInstance:
     - target: {fileID: 5327811703051384000, guid: 9d0b514f8dbbb844e874807cefc62ece, type: 3}
       propertyPath: m_Name
       value: 01.Forearm.R
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327811703051384000, guid: 9d0b514f8dbbb844e874807cefc62ece, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3862,6 +3966,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 01.Hips
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ade29287bcf35d54db75c5ed3e763a0a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3932,6 +4040,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 01.BackSatellite01
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c0e7a0b0cf296114985ee88d0aa2ab83, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3953,6 +4065,10 @@ PrefabInstance:
     - target: {fileID: 6017961952692526534, guid: a812a244268853d43a6c15d23278fe8e, type: 3}
       propertyPath: m_Name
       value: 01.Index01.R
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017961952692526534, guid: a812a244268853d43a6c15d23278fe8e, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6399553697369393020, guid: a812a244268853d43a6c15d23278fe8e, type: 3}
       propertyPath: m_RootOrder
@@ -4019,6 +4135,10 @@ PrefabInstance:
     - target: {fileID: 4820805576866136398, guid: 4310ee663d5521846a88cae32e65e711, type: 3}
       propertyPath: m_Name
       value: 01.Thumb03.R
+      objectReference: {fileID: 0}
+    - target: {fileID: 4820805576866136398, guid: 4310ee663d5521846a88cae32e65e711, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5308936429490166772, guid: 4310ee663d5521846a88cae32e65e711, type: 3}
       propertyPath: m_RootOrder
@@ -4134,6 +4254,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 01.HipsSatellite01
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4c6e3842501831a458dd459ee7dd35aa, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4203,6 +4327,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d527e4a2b6c54a64d823cb3285bd02fd, type: 3}
       propertyPath: m_Name
       value: 01.Spine
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d527e4a2b6c54a64d823cb3285bd02fd, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4274,6 +4402,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 01.Index01.L
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f0fc49abd3f45e344b664226a29db8c6, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4343,6 +4475,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 81005e69e0b46c94e9a4b0f2209cc0d2, type: 3}
       propertyPath: m_Name
       value: 01.Thumb02.L
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 81005e69e0b46c94e9a4b0f2209cc0d2, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4414,6 +4550,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 01.FootSatellite01
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e4f601b1b678242468a16539ef56cfff, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4435,6 +4575,10 @@ PrefabInstance:
     - target: {fileID: 8329390282722620699, guid: 25a1a379e9d6c6846bd453645e07f373, type: 3}
       propertyPath: m_Name
       value: 01.Hand.R
+      objectReference: {fileID: 0}
+    - target: {fileID: 8329390282722620699, guid: 25a1a379e9d6c6846bd453645e07f373, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8708872030561628065, guid: 25a1a379e9d6c6846bd453645e07f373, type: 3}
       propertyPath: m_RootOrder
@@ -4550,6 +4694,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 01.FootSatellite02
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b040029ccb48e904eaa21330dbd42092, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4619,6 +4767,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d789caf636877544ab7b8ec40bec817e, type: 3}
       propertyPath: m_Name
       value: 01.Ring01.L
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d789caf636877544ab7b8ec40bec817e, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4690,6 +4842,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 01.Head
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 988b60e1d5d7edd4183b731b608d34ad, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4759,6 +4915,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4c6e3842501831a458dd459ee7dd35aa, type: 3}
       propertyPath: m_Name
       value: 01.HipsSatellite01
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4c6e3842501831a458dd459ee7dd35aa, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4830,6 +4990,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 01.FootSatellite04
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 09af5290665acf24480e68cc87e83ea6, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4899,6 +5063,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 07cf99e383fd8bb4f94e7cc075ea5e6a, type: 3}
       propertyPath: m_Name
       value: 01.Middle01.L
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 07cf99e383fd8bb4f94e7cc075ea5e6a, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4970,6 +5138,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 01.Middle02.L
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fef30d316a97ad346b1afcff4c2914d0, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5040,6 +5212,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 01.Forearm.L
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 32ba4246866a710418278570477074c1, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5106,6 +5282,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 01.Ring03.R
       objectReference: {fileID: 0}
+    - target: {fileID: 4370406232082057732, guid: 9c66409916309b241b591412ef329bd9, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5127,6 +5307,10 @@ PrefabInstance:
     - target: {fileID: 1496584282338076907, guid: 60a28384b938e164ba6de8065d6d728e, type: 3}
       propertyPath: m_Name
       value: 01.Index02.R
+      objectReference: {fileID: 0}
+    - target: {fileID: 1496584282338076907, guid: 60a28384b938e164ba6de8065d6d728e, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2274106521568801361, guid: 60a28384b938e164ba6de8065d6d728e, type: 3}
       propertyPath: m_RootOrder
@@ -5242,6 +5426,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 01.HipsSatellite01
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4c6e3842501831a458dd459ee7dd35aa, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5311,6 +5499,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4c6e3842501831a458dd459ee7dd35aa, type: 3}
       propertyPath: m_Name
       value: 01.HipsSatellite01
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4c6e3842501831a458dd459ee7dd35aa, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5382,6 +5574,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 01.HipsSatellite01
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4c6e3842501831a458dd459ee7dd35aa, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5452,6 +5648,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 01.Ring02.L
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 57af43faea20aae4e9cb846075c0083e, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5517,6 +5717,10 @@ PrefabInstance:
     - target: {fileID: 3278636637808208121, guid: 2c06baa3836b13b4aacccc0be7add4fd, type: 3}
       propertyPath: m_Name
       value: 01.Ring01.R
+      objectReference: {fileID: 0}
+    - target: {fileID: 3278636637808208121, guid: 2c06baa3836b13b4aacccc0be7add4fd, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5588,6 +5792,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 01.Middle03.L
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ccc96bfe5d16a6d46a1d077340e79bc0, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5657,6 +5865,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4bad8dfc1528cc64aba23d498409a11b, type: 3}
       propertyPath: m_Name
       value: 01.Ring03.L
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4bad8dfc1528cc64aba23d498409a11b, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
