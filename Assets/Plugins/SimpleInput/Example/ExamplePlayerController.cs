@@ -17,7 +17,7 @@ public class ExamplePlayerController : MonoBehaviour
 
     void Awake()
     {
-        GetComponent<Renderer>().material.color = materialColor;
+        //GetComponent<Renderer>().material.color = materialColor;
         m_rigidbody = GetComponent<Rigidbody>();
     }
 
