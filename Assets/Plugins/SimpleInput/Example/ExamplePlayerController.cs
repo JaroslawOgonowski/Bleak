@@ -14,9 +14,12 @@ public class ExamplePlayerController : MonoBehaviour
 
     private float inputHorizontal;
     private float inputVertical;
+    private Animator animator;
+    private bool isMoving = false; // Flaga wskazująca, czy postać się porusza
 
     void Awake()
     {
+        animator = GetComponent<Animator>();
         //GetComponent<Renderer>().material.color = materialColor;
         m_rigidbody = GetComponent<Rigidbody>();
     }
@@ -28,6 +31,9 @@ public class ExamplePlayerController : MonoBehaviour
 
         transform.Rotate(0f, inputHorizontal * rotationSpeed, 0f, Space.World);
 
+        // Sprawdź czy postać porusza się do przodu
+        isMoving = Mathf.Abs(inputVertical) > 0.1f;
+
         if (SimpleInput.GetButtonDown(jumpButton) && IsGrounded())
             m_rigidbody.AddForce(0f, 10f, 0f, ForceMode.Impulse);
     }
@@ -37,6 +43,9 @@ public class ExamplePlayerController : MonoBehaviour
         // Modyfikuj pozycję obiektu w każdej klatce zgodnie z wejściem pionowym
         Vector3 movement = transform.forward * inputVertical * moveSpeed * Time.fixedDeltaTime;
         m_rigidbody.MovePosition(m_rigidbody.position + movement);
+
+        // Ustaw animację w zależności od poruszania się postaci
+        animator.SetBool("RunForward", isMoving);
     }
 
     void OnCollisionEnter(Collision collision)
