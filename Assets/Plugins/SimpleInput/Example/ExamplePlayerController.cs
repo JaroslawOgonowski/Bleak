@@ -44,9 +44,27 @@ public class ExamplePlayerController : MonoBehaviour
         Vector3 movement = transform.forward * inputVertical * moveSpeed * Time.fixedDeltaTime;
         m_rigidbody.MovePosition(m_rigidbody.position + movement);
 
-        // Ustaw animację w zależności od poruszania się postaci
-        animator.SetBool("RunForward", isMoving);
+        // Określ czy postać porusza się do przodu czy do tyłu
+        float forwardSpeed = Vector3.Dot(movement.normalized, transform.forward);
+
+        // Ustaw animację w zależności od kierunku poruszania się postaci
+        if (forwardSpeed > 0.1f)
+        {
+            animator.SetBool("RunForward", true);
+            animator.SetBool("RunBackward", false);
+        }
+        else if (forwardSpeed < -0.1f)
+        {
+            animator.SetBool("RunForward", false);
+            animator.SetBool("RunBackward", true);
+        }
+        else
+        {
+            animator.SetBool("RunForward", false);
+            animator.SetBool("RunBackward", false);
+        }
     }
+
 
     void OnCollisionEnter(Collision collision)
     {
