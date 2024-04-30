@@ -35,7 +35,7 @@ public class ExamplePlayerController : MonoBehaviour
         isMoving = Mathf.Abs(inputVertical) > 0.1f;
 
         if (SimpleInput.GetButtonDown(jumpButton) && IsGrounded())
-            m_rigidbody.AddForce(0f, 10f, 0f, ForceMode.Impulse);
+            m_rigidbody.AddForce(0f, 7f, 0f, ForceMode.Impulse);
     }
 
     void FixedUpdate()
