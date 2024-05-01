@@ -1,7 +1,8 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UIElements;
-
+using System.IO;
+using System.Collections;
 public class ExamplePlayerController : MonoBehaviour
 {
     public Color materialColor;
@@ -13,24 +14,32 @@ public class ExamplePlayerController : MonoBehaviour
 
     public float moveSpeed = 5f; // Stała prędkość poruszania się do przodu
     public float rotationSpeed = 1f; // Prędkość obrotu obiektu
-
+    public float jumpForce = 1f;
     private float inputHorizontal;
     private float inputVertical;
     private Animator animator;
     private bool isMoving = false; // Flaga wskazująca, czy postać się porusza
     private BoxCollider boxCollider;
+    bool closingJumpState = false;
     void Awake()
     {
         animator = GetComponent<Animator>();
         //GetComponent<Renderer>().material.color = materialColor;
         m_rigidbody = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
-
-
     }
 
     void Update()
     {
+        if(IsGrounded() == true && closingJumpState == false && animator.GetBool("Jump") == true)
+        {
+            StartCoroutine(closeJumpAnimation());
+        }
+        if (IsGrounded() == false && closingJumpState == false && animator.GetBool("Jump") == false)
+        {
+            animator.SetBool("Jump", true);
+        }
+
         inputHorizontal = SimpleInput.GetAxis(horizontalAxis);
         inputVertical = SimpleInput.GetAxis(verticalAxis);
 
@@ -38,22 +47,59 @@ public class ExamplePlayerController : MonoBehaviour
 
         // Sprawdź czy postać porusza się do przodu
         isMoving = Mathf.Abs(inputVertical) > 0.1f;
-        Debug.Log(IsGrounded());
 
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded() == true)
         {
-            m_rigidbody.AddForce(0f, 2f, 0f, ForceMode.Impulse);
-            animator.SetTrigger("Jump");
+            animator.SetBool("RunForward", false);
+            m_rigidbody.AddForce(0f, jumpForce, 0f, ForceMode.Impulse);
+            animator.SetBool("Jump", true);
         }
 
-
-
-        if (SimpleInput.GetButtonDown(jumpButton) && IsGrounded())
+        if (Input.GetKeyDown(KeyCode.W) && IsGrounded() == true)
         {
-            m_rigidbody.AddForce(0f, 5f, 0f, ForceMode.Impulse);
+            m_rigidbody.AddForce(transform.forward * 3f, ForceMode.Impulse);
+           // animator.SetBool("RunForward", true);
+        }
+        if (Input.GetKeyUp(KeyCode.W))
+        {
+           // animator.SetBool("RunForward", false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.S) && IsGrounded() == true)
+        {
+            m_rigidbody.AddForce(-transform.forward * 3f, ForceMode.Impulse);
+          //  animator.SetBool("RunBackward", true);
+        }
+        if (Input.GetKeyUp(KeyCode.S))
+        {
+          //  animator.SetBool("RunBackward", false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.A) && IsGrounded() == true)
+        {
+            transform.Rotate(0f, -8f, 0f);
+        }
+
+        if (Input.GetKeyDown(KeyCode.D) && IsGrounded() == true)
+        {
+            transform.Rotate(0f, 8f, 0f);
+        }
+
+        if (SimpleInput.GetButtonDown(jumpButton) && IsGrounded() == true)
+        {
+            m_rigidbody.AddForce(0f, jumpForce, 0f, ForceMode.Impulse);
             animator.SetTrigger("Jump");
         }
     }
+
+    private IEnumerator closeJumpAnimation()
+    {
+        closingJumpState = true;
+        yield return new WaitForSeconds(0.1f);
+        animator.SetBool("Jump", false);
+        closingJumpState = false;
+    }
+    [SerializeField] private float forwardSpeed;
 
     void FixedUpdate()
     {
@@ -62,16 +108,16 @@ public class ExamplePlayerController : MonoBehaviour
         m_rigidbody.MovePosition(m_rigidbody.position + movement);
 
         // Określ czy postać porusza się do przodu czy do tyłu
-        float forwardSpeed = Vector3.Dot(movement.normalized, transform.forward);
+        forwardSpeed = Vector3.Dot(movement.normalized, transform.forward);
 
         // Ustaw animację w zależności od kierunku poruszania się postaci
-        if (forwardSpeed > 0.1f && IsGrounded())
+        if (forwardSpeed > 0.1f && IsGrounded() == true)
         {
             animator.SetBool("RunForward", true);
             animator.SetBool("RunBackward", false);
         }
-        else if (forwardSpeed < -0.1f && IsGrounded())
-        {
+        else if (forwardSpeed < -0.1f && IsGrounded() == true)
+        {   
             animator.SetBool("RunForward", false);
             animator.SetBool("RunBackward", true);
         }
@@ -83,11 +129,11 @@ public class ExamplePlayerController : MonoBehaviour
     }
 
 
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-            m_rigidbody.AddForce(collision.contacts[0].normal * 10f, ForceMode.Impulse);
-    }
+    //void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Player"))
+    //        m_rigidbody.AddForce(collision.contacts[0].normal * 10f, ForceMode.Impulse);
+    //}
 
     bool IsGrounded()
     {
@@ -96,7 +142,7 @@ public class ExamplePlayerController : MonoBehaviour
         Vector3 size = boxCollider.bounds.size;
 
         // Promień rzucony w dół do sprawdzenia kolizji z ziemią
-        float rayLength = size.y * 0.51f; // 51% wysokości collidera
+        float rayLength = size.y * 0.6f; // 51% wysokości collidera
 
         // Wykrycie kolizji z warstwą "Ground" w promieniu
         bool isGrounded = Physics.CheckBox(center, size * 0.5f, Quaternion.identity, LayerMask.GetMask("Ground")) ||

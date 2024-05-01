@@ -6217,6 +6217,7 @@ GameObject:
   - component: {fileID: 1077806632}
   - component: {fileID: 1077806630}
   - component: {fileID: 1077806634}
+  - component: {fileID: 1077806635}
   m_Layer: 0
   m_Name: Character_Man
   m_TagString: Untagged
@@ -6263,9 +6264,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1077806628}
   serializedVersion: 4
-  m_Mass: 0.88
+  m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -6315,12 +6316,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9dd336b25bf97b4abc19bbfb79b9c2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materialColor: {r: 0.31162483, g: 0.8156863, b: 0.3058824, a: 0}
+  materialColor: {r: 0, g: 0, b: 0, a: 0}
   horizontalAxis: Horizontal
   verticalAxis: Vertical
   jumpButton: Jump
   moveSpeed: 15
   rotationSpeed: 1.8
+  jumpForce: 4
+  forwardSpeed: 0
 --- !u!65 &1077806634
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6342,6 +6345,29 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.4, y: 0.03, z: 0.3}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &1077806635
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077806628}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.44
+  m_Height: 1.69
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.87, z: 0}
 --- !u!1 &1082634316
 GameObject:
   m_ObjectHideFlags: 0
