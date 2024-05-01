@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.UIElements;
 
 public class ExamplePlayerController : MonoBehaviour
 {
@@ -16,12 +18,15 @@ public class ExamplePlayerController : MonoBehaviour
     private float inputVertical;
     private Animator animator;
     private bool isMoving = false; // Flaga wskazująca, czy postać się porusza
-
+    private BoxCollider boxCollider;
     void Awake()
     {
         animator = GetComponent<Animator>();
         //GetComponent<Renderer>().material.color = materialColor;
         m_rigidbody = GetComponent<Rigidbody>();
+        boxCollider = GetComponent<BoxCollider>();
+
+
     }
 
     void Update()
@@ -33,9 +38,21 @@ public class ExamplePlayerController : MonoBehaviour
 
         // Sprawdź czy postać porusza się do przodu
         isMoving = Mathf.Abs(inputVertical) > 0.1f;
+        Debug.Log(IsGrounded());
+
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded() == true)
+        {
+            m_rigidbody.AddForce(0f, 2f, 0f, ForceMode.Impulse);
+            animator.SetTrigger("Jump");
+        }
+
+
 
         if (SimpleInput.GetButtonDown(jumpButton) && IsGrounded())
-            m_rigidbody.AddForce(0f, 7f, 0f, ForceMode.Impulse);
+        {
+            m_rigidbody.AddForce(0f, 5f, 0f, ForceMode.Impulse);
+            animator.SetTrigger("Jump");
+        }
     }
 
     void FixedUpdate()
@@ -48,12 +65,12 @@ public class ExamplePlayerController : MonoBehaviour
         float forwardSpeed = Vector3.Dot(movement.normalized, transform.forward);
 
         // Ustaw animację w zależności od kierunku poruszania się postaci
-        if (forwardSpeed > 0.1f)
+        if (forwardSpeed > 0.1f && IsGrounded())
         {
             animator.SetBool("RunForward", true);
             animator.SetBool("RunBackward", false);
         }
-        else if (forwardSpeed < -0.1f)
+        else if (forwardSpeed < -0.1f && IsGrounded())
         {
             animator.SetBool("RunForward", false);
             animator.SetBool("RunBackward", true);
@@ -74,6 +91,17 @@ public class ExamplePlayerController : MonoBehaviour
 
     bool IsGrounded()
     {
-        return Physics.Raycast(transform.position, Vector3.down, 1.75f);
+        // Pozycja centrum i rozmiar collidera
+        Vector3 center = boxCollider.bounds.center;
+        Vector3 size = boxCollider.bounds.size;
+
+        // Promień rzucony w dół do sprawdzenia kolizji z ziemią
+        float rayLength = size.y * 0.51f; // 51% wysokości collidera
+
+        // Wykrycie kolizji z warstwą "Ground" w promieniu
+        bool isGrounded = Physics.CheckBox(center, size * 0.5f, Quaternion.identity, LayerMask.GetMask("Ground")) ||
+                          Physics.Raycast(center, Vector3.down, rayLength, LayerMask.GetMask("Ground"));
+
+        return isGrounded;
     }
 }

@@ -6216,6 +6216,7 @@ GameObject:
   - component: {fileID: 1077806633}
   - component: {fileID: 1077806632}
   - component: {fileID: 1077806630}
+  - component: {fileID: 1077806634}
   m_Layer: 0
   m_Name: Character_Man
   m_TagString: Untagged
@@ -6320,6 +6321,27 @@ MonoBehaviour:
   jumpButton: Jump
   moveSpeed: 15
   rotationSpeed: 1.8
+--- !u!65 &1077806634
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077806628}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.4, y: 0.03, z: 0.3}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1082634316
 GameObject:
   m_ObjectHideFlags: 0
@@ -12824,7 +12846,7 @@ Transform:
   m_GameObject: {fileID: 2060321892}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 258.94, y: 18.94, z: 386.12}
+  m_LocalPosition: {x: 258.94, y: 19.8, z: 386.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
