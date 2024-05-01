@@ -21,6 +21,9 @@ public class ExamplePlayerController : MonoBehaviour
     private bool isMoving = false; // Flaga wskazująca, czy postać się porusza
     private BoxCollider boxCollider;
     bool closingJumpState = false;
+    private float verticalVelocity;
+    [SerializeField] private float forwardSpeed;
+
     void Awake()
     {
         animator = GetComponent<Animator>();
@@ -31,7 +34,7 @@ public class ExamplePlayerController : MonoBehaviour
 
     void Update()
     {
-        if(IsGrounded() == true && closingJumpState == false && animator.GetBool("Jump") == true)
+        if(IsGrounded() == true && closingJumpState == false)
         {
             StartCoroutine(closeJumpAnimation());
         }
@@ -99,7 +102,6 @@ public class ExamplePlayerController : MonoBehaviour
         animator.SetBool("Jump", false);
         closingJumpState = false;
     }
-    [SerializeField] private float forwardSpeed;
 
     void FixedUpdate()
     {
@@ -125,6 +127,18 @@ public class ExamplePlayerController : MonoBehaviour
         {
             animator.SetBool("RunForward", false);
             animator.SetBool("RunBackward", false);
+        }
+
+        verticalVelocity = m_rigidbody.velocity.y;
+        if (verticalVelocity > 0.1f)
+        {
+            // Porusza się do góry
+            Debug.Log("Porusza się do góry");
+        }
+        else if (verticalVelocity < -0.1f)
+        {
+            // Porusza się w dół
+            Debug.Log("Porusza się w dół");
         }
     }
 
