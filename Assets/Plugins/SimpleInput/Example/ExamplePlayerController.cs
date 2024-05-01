@@ -22,6 +22,8 @@ public class ExamplePlayerController : MonoBehaviour
     private BoxCollider boxCollider;
     bool closingJumpState = false;
     private float verticalVelocity;
+    private bool falling;
+    private bool jumpUp;
     [SerializeField] private float forwardSpeed;
 
     void Awake()
@@ -38,11 +40,15 @@ public class ExamplePlayerController : MonoBehaviour
         {
             StartCoroutine(closeJumpAnimation());
         }
-        if (IsGrounded() == false && closingJumpState == false && animator.GetBool("Jump") == false)
+        if (IsGrounded() == false && closingJumpState == false && animator.GetBool("Jump_up") == false && jumpUp == true)
         {
-            animator.SetBool("Jump", true);
+            animator.SetBool("Jump_up", true);
         }
-
+        if (IsGrounded() == false && closingJumpState == false && falling == true)
+        {
+            animator.SetBool("Jump_up", false);
+            animator.SetBool("Falling", true);
+        }
         inputHorizontal = SimpleInput.GetAxis(horizontalAxis);
         inputVertical = SimpleInput.GetAxis(verticalAxis);
 
@@ -53,9 +59,7 @@ public class ExamplePlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded() == true)
         {
-            animator.SetBool("RunForward", false);
             m_rigidbody.AddForce(0f, jumpForce, 0f, ForceMode.Impulse);
-            animator.SetBool("Jump", true);
         }
 
         if (Input.GetKeyDown(KeyCode.W) && IsGrounded() == true)
@@ -91,7 +95,6 @@ public class ExamplePlayerController : MonoBehaviour
         if (SimpleInput.GetButtonDown(jumpButton) && IsGrounded() == true)
         {
             m_rigidbody.AddForce(0f, jumpForce, 0f, ForceMode.Impulse);
-            animator.SetTrigger("Jump");
         }
     }
 
@@ -99,7 +102,8 @@ public class ExamplePlayerController : MonoBehaviour
     {
         closingJumpState = true;
         yield return new WaitForSeconds(0.1f);
-        animator.SetBool("Jump", false);
+        animator.SetBool("Falling", false);
+        animator.SetBool("Jump_up", false);
         closingJumpState = false;
     }
 
@@ -132,13 +136,18 @@ public class ExamplePlayerController : MonoBehaviour
         verticalVelocity = m_rigidbody.velocity.y;
         if (verticalVelocity > 0.1f)
         {
-            // Porusza się do góry
-            Debug.Log("Porusza się do góry");
+            jumpUp = true;
+            falling = false;
         }
         else if (verticalVelocity < -0.1f)
         {
-            // Porusza się w dół
-            Debug.Log("Porusza się w dół");
+            falling = true;
+            jumpUp = false;
+        }
+        else
+        {
+            jumpUp = false;
+            falling = false;
         }
     }
 
