@@ -25,7 +25,7 @@ public class ExamplePlayerController : MonoBehaviour
     private bool falling;
     private bool jumpUp;
     [SerializeField] private float forwardSpeed;
-
+    private bool usedFallingAnimation = false;
     void Awake()
     {
         animator = GetComponent<Animator>();
@@ -44,8 +44,9 @@ public class ExamplePlayerController : MonoBehaviour
         {
             animator.SetBool("Jump_up", true);
         }
-        if (IsGrounded() == false && closingJumpState == false && falling == true)
+        if (IsGrounded() == false && closingJumpState == false && falling == true && usedFallingAnimation == false)
         {
+            usedFallingAnimation = true;
             animator.SetBool("Jump_up", false);
             animator.SetBool("Falling", true);
         }
@@ -104,6 +105,7 @@ public class ExamplePlayerController : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         animator.SetBool("Falling", false);
         animator.SetBool("Jump_up", false);
+        usedFallingAnimation = false;
         closingJumpState = false;
     }
 
