@@ -5,20 +5,17 @@ using System.IO;
 using System.Collections;
 public class ExamplePlayerController : MonoBehaviour
 {
-    public Color materialColor;
     private Rigidbody m_rigidbody;
-
     public string horizontalAxis = "Horizontal";
     public string verticalAxis = "Vertical";
     public string jumpButton = "Jump";
-
-    public float moveSpeed = 5f; // Stała prędkość poruszania się do przodu
-    public float rotationSpeed = 1f; // Prędkość obrotu obiektu
+    public float moveSpeed = 5f;
+    public float rotationSpeed = 1f;
     public float jumpForce = 1f;
     private float inputHorizontal;
     private float inputVertical;
     private Animator animator;
-    private bool isMoving = false; // Flaga wskazująca, czy postać się porusza
+    public bool isMoving = false;
     private BoxCollider boxCollider;
     bool closingJumpState = false;
     private float verticalVelocity;
@@ -26,10 +23,10 @@ public class ExamplePlayerController : MonoBehaviour
     private bool jumpUp;
     [SerializeField] private float forwardSpeed;
     private bool usedFallingAnimation = false;
+    public bool runJump = false;
     void Awake()
     {
         animator = GetComponent<Animator>();
-        //GetComponent<Renderer>().material.color = materialColor;
         m_rigidbody = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
     }
@@ -42,47 +39,49 @@ public class ExamplePlayerController : MonoBehaviour
         }
         if (IsGrounded() == false && closingJumpState == false && animator.GetBool("Jump_up") == false && jumpUp == true)
         {
-            animator.SetBool("Jump_up", true);
+           if (isMoving == false)
+            {
+                animator.SetBool("Jump_up", true);
+            }
+            else
+            {
+                if (runJump == false)
+                {
+                    animator.SetBool("RunJump", true);
+                } else
+                {
+                    animator.SetBool("RunJump", false);
+                }
+            }
         }
         if (IsGrounded() == false && closingJumpState == false && falling == true && usedFallingAnimation == false)
         {
-            usedFallingAnimation = true;
-            animator.SetBool("Jump_up", false);
-            animator.SetBool("Falling", true);
+            if (isMoving == false)
+            {
+                usedFallingAnimation = true;
+                animator.SetBool("Jump_up", false);
+                animator.SetBool("Falling", true);
+            }
         }
         inputHorizontal = SimpleInput.GetAxis(horizontalAxis);
         inputVertical = SimpleInput.GetAxis(verticalAxis);
 
         transform.Rotate(0f, inputHorizontal * rotationSpeed, 0f, Space.World);
-
-        // Sprawdź czy postać porusza się do przodu
         isMoving = Mathf.Abs(inputVertical) > 0.1f;
 
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded() == true)
         {
-            m_rigidbody.AddForce(0f, jumpForce, 0f, ForceMode.Impulse);
+            m_rigidbody.AddForce(0f, jumpForce, 0f, ForceMode.VelocityChange);
         }
 
         if (Input.GetKeyDown(KeyCode.W) && IsGrounded() == true)
         {
             m_rigidbody.AddForce(transform.forward * 3f, ForceMode.Impulse);
-           // animator.SetBool("RunForward", true);
         }
-        if (Input.GetKeyUp(KeyCode.W))
-        {
-           // animator.SetBool("RunForward", false);
-        }
-
         if (Input.GetKeyDown(KeyCode.S) && IsGrounded() == true)
         {
             m_rigidbody.AddForce(-transform.forward * 3f, ForceMode.Impulse);
-          //  animator.SetBool("RunBackward", true);
         }
-        if (Input.GetKeyUp(KeyCode.S))
-        {
-          //  animator.SetBool("RunBackward", false);
-        }
-
         if (Input.GetKeyDown(KeyCode.A) && IsGrounded() == true)
         {
             transform.Rotate(0f, -8f, 0f);
@@ -96,6 +95,14 @@ public class ExamplePlayerController : MonoBehaviour
         if (SimpleInput.GetButtonDown(jumpButton) && IsGrounded() == true)
         {
             m_rigidbody.AddForce(0f, jumpForce, 0f, ForceMode.Impulse);
+        }
+        if (animator.GetBool("RunJump") == true && runJump == false)
+        {
+             runJump = true;
+        }
+        if (runJump == true && IsGrounded() == true)
+        {
+            runJump = false;
         }
     }
 
@@ -119,20 +126,35 @@ public class ExamplePlayerController : MonoBehaviour
         forwardSpeed = Vector3.Dot(movement.normalized, transform.forward);
 
         // Ustaw animację w zależności od kierunku poruszania się postaci
-        if (forwardSpeed > 0.1f && IsGrounded() == true)
+        if (forwardSpeed > 0.1f)
         {
-            animator.SetBool("RunForward", true);
-            animator.SetBool("RunBackward", false);
+            isMoving = true;
+
+            if(IsGrounded() == true)
+            {
+                animator.SetBool("RunForward", true);
+                animator.SetBool("RunBackward", false);
+                animator.SetBool("RunJump", false);
+            }
         }
         else if (forwardSpeed < -0.1f && IsGrounded() == true)
-        {   
-            animator.SetBool("RunForward", false);
-            animator.SetBool("RunBackward", true);
+        {
+            isMoving = true;
+            if (IsGrounded() == true)
+            {
+                animator.SetBool("RunForward", false);
+                animator.SetBool("RunBackward", true);
+                animator.SetBool("RunJump", false);
+            }
         }
         else
         {
-            animator.SetBool("RunForward", false);
-            animator.SetBool("RunBackward", false);
+            isMoving = false;
+            if (IsGrounded() == true)
+            {
+                animator.SetBool("RunForward", false);
+                animator.SetBool("RunBackward", false);
+            }
         }
 
         verticalVelocity = m_rigidbody.velocity.y;
@@ -152,13 +174,6 @@ public class ExamplePlayerController : MonoBehaviour
             falling = false;
         }
     }
-
-
-    //void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Player"))
-    //        m_rigidbody.AddForce(collision.contacts[0].normal * 10f, ForceMode.Impulse);
-    //}
 
     bool IsGrounded()
     {

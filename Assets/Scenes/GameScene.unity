@@ -6218,7 +6218,6 @@ GameObject:
   - component: {fileID: 1077806630}
   - component: {fileID: 1077806634}
   - component: {fileID: 1077806635}
-  - component: {fileID: 1077806636}
   m_Layer: 0
   m_Name: Character_Man
   m_TagString: Untagged
@@ -6317,14 +6316,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9dd336b25bf97b4abc19bbfb79b9c2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materialColor: {r: 0, g: 0, b: 0, a: 0}
   horizontalAxis: Horizontal
   verticalAxis: Vertical
   jumpButton: Jump
   moveSpeed: 15
   rotationSpeed: 1.8
   jumpForce: 4
+  isMoving: 0
   forwardSpeed: 0
+  runJump: 0
 --- !u!65 &1077806634
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6369,19 +6369,6 @@ CapsuleCollider:
   m_Height: 1.69
   m_Direction: 1
   m_Center: {x: 0, y: 0.87, z: 0}
---- !u!114 &1077806636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1077806628}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5dad0a70b931a04fb2e8f1da6f370ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  smoothBlend: 0.1
 --- !u!1 &1082634316
 GameObject:
   m_ObjectHideFlags: 0
