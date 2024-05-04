@@ -32,7 +32,7 @@ public class ExamplePlayerController : MonoBehaviour
     }
 
     void Update()
-    {
+    {   
         if(IsGrounded() == true && closingJumpState == false)
         {
             StartCoroutine(closeJumpAnimation());
