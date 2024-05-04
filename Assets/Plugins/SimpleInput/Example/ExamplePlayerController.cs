@@ -18,12 +18,15 @@ public class ExamplePlayerController : MonoBehaviour
     private float inputHorizontal;
     private float inputVertical;
     private Animator animator;
-    private bool isMoving = false; // Flaga wskazująca, czy postać się porusza
+    private bool isMoving = false;
     private BoxCollider boxCollider;
     bool closingJumpState = false;
     private float verticalVelocity;
     private bool falling;
     private bool jumpUp;
+    private bool isGathering;
+    private bool isMining;
+
     [SerializeField] private float forwardSpeed;
     private bool usedFallingAnimation = false;
     void Awake()
@@ -54,11 +57,9 @@ public class ExamplePlayerController : MonoBehaviour
         inputVertical = SimpleInput.GetAxis(verticalAxis);
 
         transform.Rotate(0f, inputHorizontal * rotationSpeed, 0f, Space.World);
-
-        // Sprawdź czy postać porusza się do przodu
         isMoving = Mathf.Abs(inputVertical) > 0.1f;
 
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded() == true)
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded() == true || SimpleInput.GetButtonDown(jumpButton) && IsGrounded() == true)
         {
             m_rigidbody.AddForce(0f, jumpForce, 0f, ForceMode.Impulse);
         }
@@ -66,36 +67,18 @@ public class ExamplePlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W) && IsGrounded() == true)
         {
             m_rigidbody.AddForce(transform.forward * 3f, ForceMode.Impulse);
-           // animator.SetBool("RunForward", true);
         }
-        if (Input.GetKeyUp(KeyCode.W))
-        {
-           // animator.SetBool("RunForward", false);
-        }
-
         if (Input.GetKeyDown(KeyCode.S) && IsGrounded() == true)
         {
             m_rigidbody.AddForce(-transform.forward * 3f, ForceMode.Impulse);
-          //  animator.SetBool("RunBackward", true);
         }
-        if (Input.GetKeyUp(KeyCode.S))
-        {
-          //  animator.SetBool("RunBackward", false);
-        }
-
         if (Input.GetKeyDown(KeyCode.A) && IsGrounded() == true)
         {
             transform.Rotate(0f, -8f, 0f);
         }
-
         if (Input.GetKeyDown(KeyCode.D) && IsGrounded() == true)
         {
             transform.Rotate(0f, 8f, 0f);
-        }
-
-        if (SimpleInput.GetButtonDown(jumpButton) && IsGrounded() == true)
-        {
-            m_rigidbody.AddForce(0f, jumpForce, 0f, ForceMode.Impulse);
         }
     }
 
@@ -111,14 +94,11 @@ public class ExamplePlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Modyfikuj pozycję obiektu w każdej klatce zgodnie z wejściem pionowym
         Vector3 movement = transform.forward * inputVertical * moveSpeed * Time.fixedDeltaTime;
         m_rigidbody.MovePosition(m_rigidbody.position + movement);
 
-        // Określ czy postać porusza się do przodu czy do tyłu
         forwardSpeed = Vector3.Dot(movement.normalized, transform.forward);
 
-        // Ustaw animację w zależności od kierunku poruszania się postaci
         if (forwardSpeed > 0.1f && IsGrounded() == true)
         {
             animator.SetBool("RunForward", true);
@@ -153,23 +133,13 @@ public class ExamplePlayerController : MonoBehaviour
         }
     }
 
-
-    //void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Player"))
-    //        m_rigidbody.AddForce(collision.contacts[0].normal * 10f, ForceMode.Impulse);
-    //}
-
     bool IsGrounded()
     {
-        // Pozycja centrum i rozmiar collidera
         Vector3 center = boxCollider.bounds.center;
         Vector3 size = boxCollider.bounds.size;
 
-        // Promień rzucony w dół do sprawdzenia kolizji z ziemią
-        float rayLength = size.y * 0.6f; // 51% wysokości collidera
+        float rayLength = size.y * 0.51f;
 
-        // Wykrycie kolizji z warstwą "Ground" w promieniu
         bool isGrounded = Physics.CheckBox(center, size * 0.5f, Quaternion.identity, LayerMask.GetMask("Ground")) ||
                           Physics.Raycast(center, Vector3.down, rayLength, LayerMask.GetMask("Ground"));
 
