@@ -6523,6 +6523,8 @@ MonoBehaviour:
   moveSpeed: 15
   rotationSpeed: 1.8
   jumpForce: 4
+  animator: {fileID: 0}
+  gatheringMove: 0
   forwardSpeed: 0
 --- !u!65 &1077806634
 BoxCollider:
@@ -13206,7 +13208,8 @@ MonoBehaviour:
   miningTarget: {fileID: 245230895}
   miningButton: {fileID: 769013346}
   distance: 6.33
-  moveSpeed: 2
+  moveSpeed: 4
+  rotationSpeed: 2
 --- !u!4 &2064086408
 Transform:
   m_ObjectHideFlags: 0

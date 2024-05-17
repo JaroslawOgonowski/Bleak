@@ -62,7 +62,11 @@ public class ExamplePlayerController : MonoBehaviour
         inputHorizontal = SimpleInput.GetAxis(horizontalAxis);
         inputVertical = SimpleInput.GetAxis(verticalAxis);
 
-        transform.Rotate(0f, inputHorizontal * rotationSpeed, 0f, Space.World);
+        if (gatheringMove == false)
+        {
+            transform.Rotate(0f, inputHorizontal * rotationSpeed, 0f, Space.World);
+        }
+
         isMoving = Mathf.Abs(inputVertical) > 0.1f;
 
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded() == true || SimpleInput.GetButtonDown(jumpButton) && IsGrounded() == true && gatheringMove == false)
