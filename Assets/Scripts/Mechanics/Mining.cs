@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Mining : MonoBehaviour
-{
+{   
     [SerializeField] private GameObject character;
     [SerializeField] private GameObject miningTarget;
     [SerializeField] private Button miningButton;
@@ -25,24 +25,23 @@ public class Mining : MonoBehaviour
 
     IEnumerator MoveCharacterToTarget()
     {
-        Animator animator = character.GetComponent<Animator>();
-
         while (true)
         {
-
+            ExamplePlayerController.Instance.gatheringMove = true;
             Vector3 direction = miningTarget.transform.position - character.transform.position;
             float currentDistance = direction.magnitude;
-
+           
             // Check if character is too close or too far
             if (currentDistance > distance + 0.1f)
             {
+                ExamplePlayerController.Instance.animator.SetBool("RunForward", true);
                 // Move closer
                 direction.Normalize();
                 character.transform.Translate(direction * moveSpeed * Time.deltaTime, Space.World);
             }
             else if (currentDistance < distance - 0.1f)
             {
-                animator.SetBool("RunForward", true);
+                ExamplePlayerController.Instance.animator.SetBool("RunBackward", true);
                 // Move away
                 direction.Normalize();
                 character.transform.Translate(-direction * moveSpeed * Time.deltaTime, Space.World);
@@ -51,6 +50,10 @@ public class Mining : MonoBehaviour
             {
                 // Character is at the correct distance
                 Debug.Log("Character is at the correct distance from the mining target.");
+                ExamplePlayerController.Instance.animator.SetBool("RunBackward", false);
+                ExamplePlayerController.Instance.animator.SetBool("RunForward", false);
+                ExamplePlayerController.Instance.gatheringMove = false;
+                ExamplePlayerController.Instance.animator.SetBool("Mining", true);
                 yield break;
             }
 
