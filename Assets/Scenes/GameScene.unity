@@ -2154,6 +2154,25 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3858865840082214732, guid: fd98d1350cd6fe14e9a0abd03d86516a, type: 3}
   m_PrefabInstance: {fileID: 3482602304486770079}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &245230900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245230895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d97119d6b27a81348b2125e0a764678e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Verite
+  type: 1
+  firstSkillReqName: Mining
+  firstSkillReq: 95.1
+  secSkillReqName: 
+  secSkillReq: 0
+  toolReq: Pickaxe
 --- !u!1 &249684209
 GameObject:
   m_ObjectHideFlags: 0
@@ -11636,6 +11655,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1143331155}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1797723716
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1797723717}
+  m_Layer: 0
+  m_Name: GatheringManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1797723717
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797723716}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 911.1723, y: 753.0823, z: -224.40356}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2064086408}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1806329391
 GameObject:
   m_ObjectHideFlags: 0
@@ -13561,12 +13612,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2064086406}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 272.7326, y: 1.1620188, z: 560.57056}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -638.4397, y: -751.9202, z: 784.9741}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1797723717}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2077616302
 PrefabInstance:
@@ -14633,7 +14684,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3858865840082214732, guid: fd98d1350cd6fe14e9a0abd03d86516a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 245230900}
   m_SourcePrefab: {fileID: 100100000, guid: fd98d1350cd6fe14e9a0abd03d86516a, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -14647,6 +14701,7 @@ SceneRoots:
   - {fileID: 1312842927}
   - {fileID: 342072874}
   - {fileID: 596920337}
+  - {fileID: 1797723717}
   - {fileID: 787124205}
   - {fileID: 803859512}
   - {fileID: 2105922179}
@@ -14660,4 +14715,3 @@ SceneRoots:
   - {fileID: 1948370634}
   - {fileID: 1693585944}
   - {fileID: 3482602304486770079}
-  - {fileID: 2064086408}
