@@ -12,7 +12,7 @@ public class Mining : MonoBehaviour
     public float distance = 5f;
     public float moveSpeed = 2f; // Speed at which the character moves
     public float rotationSpeed = 2f; // Speed at which the character rotates
-
+    private float minimalGatheringDistance = 12f;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +26,7 @@ public class Mining : MonoBehaviour
 
     IEnumerator MoveCharacterToTarget()
     {
+
         while (true)
         {
             ExamplePlayerController.Instance.gatheringMove = true;
