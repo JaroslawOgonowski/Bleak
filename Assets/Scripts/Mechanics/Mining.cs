@@ -8,7 +8,6 @@ public class Mining : MonoBehaviour
 {
     [SerializeField] private GameObject character;
     [SerializeField] private GameObject miningTarget;
-    [SerializeField] private Button miningButton;
     public float distance = 5f;
     public float moveSpeed = 2f; // Speed at which the character moves
     public float rotationSpeed = 2f; // Speed at which the character rotates
@@ -16,10 +15,9 @@ public class Mining : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        miningButton.onClick.AddListener(() => onMiningButtonClick());
     }
 
-    void onMiningButtonClick()
+    public void onMiningButtonClick()
     {
         StartCoroutine(MoveCharacterToTarget());
     }
