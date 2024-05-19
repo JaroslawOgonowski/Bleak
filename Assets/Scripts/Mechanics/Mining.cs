@@ -6,29 +6,34 @@ using UnityEngine.UI;
 
 public class Mining : MonoBehaviour
 {
+    public static Mining instance;
     [SerializeField] private GameObject character;
-    [SerializeField] private GameObject miningTarget;
     public float distance = 5f;
     public float moveSpeed = 2f; // Speed at which the character moves
     public float rotationSpeed = 2f; // Speed at which the character rotates
     private float minimalGatheringDistance = 12f;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        instance = this;
+    }
+
     void Start()
     {
     }
 
-    public void onMiningButtonClick()
+    public void onMiningButtonClick(GameObject target)
     {
-        StartCoroutine(MoveCharacterToTarget());
+        StartCoroutine(MoveCharacterToTarget(target));
     }
 
-    IEnumerator MoveCharacterToTarget()
+    IEnumerator MoveCharacterToTarget(GameObject target)
     {
 
         while (true)
         {
             ExamplePlayerController.Instance.gatheringMove = true;
-            Vector3 direction = miningTarget.transform.position - character.transform.position;
+            Vector3 direction = target.transform.position - character.transform.position;
             float currentDistance = direction.magnitude;
 
             // Rotate character to face the mining target

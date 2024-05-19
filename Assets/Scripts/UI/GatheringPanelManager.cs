@@ -13,9 +13,13 @@ public class GatheringPanelManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI gatheringPanelTitle;
     [SerializeField] private TextMeshProUGUI gatheringPanelContent;
     [SerializeField] private Button gatheringButton;
-    void Start()
+
+    private void Awake()
     {
         instance = this;
+    }
+    void Start()
+    {
         gatheringPanel.SetActive(false);
         gatheringPanelCloseButton.onClick.AddListener(() => closeGatheringPanel());
     }
@@ -33,7 +37,11 @@ public class GatheringPanelManager : MonoBehaviour
 
         if(targetInfo.type == 1)
         {
-            gatheringButton.onClick.AddListener(() => target.GetComponent<Mining>().onMiningButtonClick());
+            gatheringButton.onClick.AddListener(() => Mining.instance.onMiningButtonClick(target));
+        }
+        else
+        {
+            Debug.LogError("Bad type");
         }
         gatheringPanel.SetActive(true);
     }
