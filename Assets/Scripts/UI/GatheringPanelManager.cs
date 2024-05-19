@@ -13,7 +13,10 @@ public class GatheringPanelManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI gatheringPanelTitle;
     [SerializeField] private TextMeshProUGUI gatheringPanelContent;
     [SerializeField] private Button gatheringButton;
-
+    [SerializeField] private Image gatheringImage;
+    [SerializeField] private Sprite minningSprite;
+    [SerializeField] private Sprite lumberSprite;
+    [SerializeField] private Sprite harvestingSprite;
     private void Awake()
     {
         instance = this;
@@ -37,7 +40,16 @@ public class GatheringPanelManager : MonoBehaviour
 
         if(targetInfo.type == 1)
         {
+            gatheringImage.sprite = minningSprite;
             gatheringButton.onClick.AddListener(() => Mining.instance.onMiningButtonClick(target));
+        } 
+        else if( targetInfo.type == 2)
+        {
+            gatheringImage.sprite = lumberSprite;
+        }
+        else if( targetInfo.type == 3)
+        {
+            gatheringImage.sprite = harvestingSprite;
         }
         else
         {

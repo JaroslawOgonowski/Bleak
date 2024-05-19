@@ -64,12 +64,16 @@ public class Mining : MonoBehaviour
                 float angle = Quaternion.Angle(character.transform.rotation, targetRotation);
                 if (angle < 5f) // Adjust the threshold angle as needed
                 {
+                    CharacterFreezePosition(character);
                     // Character is at the correct distance and properly oriented
                     Debug.Log("Character is at the correct distance from the mining target.");
                     ExamplePlayerController.Instance.animator.SetBool("RunBackward", false);
                     ExamplePlayerController.Instance.animator.SetBool("RunForward", false);
-                    ExamplePlayerController.Instance.gatheringMove = false;
                     ExamplePlayerController.Instance.animator.SetBool("Mining", true);
+                    yield return new WaitForSeconds(4.5f);
+                    CharacterUnfreezePosition(character);
+                    ExamplePlayerController.Instance.gatheringMove = false;
+                    //ExamplePlayerController.Instance.gatheringMove = false;
                     yield break;
                 }
             }
@@ -78,4 +82,27 @@ public class Mining : MonoBehaviour
         }
     }
 
+    private void CharacterFreezePosition(GameObject character)
+    {
+        Rigidbody rb = character.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.constraints = RigidbodyConstraints.FreezeAll;
+        }
+    }
+
+    private void CharacterUnfreezePosition(GameObject character)
+    {
+        Rigidbody rb = character.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.constraints = RigidbodyConstraints.None;
+            rb.constraints = RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX;
+        }
+    }
+
+    public void OnAnimationEvent()
+    {
+        Debug.Log("Now triggered!");
+    }
 }

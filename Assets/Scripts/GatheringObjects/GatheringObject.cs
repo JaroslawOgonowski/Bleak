@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class GatheringObject : MonoBehaviour, IPointerClickHandler
 {
     public string name;
-    [Tooltip("1 - Mining,\n2 - Lumber")]
+    [Tooltip("1 - Mining,\n2 - Lumber\n3 - Harvesting")]
     public byte type;
     [Space(5)]
     public string firstSkillReqName;
