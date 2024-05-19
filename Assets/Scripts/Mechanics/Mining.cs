@@ -12,6 +12,7 @@ public class Mining : MonoBehaviour
     public float moveSpeed = 2f; // Speed at which the character moves
     public float rotationSpeed = 2f; // Speed at which the character rotates
     private float minimalGatheringDistance = 12f;
+    private Animator animator;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -20,6 +21,7 @@ public class Mining : MonoBehaviour
 
     void Start()
     {
+        animator = ExamplePlayerController.Instance.animator;
     }
 
     public void onMiningButtonClick(GameObject target)
@@ -44,16 +46,16 @@ public class Mining : MonoBehaviour
             // Check if character is too close or too far
             if (currentDistance > distance + 0.1f)
             {
-                ExamplePlayerController.Instance.animator.SetBool("RunForward", true);
-                ExamplePlayerController.Instance.animator.SetBool("RunBackward", false);
+                animator.SetBool("RunForward", true);
+                animator.SetBool("RunBackward", false);
                 // Move closer
                 direction.Normalize();
                 character.transform.Translate(direction * moveSpeed * Time.deltaTime, Space.World);
             }
             else if (currentDistance < distance - 0.1f)
             {
-                ExamplePlayerController.Instance.animator.SetBool("RunBackward", true);
-                ExamplePlayerController.Instance.animator.SetBool("RunForward", false);
+                animator.SetBool("RunBackward", true);
+                animator.SetBool("RunForward", false);
                 // Move away
                 direction.Normalize();
                 character.transform.Translate(-direction * moveSpeed * Time.deltaTime, Space.World);
@@ -67,12 +69,9 @@ public class Mining : MonoBehaviour
                     CharacterFreezePosition(character);
                     // Character is at the correct distance and properly oriented
                     Debug.Log("Character is at the correct distance from the mining target.");
-                    ExamplePlayerController.Instance.animator.SetBool("RunBackward", false);
-                    ExamplePlayerController.Instance.animator.SetBool("RunForward", false);
-                    ExamplePlayerController.Instance.animator.SetBool("Mining", true);
-                    yield return new WaitForSeconds(4.5f);
-                    CharacterUnfreezePosition(character);
-                    ExamplePlayerController.Instance.gatheringMove = false;
+                    animator.SetBool("RunBackward", false);
+                    animator.SetBool("RunForward", false);
+                    animator.SetBool("Mining", true);                    
                     //ExamplePlayerController.Instance.gatheringMove = false;
                     yield break;
                 }
@@ -103,6 +102,7 @@ public class Mining : MonoBehaviour
 
     public void OnAnimationEvent()
     {
-        Debug.Log("Now triggered!");
+        CharacterUnfreezePosition(character);
+        ExamplePlayerController.Instance.gatheringMove = false;
     }
 }
