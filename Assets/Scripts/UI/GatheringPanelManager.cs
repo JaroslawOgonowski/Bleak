@@ -8,15 +8,16 @@ using UnityEngine.UI;
 public class GatheringPanelManager : MonoBehaviour
 {
     public static GatheringPanelManager instance;
-    [SerializeField] private GameObject gatheringPanel;
+    [SerializeField] public GameObject gatheringPanel;
     [SerializeField] private Button gatheringPanelCloseButton;
     [SerializeField] private TextMeshProUGUI gatheringPanelTitle;
     [SerializeField] private TextMeshProUGUI gatheringPanelContent;
-    [SerializeField] private Button gatheringButton;
+    [SerializeField] public Button gatheringButton;
     [SerializeField] private Image gatheringImage;
     [SerializeField] private Sprite minningSprite;
     [SerializeField] private Sprite lumberSprite;
     [SerializeField] private Sprite harvestingSprite;
+    public GameObject currentTarget;
     private void Awake()
     {
         instance = this;
@@ -25,36 +26,46 @@ public class GatheringPanelManager : MonoBehaviour
     {
         gatheringPanel.SetActive(false);
         gatheringPanelCloseButton.onClick.AddListener(() => closeGatheringPanel());
+        
     }
     
     private void closeGatheringPanel()
     {
         gatheringPanel.SetActive(false);
         gatheringButton.onClick.RemoveAllListeners();
+        currentTarget = null;
     }
     public void OpenGatheringPanel(GameObject target)
     {
-        GatheringObject targetInfo = target.GetComponent<GatheringObject>();
-        gatheringPanelTitle.text = targetInfo.name;
-        gatheringPanelContent.text = $"Requirements: {targetInfo.firstSkillReqName}: {targetInfo.firstSkillReq}, Tool: {targetInfo.toolReq}";
+        MobInfoPanelManager.Instance.mobPanel.SetActive(false);
+        gatheringPanel.SetActive(false);
+        gatheringButton.onClick.RemoveAllListeners();
+        if (target != currentTarget && target != Mining.instance.currentTarget)
+        {
+            currentTarget = target;
+            GatheringObject targetInfo = target.GetComponent<GatheringObject>();
+            gatheringPanelTitle.text = targetInfo.name;
+            gatheringPanelContent.text = $"Requirements: {targetInfo.firstSkillReqName}: {targetInfo.firstSkillReq}, Tool: {targetInfo.toolReq}";
 
-        if(targetInfo.type == 1)
-        {
-            gatheringImage.sprite = minningSprite;
-            gatheringButton.onClick.AddListener(() => Mining.instance.onMiningButtonClick(target));
-        } 
-        else if( targetInfo.type == 2)
-        {
-            gatheringImage.sprite = lumberSprite;
+            if (targetInfo.type == 1)
+            {
+                gatheringImage.sprite = minningSprite;
+                gatheringButton.onClick.AddListener(() => Mining.instance.onMiningButtonClick(target));
+            }
+            else if (targetInfo.type == 2)
+            {
+                gatheringImage.sprite = lumberSprite;
+            }
+            else if (targetInfo.type == 3)
+            {
+                gatheringImage.sprite = harvestingSprite;
+            }
+            else
+            {
+                Debug.LogError("Bad type");
+            }
+            gatheringPanel.SetActive(true);
         }
-        else if( targetInfo.type == 3)
-        {
-            gatheringImage.sprite = harvestingSprite;
-        }
-        else
-        {
-            Debug.LogError("Bad type");
-        }
-        gatheringPanel.SetActive(true);
     }
+
 }

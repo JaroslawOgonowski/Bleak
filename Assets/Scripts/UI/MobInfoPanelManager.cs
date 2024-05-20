@@ -5,7 +5,8 @@ using UnityEngine.UI;
 using TMPro;
 public class MobInfoPanelManager : MonoBehaviour
 {
-    [SerializeField] private GameObject mobPanel;
+    public static MobInfoPanelManager Instance;
+    [SerializeField] public GameObject mobPanel;
     [SerializeField] private Button mobPanelHideButton;
     [SerializeField] private TextMeshProUGUI mobPanelMobName;
     [SerializeField] private Slider mobPanelSliderHP;
@@ -13,7 +14,10 @@ public class MobInfoPanelManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI mobPanelStats1;
     [SerializeField] private GameObject camera;
     private GameObject lastCameraTarget;
-
+    private void Awake()
+    {
+        Instance = this;
+    }
     private void OnEnable()
     {
         mobPanel.SetActive(false);
