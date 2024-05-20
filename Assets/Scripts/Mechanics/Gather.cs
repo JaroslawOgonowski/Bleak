@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.GraphicsBuffer;
 
-public class Mining : MonoBehaviour
+public class Gather : MonoBehaviour
 {
-    public static Mining instance;
+    public static Gather instance;
     [SerializeField] private GameObject character;
     public float distance = 5f;
     public float moveSpeed = 2f; // Speed at which the character moves
@@ -14,7 +15,7 @@ public class Mining : MonoBehaviour
     private float minimalGatheringDistance = 12f;
     private Animator animator;
     public GameObject currentTarget;
-    private bool miningProcess = false;
+    private bool gatherProcess = false;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -28,17 +29,22 @@ public class Mining : MonoBehaviour
 
     public void onMiningButtonClick(GameObject target)
     {
-        StartCoroutine(MoveCharacterToTarget(target));
+        StartCoroutine(MoveCharacterToTarget(target, "Mining"));
     }
 
-    IEnumerator MoveCharacterToTarget(GameObject target)
+    public void onLumberButtonClick(GameObject target)
+    {
+        StartCoroutine(MoveCharacterToTarget(target, "Lumber"));
+    }
+
+    IEnumerator MoveCharacterToTarget(GameObject target, string animationTrigger)
     {
         GatheringPanelManager.instance.gatheringPanel.SetActive(false);
-        if (!miningProcess)
+        if (!gatherProcess)
         {
             while (true)
             {
-                miningProcess = true;
+                gatherProcess = true;
                 ExamplePlayerController.Instance.gatheringMove = true;
                 Vector3 direction = target.transform.position - character.transform.position;
                 float currentDistance = direction.magnitude;
@@ -76,7 +82,7 @@ public class Mining : MonoBehaviour
                         Debug.Log("Character is at the correct distance from the mining target.");
                         animator.SetBool("RunBackward", false);
                         animator.SetBool("RunForward", false);
-                        animator.SetBool("Mining", true);
+                        animator.SetBool(animationTrigger, true);
                         currentTarget = target;
                         yield break;
                     }
@@ -113,7 +119,7 @@ public class Mining : MonoBehaviour
         GatheringPanelManager.instance.currentTarget = null;
         Destroy(currentTarget);
         currentTarget = null;
-        miningProcess = false;
+        gatherProcess = false;
         CharacterUnfreezePosition(character);
         ExamplePlayerController.Instance.gatheringMove = false;
 

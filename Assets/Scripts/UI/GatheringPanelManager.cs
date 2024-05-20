@@ -40,7 +40,7 @@ public class GatheringPanelManager : MonoBehaviour
         MobInfoPanelManager.Instance.mobPanel.SetActive(false);
         gatheringPanel.SetActive(false);
         gatheringButton.onClick.RemoveAllListeners();
-        if (target != currentTarget && target != Mining.instance.currentTarget)
+        if (target != currentTarget && target != Gather.instance.currentTarget)
         {
             currentTarget = target;
             GatheringObject targetInfo = target.GetComponent<GatheringObject>();
@@ -50,11 +50,12 @@ public class GatheringPanelManager : MonoBehaviour
             if (targetInfo.type == 1)
             {
                 gatheringImage.sprite = minningSprite;
-                gatheringButton.onClick.AddListener(() => Mining.instance.onMiningButtonClick(target));
+                gatheringButton.onClick.AddListener(() => Gather.instance.onMiningButtonClick(target));
             }
             else if (targetInfo.type == 2)
             {
                 gatheringImage.sprite = lumberSprite;
+                gatheringButton.onClick.AddListener(() => Gather.instance.onLumberButtonClick(target));
             }
             else if (targetInfo.type == 3)
             {
