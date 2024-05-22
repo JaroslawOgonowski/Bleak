@@ -40,7 +40,7 @@ public class GatheringPanelManager : MonoBehaviour
         MobInfoPanelManager.Instance.mobPanel.SetActive(false);
         gatheringPanel.SetActive(false);
         gatheringButton.onClick.RemoveAllListeners();
-        if (target != currentTarget && target != Gather.instance.currentTarget)
+        if (target != Gather.instance.currentTarget)
         {
             currentTarget = target;
             GatheringObject targetInfo = target.GetComponent<GatheringObject>();
