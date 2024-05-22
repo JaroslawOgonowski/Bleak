@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class TargetParticlesActive : MonoBehaviour
 {
-    private GameObject target;
-
-    public void ActiveParticle()
+    [SerializeField] private GameObject minningTool;
+    public void ActiveParticle(int num)
     {
-        target = Gather.instance.currentTarget;
+        GameObject target = minningTool;
         if (Gather.instance.gatherProcess && target != null)
         {
             ParticleSystem particleSystem = target.GetComponentInChildren<ParticleSystem>();
