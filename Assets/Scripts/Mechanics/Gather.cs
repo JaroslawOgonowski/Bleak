@@ -115,7 +115,8 @@ public class Gather : MonoBehaviour
 
     public void OnAnimationEvent()
     {
-        
+        int rn = Random.Range(1, 3);
+        ResTextManager.instance.ShowText($"{currentTarget .GetComponent<GatheringObject>().name} (+{rn})");
         GatheringPanelManager.instance.currentTarget = null;
         Destroy(currentTarget);
         currentTarget = null;
