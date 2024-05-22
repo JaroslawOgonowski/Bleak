@@ -15,7 +15,7 @@ public class Gather : MonoBehaviour
     private float minimalGatheringDistance = 12f;
     private Animator animator;
     public GameObject currentTarget;
-    private bool gatherProcess = false;
+    public bool gatherProcess = false;
     // Start is called before the first frame update
     private void Awake()
     {
