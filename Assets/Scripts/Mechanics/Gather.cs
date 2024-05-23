@@ -82,6 +82,12 @@ public class Gather : MonoBehaviour
                         Debug.Log("Character is at the correct distance from the mining target.");
                         animator.SetBool("RunBackward", false);
                         animator.SetBool("RunForward", false);
+                        if(animationTrigger == "Lumber")
+                        {
+                            direction.y = 10; // Keep only the horizontal direction
+                            Quaternion pos = Quaternion.LookRotation(direction);
+                            character.transform.rotation = Quaternion.Slerp(character.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+                        }
                         animator.SetBool(animationTrigger, true);
                         currentTarget = target;
                         yield break;

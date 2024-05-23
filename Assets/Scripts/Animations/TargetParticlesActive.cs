@@ -8,6 +8,7 @@ public class TargetParticlesActive : MonoBehaviour
     public void ActiveParticle(int num)
     {
         GameObject target = minningTool;
+
         if (Gather.instance.gatherProcess && target != null)
         {
             ParticleSystem particleSystem = target.GetComponentInChildren<ParticleSystem>();
@@ -16,7 +17,7 @@ public class TargetParticlesActive : MonoBehaviour
                 particleSystem.Play(); // Start the particle system to make it flash
 
                 // Optionally, you can stop the particle system after a short delay to ensure it just blinks.
-                StartCoroutine(StopParticleSystem(particleSystem, 0.1f)); // Adjust the delay as needed
+                StartCoroutine(StopParticleSystem(particleSystem, 0.3f)); // Adjust the delay as needed
             }
         }
     }
