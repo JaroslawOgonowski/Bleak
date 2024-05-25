@@ -1240,6 +1240,7 @@ MonoBehaviour:
   gravity: 20
   stepDown: 0.4
   airControl: 2.5
+  jumpDamp: 0.5
 --- !u!1 &80143364
 GameObject:
   m_ObjectHideFlags: 0

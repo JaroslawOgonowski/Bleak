@@ -6,10 +6,13 @@ using Input = UnityEngine.Input;
 
 public class CharacterMotion : MonoBehaviour
 {
-    public float jumpHeight;
-    public float gravity;
-    public float stepDown;
-    public float airControl;
+    public float jumpHeight = 4f;
+    public float gravity = 20f;
+    public float stepDown = 0.3f;
+    public float airControl = 2.5f;
+    public float jumpDamp = 0.5f;
+    public float groundSpeed = 1.2f;
+    public float pushPower = 2;
 
     Animator animator;
     CharacterController characterController;
@@ -49,26 +52,39 @@ public class CharacterMotion : MonoBehaviour
     {
         if (isJumping)
         {
-            velocity.y -= gravity*Time.fixedDeltaTime;
-            Vector3 displacment = velocity * Time.fixedDeltaTime;
-            displacment += CalculateAirControl();
-            characterController.Move(displacment);
-            isJumping =! characterController.isGrounded;
-            rootMotion = Vector3.zero;
-        } else
+            UpdateInAir();
+        }
+        else
         {
-            characterController.Move(rootMotion + Vector3.down * stepDown);
-            rootMotion = Vector3.zero;
-
-            if(!characterController.isGrounded)
-            {
-                isJumping = true;
-                velocity = animator.velocity;
-                velocity.y = 0f;
-
-            }
+            UpdateOnGround();
         }
     }
+
+    private void UpdateOnGround()
+    {
+        Vector3 stepForwardAmount = rootMotion * groundSpeed;
+        Vector3 stepDownAmount = Vector3.down * stepDown;
+
+        characterController.Move(stepForwardAmount + stepDownAmount);
+        rootMotion = Vector3.zero;
+
+        if (!characterController.isGrounded)
+        {
+            SetInAir(0);
+        }
+    }
+
+    private void UpdateInAir()
+    {
+        velocity.y -= gravity * Time.fixedDeltaTime;
+        Vector3 displacment = velocity * Time.fixedDeltaTime;
+        displacment += CalculateAirControl();
+        characterController.Move(displacment);
+        isJumping = !characterController.isGrounded;
+        rootMotion = Vector3.zero;
+        animator.SetBool("isJumping", isJumping);
+    }
+
 
     Vector3 CalculateAirControl()
     {
@@ -78,9 +94,39 @@ public class CharacterMotion : MonoBehaviour
     {
         if(!isJumping)
         {
-            isJumping = true;
-            velocity = animator.velocity;
-            velocity.y = Mathf.Sqrt(2 * gravity * jumpHeight);
+            float jumpVelocity = Mathf.Sqrt(2 * gravity * jumpHeight);
+            SetInAir(jumpVelocity);
         }
+    }
+
+    private void SetInAir(float jumpVelocity)
+    {
+        isJumping = true;
+        velocity = animator.velocity * jumpDamp * groundSpeed;
+        velocity.y = jumpVelocity;
+        animator.SetBool("isJumping", true);
+    }
+
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        Rigidbody body = hit.collider.attachedRigidbody;
+
+        // no rigidbody
+        if (body == null || body.isKinematic)
+            return;
+
+        // We dont want to push objects below us
+        if (hit.moveDirection.y < -0.3f)
+            return;
+
+        // Calculate push direction from move direction,
+        // we only push objects to the sides never up and down
+        Vector3 pushDir = new Vector3(hit.moveDirection.x, 0, hit.moveDirection.z);
+
+        // If you know how fast your character is trying to move,
+        // then you can also multiply the push velocity by that.
+
+        // Apply the push
+        body.velocity = pushDir * pushPower;
     }
 }
