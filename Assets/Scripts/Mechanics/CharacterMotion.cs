@@ -26,6 +26,7 @@ public class CharacterMotion : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        animator.applyRootMotion = true;
         characterController = GetComponent<CharacterController>();
     }
 
@@ -35,8 +36,8 @@ public class CharacterMotion : MonoBehaviour
         input.x = Input.GetAxis("Horizontal");
         input.y = Input.GetAxis("Vertical");
 
-        animator.SetFloat("InputX", input.x);
-        animator.SetFloat("InputY", input.y);
+        animator.SetFloat("inputX", input.x);
+        animator.SetFloat("inputY", input.y);
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
