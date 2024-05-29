@@ -13,7 +13,7 @@ public class CharacterMotion : MonoBehaviour
     public float jumpDamp = 0.5f;
     public float groundSpeed = 1.2f;
     public float pushPower = 2;
-
+    public float rotationSpeed = 3f;
     Animator animator;
     CharacterController characterController;
     Vector2 input;
@@ -26,7 +26,6 @@ public class CharacterMotion : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        animator.applyRootMotion = true;
         characterController = GetComponent<CharacterController>();
     }
 
@@ -35,7 +34,6 @@ public class CharacterMotion : MonoBehaviour
     {
         input.x = Input.GetAxis("Horizontal");
         input.y = Input.GetAxis("Vertical");
-
         animator.SetFloat("inputX", input.x);
         animator.SetFloat("inputY", input.y);
 
@@ -43,12 +41,13 @@ public class CharacterMotion : MonoBehaviour
         {
             Jump();
         }
+        transform.Rotate(0f, input.x * rotationSpeed, 0f, Space.World);
     }
 
-    private void OnAnimatorMove()
-    {
-        rootMotion += animator.deltaPosition;
-    }
+    //private void OnAnimatorMove()
+    //{
+    //    rootMotion += animator.deltaPosition;
+    //}
     private void FixedUpdate()
     {
         if (isJumping)
@@ -89,11 +88,11 @@ public class CharacterMotion : MonoBehaviour
 
     Vector3 CalculateAirControl()
     {
-        return ((transform.forward * input.y)+(transform.right * input.x)) * (airControl/100);
+        return ((transform.forward * input.y) + (transform.right * input.x)) * (airControl / 100);
     }
     void Jump()
     {
-        if(!isJumping)
+        if (!isJumping)
         {
             float jumpVelocity = Mathf.Sqrt(2 * gravity * jumpHeight);
             SetInAir(jumpVelocity);
