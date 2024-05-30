@@ -18,6 +18,7 @@ public class CharacterMotion : MonoBehaviour
     CharacterController characterController;
     Vector2 input;
 
+    float verticalVelocity;
     Vector3 rootMotion;
     Vector3 velocity;
     bool isJumping;
@@ -34,10 +35,12 @@ public class CharacterMotion : MonoBehaviour
     {
         input.x = Input.GetAxis("Horizontal");
         input.y = Input.GetAxis("Vertical");
+        input.x += SimpleInput.GetAxis("Horizontal");
+        input.y += SimpleInput.GetAxis("Vertical");
         animator.SetFloat("inputX", input.x);
         animator.SetFloat("inputY", input.y);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || SimpleInput.GetButtonDown("Jump"))
         {
             Jump();
         }
@@ -58,6 +61,9 @@ public class CharacterMotion : MonoBehaviour
         {
             UpdateOnGround();
         }
+
+        verticalVelocity = characterController.velocity.y;
+        animator.SetFloat("verticalVelocity", verticalVelocity);
     }
 
     private void UpdateOnGround()
