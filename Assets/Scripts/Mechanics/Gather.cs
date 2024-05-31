@@ -5,6 +5,7 @@ public class Gather : MonoBehaviour
 {
     public static Gather instance;
     [SerializeField] private GameObject character;
+    public float minimalDistance = 12f;
     public float distance = 5f;
     public float moveSpeed = 2f; // Prêdkoœæ poruszania siê postaci
     public float rotationSpeed = 2f; // Prêdkoœæ obracania siê postaci
@@ -27,14 +28,26 @@ public class Gather : MonoBehaviour
 
     public void onMiningButtonClick(GameObject target)
     {
-        StartCoroutine(MoveCharacterToTarget(target, "Mining"));
+        CheckDistance(target, "Mining");
     }
 
     public void onLumberButtonClick(GameObject target)
     {
-        StartCoroutine(MoveCharacterToTarget(target, "Lumber"));
+        CheckDistance(target, "Lumber");
     }
 
+    private void CheckDistance(GameObject target, string animationTrigger)
+    {
+        float currentDistance = Vector3.Distance(target.transform.position, character.transform.position);
+        if (currentDistance < minimalDistance)
+        {
+            StartCoroutine(MoveCharacterToTarget(target, animationTrigger));
+        }
+        else
+        {
+            Debug.Log("to far away");
+        }
+    }
     IEnumerator MoveCharacterToTarget(GameObject target, string animationTrigger)
     {
         GatheringPanelManager.instance.gatheringPanel.SetActive(false);
