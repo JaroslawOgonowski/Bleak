@@ -6,6 +6,7 @@ using Input = UnityEngine.Input;
 
 public class CharacterMotion : MonoBehaviour
 {
+    public static CharacterMotion instance;
     public float jumpHeight = 4f;
     public float gravity = 20f;
     public float stepDown = 0.3f;
@@ -22,7 +23,12 @@ public class CharacterMotion : MonoBehaviour
     Vector3 rootMotion;
     Vector3 velocity;
     bool isJumping;
+    public bool gatheringMove;
 
+    private void Awake()
+    {
+        instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -33,18 +39,22 @@ public class CharacterMotion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        input.x = Input.GetAxis("Horizontal");
-        input.y = Input.GetAxis("Vertical");
-        input.x += SimpleInput.GetAxis("Horizontal");
-        input.y += SimpleInput.GetAxis("Vertical");
-        animator.SetFloat("inputX", input.x);
-        animator.SetFloat("inputY", input.y);
-
-        if (Input.GetKeyDown(KeyCode.Space) || SimpleInput.GetButtonDown("Jump"))
+        if (!gatheringMove)
         {
-            Jump();
+            input.x = Input.GetAxis("Horizontal");
+            input.y = Input.GetAxis("Vertical");
+            input.x += SimpleInput.GetAxis("Horizontal");
+            input.y += SimpleInput.GetAxis("Vertical");
+            animator.SetFloat("inputX", input.x);
+            animator.SetFloat("inputY", input.y);
+
+            if (Input.GetKeyDown(KeyCode.Space) || SimpleInput.GetButtonDown("Jump"))
+            {
+                Jump();
+            }
+            transform.Rotate(0f, input.x * rotationSpeed, 0f, Space.World);
         }
-        transform.Rotate(0f, input.x * rotationSpeed, 0f, Space.World);
+        
     }
 
     //private void OnAnimatorMove()
@@ -53,17 +63,20 @@ public class CharacterMotion : MonoBehaviour
     //}
     private void FixedUpdate()
     {
-        if (isJumping)
+        if (!gatheringMove)
         {
-            UpdateInAir();
-        }
-        else
-        {
-            UpdateOnGround();
-        }
+            if (isJumping)
+            {
+                UpdateInAir();
+            }
+            else
+            {
+                UpdateOnGround();
+            }
 
-        verticalVelocity = characterController.velocity.y;
-        animator.SetFloat("verticalVelocity", verticalVelocity);
+            verticalVelocity = characterController.velocity.y;
+            animator.SetFloat("verticalVelocity", verticalVelocity);
+        }                         
     }
 
     private void UpdateOnGround()

@@ -5,7 +5,7 @@ using UnityEngine;
 public class TargetParticlesActive : MonoBehaviour
 {
     [SerializeField] private GameObject minningTool;
-    public void ActiveParticle(int num)
+    public void ActiveParticle()
     {
         GameObject target = minningTool;
 

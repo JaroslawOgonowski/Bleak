@@ -1,22 +1,19 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
-using static UnityEngine.GraphicsBuffer;
 
 public class Gather : MonoBehaviour
 {
     public static Gather instance;
     [SerializeField] private GameObject character;
     public float distance = 5f;
-    public float moveSpeed = 2f; // Speed at which the character moves
-    public float rotationSpeed = 2f; // Speed at which the character rotates
+    public float moveSpeed = 2f; // Prêdkoœæ poruszania siê postaci
+    public float rotationSpeed = 2f; // Prêdkoœæ obracania siê postaci
     private float minimalGatheringDistance = 12f;
     private Animator animator;
     public GameObject currentTarget;
     public bool gatherProcess = false;
-    // Start is called before the first frame update
+    private CharacterController characterController;
+
     private void Awake()
     {
         instance = this;
@@ -24,7 +21,8 @@ public class Gather : MonoBehaviour
 
     void Start()
     {
-        animator = ExamplePlayerController.Instance.animator;
+        animator = character.GetComponent<Animator>();
+        characterController = character.GetComponent<CharacterController>();
     }
 
     public void onMiningButtonClick(GameObject target)
@@ -42,49 +40,50 @@ public class Gather : MonoBehaviour
         GatheringPanelManager.instance.gatheringPanel.SetActive(false);
         if (!gatherProcess)
         {
+            gatherProcess = true;
+            CharacterMotion.instance.gatheringMove = true;
             while (true)
             {
-                gatherProcess = true;
-                ExamplePlayerController.Instance.gatheringMove = true;
                 Vector3 direction = target.transform.position - character.transform.position;
                 float currentDistance = direction.magnitude;
 
-                // Rotate character to face the mining target
-                direction.y = 0; // Keep only the horizontal direction
+                // Obróæ postaæ w kierunku celu
+                direction.y = 0; // Uwzglêdniaj tylko kierunek poziomy
                 Quaternion targetRotation = Quaternion.LookRotation(direction);
                 character.transform.rotation = Quaternion.Slerp(character.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
-                // Check if character is too close or too far
+                // SprawdŸ odleg³oœæ od celu
                 if (currentDistance > distance + 0.1f)
                 {
-                    animator.SetBool("RunForward", true);
+                    Debug.Log("Poruszanie siê bli¿ej celu");
                     animator.SetBool("RunBackward", false);
-                    // Move closer
+                    animator.SetBool("RunForward", true);
+                    // Poruszaj siê bli¿ej
                     direction.Normalize();
-                    character.transform.Translate(direction * moveSpeed * Time.deltaTime, Space.World);
+                    characterController.Move(direction * moveSpeed * Time.deltaTime);
                 }
                 else if (currentDistance < distance - 0.1f)
                 {
-                    animator.SetBool("RunBackward", true);
+                    Debug.Log("Poruszanie siê dalej od celu");
                     animator.SetBool("RunForward", false);
-                    // Move away
+                    animator.SetBool("RunBackward", true);
+                    // Poruszaj siê dalej
                     direction.Normalize();
-                    character.transform.Translate(-direction * moveSpeed * Time.deltaTime, Space.World);
+                    characterController.Move(-direction * moveSpeed * Time.deltaTime);
                 }
                 else
                 {
-                    // Check if character is properly oriented towards the target
+                    // SprawdŸ, czy postaæ jest odpowiednio zorientowana w kierunku celu
                     float angle = Quaternion.Angle(character.transform.rotation, targetRotation);
-                    if (angle < 5f) // Adjust the threshold angle as needed
+                    if (angle < 5f) // Dostosuj próg k¹ta w razie potrzeby
                     {
-                        CharacterFreezePosition(character);
-                        // Character is at the correct distance and properly oriented
-                        Debug.Log("Character is at the correct distance from the mining target.");
+                        // Postaæ jest w odpowiedniej odleg³oœci i odpowiednio zorientowana
+                        Debug.Log("Postaæ jest w odpowiedniej odleg³oœci od celu.");
                         animator.SetBool("RunBackward", false);
                         animator.SetBool("RunForward", false);
-                        if(animationTrigger == "Lumber")
+                        if (animationTrigger == "Lumber")
                         {
-                            direction.y = 10; // Keep only the horizontal direction
+                            direction.y = 10; // Uwzglêdniaj tylko kierunek poziomy
                             Quaternion pos = Quaternion.LookRotation(direction);
                             character.transform.rotation = Quaternion.Slerp(character.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
                         }
@@ -97,38 +96,16 @@ public class Gather : MonoBehaviour
                 yield return null;
             }
         }
-       
-    }
-
-    private void CharacterFreezePosition(GameObject character)
-    {
-        Rigidbody rb = character.GetComponent<Rigidbody>();
-        if (rb != null)
-        {
-            rb.constraints = RigidbodyConstraints.FreezeAll;
-        }
-    }
-
-    private void CharacterUnfreezePosition(GameObject character)
-    {
-        Rigidbody rb = character.GetComponent<Rigidbody>();
-        if (rb != null)
-        {
-            rb.constraints = RigidbodyConstraints.None;
-            rb.constraints = RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX;
-        }
     }
 
     public void OnAnimationEvent()
     {
         int rn = Random.Range(1, 3);
-        ResTextManager.instance.ShowText($"{currentTarget .GetComponent<GatheringObject>().name} (+{rn})");
+        ResTextManager.instance.ShowText($"{currentTarget.GetComponent<GatheringObject>().name} (+{rn})");
         GatheringPanelManager.instance.currentTarget = null;
         Destroy(currentTarget);
         currentTarget = null;
         gatherProcess = false;
-        CharacterUnfreezePosition(character);
-        ExamplePlayerController.Instance.gatheringMove = false;
-
+        CharacterMotion.instance.gatheringMove = false;
     }
 }
