@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class GatheringPanelManager : MonoBehaviour
 {
     public static GatheringPanelManager instance;
+    public GameObject farAwayPanel;
     [SerializeField] public GameObject gatheringPanel;
     [SerializeField] private Button gatheringPanelCloseButton;
     [SerializeField] private TextMeshProUGUI gatheringPanelTitle;
@@ -24,6 +25,7 @@ public class GatheringPanelManager : MonoBehaviour
     }
     void Start()
     {
+        farAwayPanel.SetActive(false);
         gatheringPanel.SetActive(false);
         gatheringPanelCloseButton.onClick.AddListener(() => closeGatheringPanel());
         
@@ -68,5 +70,11 @@ public class GatheringPanelManager : MonoBehaviour
             gatheringPanel.SetActive(true);
         }
     }
+    public IEnumerator FarAwayPanelOpen()
+    {
+        farAwayPanel.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
+        farAwayPanel.SetActive(false);
 
+    }
 }

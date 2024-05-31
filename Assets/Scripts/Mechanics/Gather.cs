@@ -45,7 +45,7 @@ public class Gather : MonoBehaviour
         }
         else
         {
-            Debug.Log("to far away");
+            StartCoroutine(GatheringPanelManager.instance.FarAwayPanelOpen());
         }
     }
     IEnumerator MoveCharacterToTarget(GameObject target, string animationTrigger)
