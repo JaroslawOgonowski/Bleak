@@ -62,6 +62,7 @@ public class GatheringPanelManager : MonoBehaviour
             else if (targetInfo.type == 3)
             {
                 gatheringImage.sprite = harvestingSprite;
+                gatheringButton.onClick.AddListener(() => Gather.instance.onHarvestButtonClick(target));
             }
             else
             {

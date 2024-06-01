@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Gather : MonoBehaviour
 {
@@ -36,6 +37,10 @@ public class Gather : MonoBehaviour
         CheckDistance(target, "Lumber");
     }
 
+    public void onHarvestButtonClick(GameObject target)
+    {
+        CheckDistance(target, "Harvest");
+    }
     private void CheckDistance(GameObject target, string animationTrigger)
     {
         float currentDistance = Vector3.Distance(target.transform.position, character.transform.position);
