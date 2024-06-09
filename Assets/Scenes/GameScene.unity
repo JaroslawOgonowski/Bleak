@@ -5972,75 +5972,6 @@ Transform:
   - {fileID: 1196603152}
   m_Father: {fileID: 1830816885}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &476335943
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3661585493432574202, guid: 7129d33baee5a304fa5a78de1cd04f6a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 14.338
-      objectReference: {fileID: 0}
-    - target: {fileID: 3661585493432574202, guid: 7129d33baee5a304fa5a78de1cd04f6a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 14.338
-      objectReference: {fileID: 0}
-    - target: {fileID: 3661585493432574202, guid: 7129d33baee5a304fa5a78de1cd04f6a, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 14.338
-      objectReference: {fileID: 0}
-    - target: {fileID: 3661585493432574202, guid: 7129d33baee5a304fa5a78de1cd04f6a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 267.91
-      objectReference: {fileID: 0}
-    - target: {fileID: 3661585493432574202, guid: 7129d33baee5a304fa5a78de1cd04f6a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.52
-      objectReference: {fileID: 0}
-    - target: {fileID: 3661585493432574202, guid: 7129d33baee5a304fa5a78de1cd04f6a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 545.64
-      objectReference: {fileID: 0}
-    - target: {fileID: 3661585493432574202, guid: 7129d33baee5a304fa5a78de1cd04f6a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.55366534
-      objectReference: {fileID: 0}
-    - target: {fileID: 3661585493432574202, guid: 7129d33baee5a304fa5a78de1cd04f6a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.53775275
-      objectReference: {fileID: 0}
-    - target: {fileID: 3661585493432574202, guid: 7129d33baee5a304fa5a78de1cd04f6a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.45610455
-      objectReference: {fileID: 0}
-    - target: {fileID: 3661585493432574202, guid: 7129d33baee5a304fa5a78de1cd04f6a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.4429959
-      objectReference: {fileID: 0}
-    - target: {fileID: 3661585493432574202, guid: 7129d33baee5a304fa5a78de1cd04f6a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -88.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 3661585493432574202, guid: 7129d33baee5a304fa5a78de1cd04f6a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -78.963
-      objectReference: {fileID: 0}
-    - target: {fileID: 3661585493432574202, guid: 7129d33baee5a304fa5a78de1cd04f6a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7185777887056126559, guid: 7129d33baee5a304fa5a78de1cd04f6a, type: 3}
-      propertyPath: m_Name
-      value: Health Potion
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7129d33baee5a304fa5a78de1cd04f6a, type: 3}
 --- !u!1 &478928943
 GameObject:
   m_ObjectHideFlags: 0
@@ -20043,75 +19974,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 849268747}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1496082261
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3767645054357415353, guid: 9a894f0b89034d146b6cf6c49af16592, type: 3}
-      propertyPath: m_Name
-      value: Scoparius
-      objectReference: {fileID: 0}
-    - target: {fileID: 7782236776755126085, guid: 9a894f0b89034d146b6cf6c49af16592, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 4.6418
-      objectReference: {fileID: 0}
-    - target: {fileID: 7782236776755126085, guid: 9a894f0b89034d146b6cf6c49af16592, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 4.6418
-      objectReference: {fileID: 0}
-    - target: {fileID: 7782236776755126085, guid: 9a894f0b89034d146b6cf6c49af16592, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 4.6418
-      objectReference: {fileID: 0}
-    - target: {fileID: 7782236776755126085, guid: 9a894f0b89034d146b6cf6c49af16592, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 265.63757
-      objectReference: {fileID: 0}
-    - target: {fileID: 7782236776755126085, guid: 9a894f0b89034d146b6cf6c49af16592, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.000009059906
-      objectReference: {fileID: 0}
-    - target: {fileID: 7782236776755126085, guid: 9a894f0b89034d146b6cf6c49af16592, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 557.335
-      objectReference: {fileID: 0}
-    - target: {fileID: 7782236776755126085, guid: 9a894f0b89034d146b6cf6c49af16592, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7782236776755126085, guid: 9a894f0b89034d146b6cf6c49af16592, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7782236776755126085, guid: 9a894f0b89034d146b6cf6c49af16592, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7782236776755126085, guid: 9a894f0b89034d146b6cf6c49af16592, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7782236776755126085, guid: 9a894f0b89034d146b6cf6c49af16592, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7782236776755126085, guid: 9a894f0b89034d146b6cf6c49af16592, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7782236776755126085, guid: 9a894f0b89034d146b6cf6c49af16592, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9a894f0b89034d146b6cf6c49af16592, type: 3}
 --- !u!1 &1496358737
 GameObject:
   m_ObjectHideFlags: 0
@@ -29623,59 +29485,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2006556321}
   m_CullTransparentMesh: 1
---- !u!1 &2008679794
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2008679796}
-  - component: {fileID: 2008679795}
-  m_Layer: 0
-  m_Name: Inventory Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2008679795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2008679794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d0c741d8be3c1c4b96679e1f0b964fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dontDestroyOnLoad: 1
-  m_Database: {fileID: 11400000, guid: 1ae57b994efcab048a1bb130d4e11d83, type: 2}
-  m_ChildDatabases: []
-  onDataLoaded:
-    m_PersistentCalls:
-      m_Calls: []
-  onDataSaved:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!4 &2008679796
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2008679794}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2010833679
 GameObject:
   m_ObjectHideFlags: 0
@@ -32738,19 +32547,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d4d70931d8ad9478920245a476327b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates: []
-  m_ItemName: {fileID: 0}
-  m_UseRarityColor: 0
-  "m_\xCDcon": {fileID: 5847754310359216762}
-  m_Stack: {fileID: 4830279824177920597}
-  restrictions: []
-  m_UseKey: 0
-  m_Key: {fileID: 0}
-  m_CooldownOverlay: {fileID: 8641399963634690939}
-  m_Cooldown: {fileID: 0}
-  m_Description: {fileID: 0}
-  m_Ingredients: {fileID: 0}
-  m_BuyPrice: {fileID: 0}
 --- !u!114 &469044352078565596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32892,19 +32688,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d4d70931d8ad9478920245a476327b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates: []
-  m_ItemName: {fileID: 0}
-  m_UseRarityColor: 0
-  "m_\xCDcon": {fileID: 3867630732882382808}
-  m_Stack: {fileID: 5440881925560120678}
-  restrictions: []
-  m_UseKey: 0
-  m_Key: {fileID: 0}
-  m_CooldownOverlay: {fileID: 4511982572655872783}
-  m_Cooldown: {fileID: 0}
-  m_Description: {fileID: 0}
-  m_Ingredients: {fileID: 0}
-  m_BuyPrice: {fileID: 0}
 --- !u!224 &596765732149944708
 RectTransform:
   m_ObjectHideFlags: 0
@@ -33132,19 +32915,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d4d70931d8ad9478920245a476327b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates: []
-  m_ItemName: {fileID: 0}
-  m_UseRarityColor: 0
-  "m_\xCDcon": {fileID: 4591842810998236914}
-  m_Stack: {fileID: 7577858109962626699}
-  restrictions: []
-  m_UseKey: 0
-  m_Key: {fileID: 0}
-  m_CooldownOverlay: {fileID: 5009095305913703495}
-  m_Cooldown: {fileID: 0}
-  m_Description: {fileID: 0}
-  m_Ingredients: {fileID: 0}
-  m_BuyPrice: {fileID: 0}
 --- !u!114 &767502966739896762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34481,29 +34251,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f0d900f24272a24f8ccae592107deb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeDelay: 0.2
-  m_Current: 1
-  step: 1
-  min: 1
-  max: 10
-  onChange:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnChange:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1539669167758193939}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1539669167138695033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34516,22 +34263,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db1c33589553a36409249de03339fb94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates: []
-  name: Stack
-  priority: 0
-  m_KeyCode: 0
-  m_EaseType: 28
-  m_Duration: 0.4
-  m_IgnoreTimeScale: 1
-  m_ShowSound: {fileID: 0}
-  m_CloseSound: {fileID: 0}
-  m_Focus: 1
-  m_DeactivateOnClose: 1
-  m_ShowAndHideCursor: 0
-  m_CloseOnMove: 1
-  m_Deactivate: 306
-  m_FocusPlayer: 0
-  item: {fileID: 0}
 --- !u!225 &1539669167138695034
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -35860,19 +35591,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d4d70931d8ad9478920245a476327b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates: []
-  m_ItemName: {fileID: 0}
-  m_UseRarityColor: 0
-  "m_\xCDcon": {fileID: 2693539903711949316}
-  m_Stack: {fileID: 5711562631113518591}
-  restrictions: []
-  m_UseKey: 0
-  m_Key: {fileID: 0}
-  m_CooldownOverlay: {fileID: 8432915052108395839}
-  m_Cooldown: {fileID: 0}
-  m_Description: {fileID: 0}
-  m_Ingredients: {fileID: 0}
-  m_BuyPrice: {fileID: 0}
 --- !u!224 &1715349916997925024
 RectTransform:
   m_ObjectHideFlags: 0
@@ -35904,19 +35622,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d4d70931d8ad9478920245a476327b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates: []
-  m_ItemName: {fileID: 0}
-  m_UseRarityColor: 0
-  "m_\xCDcon": {fileID: 6048633554608736331}
-  m_Stack: {fileID: 8358769081088215094}
-  restrictions: []
-  m_UseKey: 0
-  m_Key: {fileID: 0}
-  m_CooldownOverlay: {fileID: 3613723223022603928}
-  m_Cooldown: {fileID: 0}
-  m_Description: {fileID: 0}
-  m_Ingredients: {fileID: 0}
-  m_BuyPrice: {fileID: 0}
 --- !u!224 &1774291848217130387
 RectTransform:
   m_ObjectHideFlags: 0
@@ -36613,19 +36318,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d4d70931d8ad9478920245a476327b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates: []
-  m_ItemName: {fileID: 0}
-  m_UseRarityColor: 0
-  "m_\xCDcon": {fileID: 6223709954038817185}
-  m_Stack: {fileID: 2179781254212581176}
-  restrictions: []
-  m_UseKey: 0
-  m_Key: {fileID: 0}
-  m_CooldownOverlay: {fileID: 1977767807292108641}
-  m_Cooldown: {fileID: 0}
-  m_Description: {fileID: 0}
-  m_Ingredients: {fileID: 0}
-  m_BuyPrice: {fileID: 0}
 --- !u!224 &2398924585324694541
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37801,10 +37493,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7f10d0457b7b0541a4d7bdc91b96112, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Categories:
-  - {fileID: -3989543302354102894, guid: 0049234d696d6d54cbdfa5d0775e5081, type: 2}
-  - {fileID: 164684216256526245, guid: 1ae57b994efcab048a1bb130d4e11d83, type: 2}
-  invert: 1
 --- !u!222 &2979494618568141033
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -37825,19 +37513,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d4d70931d8ad9478920245a476327b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates: []
-  m_ItemName: {fileID: 0}
-  m_UseRarityColor: 0
-  "m_\xCDcon": {fileID: 4839910970527883571}
-  m_Stack: {fileID: 3330562843530752220}
-  restrictions: []
-  m_UseKey: 0
-  m_Key: {fileID: 0}
-  m_CooldownOverlay: {fileID: 6144416587328130788}
-  m_Cooldown: {fileID: 0}
-  m_Description: {fileID: 0}
-  m_Ingredients: {fileID: 0}
-  m_BuyPrice: {fileID: 0}
 --- !u!114 &3013525017958941537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38488,25 +38163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f0dbc18d126d094eb5b94f21a0163af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates: []
-  name: General Progressbar
-  priority: 0
-  m_KeyCode: 0
-  m_EaseType: 28
-  m_Duration: 0.5
-  m_IgnoreTimeScale: 1
-  m_ShowSound: {fileID: 0}
-  m_CloseSound: {fileID: 0}
-  m_Focus: 1
-  m_DeactivateOnClose: 1
-  m_ShowAndHideCursor: 0
-  m_CloseOnMove: 1
-  m_Deactivate: 306
-  m_FocusPlayer: 0
-  progressbar: {fileID: 8019320552296838736}
-  m_ProgressbarTitle: {fileID: 1846742429747013476}
-  progressLabel: {fileID: 0}
-  format: F0
 --- !u!1 &3554328795281086543
 GameObject:
   m_ObjectHideFlags: 0
@@ -38589,14 +38245,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d19d2c4eff3cad489e4e29cb6a6f58e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates: []
-  m_ItemName: {fileID: 0}
-  m_UseRarityColor: 0
-  "m_\xCDcon": {fileID: 6303617611566478779}
-  m_Stack: {fileID: 3554328795854738248}
-  restrictions: []
-  m_Currency: {fileID: -8859189835947310016, guid: 1ae57b994efcab048a1bb130d4e11d83, type: 2}
-  m_HideEmptySlot: 1
 --- !u!1 &3554328795510625566
 GameObject:
   m_ObjectHideFlags: 0
@@ -38788,28 +38436,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 485ac1ea01fa8db4db339beecabccbce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates: []
-  name: Menu Tooltip
-  priority: 0
-  m_KeyCode: 0
-  m_EaseType: 28
-  m_Duration: 0.4
-  m_IgnoreTimeScale: 1
-  m_ShowSound: {fileID: 0}
-  m_CloseSound: {fileID: 0}
-  m_Focus: 1
-  m_DeactivateOnClose: 0
-  m_ShowAndHideCursor: 0
-  m_CloseOnMove: 1
-  m_Deactivate: 306
-  m_FocusPlayer: 0
-  m_UpdatePosition: 1
-  m_PositionOffset: {x: 130, y: 0}
-  m_Title: {fileID: 6303617611301176172}
-  m_Text: {fileID: 6303617610249255582}
-  m_Icon: {fileID: 6303617610382178599}
-  m_Background: {fileID: 6303617611051012894}
-  m_SlotPrefab: {fileID: 6303617610461310976}
 --- !u!225 &3554328795694011679
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -39366,8 +38992,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef38f6e1a427f4846975cf6009a8141f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Key: {fileID: 3554328795698415949}
-  m_Value: {fileID: 8019320551055837681}
 --- !u!114 &3554328796315800596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39482,14 +39106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d19d2c4eff3cad489e4e29cb6a6f58e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates: []
-  m_ItemName: {fileID: 0}
-  m_UseRarityColor: 0
-  "m_\xCDcon": {fileID: 6303617610680840857}
-  m_Stack: {fileID: 6303617610122316727}
-  restrictions: []
-  m_Currency: {fileID: -2811142919616601772, guid: 1ae57b994efcab048a1bb130d4e11d83, type: 2}
-  m_HideEmptySlot: 0
 --- !u!222 &3554328796441036032
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -39798,14 +39414,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d19d2c4eff3cad489e4e29cb6a6f58e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates: []
-  m_ItemName: {fileID: 0}
-  m_UseRarityColor: 0
-  "m_\xCDcon": {fileID: 6303617610537571720}
-  m_Stack: {fileID: 6303617610490448584}
-  restrictions: []
-  m_Currency: {fileID: -6442420119529586086, guid: 1ae57b994efcab048a1bb130d4e11d83, type: 2}
-  m_HideEmptySlot: 1
 --- !u!224 &3571993832583048795
 RectTransform:
   m_ObjectHideFlags: 0
@@ -40029,19 +39637,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d4d70931d8ad9478920245a476327b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates: []
-  m_ItemName: {fileID: 0}
-  m_UseRarityColor: 0
-  "m_\xCDcon": {fileID: 8927938118820452848}
-  m_Stack: {fileID: 6482125098832249238}
-  restrictions: []
-  m_UseKey: 0
-  m_Key: {fileID: 0}
-  m_CooldownOverlay: {fileID: 2582018266968153221}
-  m_Cooldown: {fileID: 0}
-  m_Description: {fileID: 0}
-  m_Ingredients: {fileID: 0}
-  m_BuyPrice: {fileID: 0}
 --- !u!222 &3777057293495583090
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -40275,19 +39870,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d4d70931d8ad9478920245a476327b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates: []
-  m_ItemName: {fileID: 0}
-  m_UseRarityColor: 0
-  "m_\xCDcon": {fileID: 7306774770369596359}
-  m_Stack: {fileID: 6820061304931722915}
-  restrictions: []
-  m_UseKey: 0
-  m_Key: {fileID: 0}
-  m_CooldownOverlay: {fileID: 452103163925051017}
-  m_Cooldown: {fileID: 0}
-  m_Description: {fileID: 0}
-  m_Ingredients: {fileID: 0}
-  m_BuyPrice: {fileID: 0}
 --- !u!114 &3892914897538367398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40867,19 +40449,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d4d70931d8ad9478920245a476327b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates: []
-  m_ItemName: {fileID: 0}
-  m_UseRarityColor: 0
-  "m_\xCDcon": {fileID: 7695235794755798231}
-  m_Stack: {fileID: 861852647127510295}
-  restrictions: []
-  m_UseKey: 0
-  m_Key: {fileID: 0}
-  m_CooldownOverlay: {fileID: 5416942874759215921}
-  m_Cooldown: {fileID: 0}
-  m_Description: {fileID: 0}
-  m_Ingredients: {fileID: 0}
-  m_BuyPrice: {fileID: 0}
 --- !u!224 &4366744352345182236
 RectTransform:
   m_ObjectHideFlags: 0
@@ -41205,19 +40774,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d4d70931d8ad9478920245a476327b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates: []
-  m_ItemName: {fileID: 0}
-  m_UseRarityColor: 0
-  "m_\xCDcon": {fileID: 8216829468989339908}
-  m_Stack: {fileID: 247856867517767771}
-  restrictions: []
-  m_UseKey: 0
-  m_Key: {fileID: 0}
-  m_CooldownOverlay: {fileID: 6334251915256162842}
-  m_Cooldown: {fileID: 0}
-  m_Description: {fileID: 0}
-  m_Ingredients: {fileID: 0}
-  m_BuyPrice: {fileID: 0}
 --- !u!224 &4615196347077348186
 RectTransform:
   m_ObjectHideFlags: 0
@@ -41360,26 +40916,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6ea1f67a5ee4ec4a8cc3f65bebbb7c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates: []
-  name: Notification
-  priority: 0
-  m_KeyCode: 0
-  m_EaseType: 28
-  m_Duration: 0.7
-  m_IgnoreTimeScale: 1
-  m_ShowSound: {fileID: 0}
-  m_CloseSound: {fileID: 0}
-  m_Focus: 1
-  m_DeactivateOnClose: 1
-  m_ShowAndHideCursor: 0
-  m_CloseOnMove: 1
-  m_Deactivate: 306
-  m_FocusPlayer: 0
-  m_DynamicContainer: 1
-  m_SlotParent: {fileID: 4716953805440746984}
-  m_SlotPrefab: {fileID: 4716953806453243635}
-  fade: 1
-  timeFormat: HH:mm:ss
 --- !u!224 &4716953805087349853
 RectTransform:
   m_ObjectHideFlags: 0
@@ -41525,28 +41061,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 485ac1ea01fa8db4db339beecabccbce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates: []
-  name: Tooltip
-  priority: 0
-  m_KeyCode: 0
-  m_EaseType: 28
-  m_Duration: 0.4
-  m_IgnoreTimeScale: 1
-  m_ShowSound: {fileID: 0}
-  m_CloseSound: {fileID: 0}
-  m_Focus: 1
-  m_DeactivateOnClose: 0
-  m_ShowAndHideCursor: 0
-  m_CloseOnMove: 1
-  m_Deactivate: 306
-  m_FocusPlayer: 0
-  m_UpdatePosition: 1
-  m_PositionOffset: {x: 0, y: 0}
-  m_Title: {fileID: 5168206905887178692}
-  m_Text: {fileID: 2836297559796061398}
-  m_Icon: {fileID: 2836297557967857892}
-  m_Background: {fileID: 3554328796502313953}
-  m_SlotPrefab: {fileID: 3554328796185274623}
 --- !u!224 &4716953805378692640
 RectTransform:
   m_ObjectHideFlags: 0
@@ -41846,7 +41360,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19615e8737b33f247ad0d94fbb20cf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Prefab: {fileID: 4716953806651975454}
 --- !u!224 &4716953805919926297
 RectTransform:
   m_ObjectHideFlags: 0
@@ -41934,35 +41447,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2b07d55f135ac04bbe9c99ce80d32ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Highlighted
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 4716953805998197880}
 --- !u!224 &4716953805998197882
 RectTransform:
   m_ObjectHideFlags: 0
@@ -42040,9 +41524,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2342df2a2a1383f42b8d61f30d0d753a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Text: {fileID: 3779004766555875029}
-  m_Time: {fileID: 8019320552034672770}
-  m_Icon: {fileID: 676428802237112711}
 --- !u!224 &4716953806453243634
 RectTransform:
   m_ObjectHideFlags: 0
@@ -42360,22 +41841,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0530cab7f470f374e86b69b9ae1f428b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates: []
-  name: ContextMenu
-  priority: 0
-  m_KeyCode: 0
-  m_EaseType: 28
-  m_Duration: 0.7
-  m_IgnoreTimeScale: 1
-  m_ShowSound: {fileID: 0}
-  m_CloseSound: {fileID: 0}
-  m_Focus: 1
-  m_DeactivateOnClose: 1
-  m_ShowAndHideCursor: 0
-  m_CloseOnMove: 1
-  m_Deactivate: 306
-  m_FocusPlayer: 0
-  m_MenuItemPrefab: {fileID: 4716953805998197881}
 --- !u!114 &4716953806893209787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42960,19 +42425,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d4d70931d8ad9478920245a476327b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates: []
-  m_ItemName: {fileID: 0}
-  m_UseRarityColor: 0
-  "m_\xCDcon": {fileID: 5414665073886175210}
-  m_Stack: {fileID: 1562292371915601648}
-  restrictions: []
-  m_UseKey: 0
-  m_Key: {fileID: 0}
-  m_CooldownOverlay: {fileID: 4997630920908111949}
-  m_Cooldown: {fileID: 0}
-  m_Description: {fileID: 0}
-  m_Ingredients: {fileID: 0}
-  m_BuyPrice: {fileID: 0}
 --- !u!222 &5026815461244413536
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -43350,19 +42802,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d4d70931d8ad9478920245a476327b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates: []
-  m_ItemName: {fileID: 0}
-  m_UseRarityColor: 0
-  "m_\xCDcon": {fileID: 2015696336015699851}
-  m_Stack: {fileID: 7090883495790425874}
-  restrictions: []
-  m_UseKey: 0
-  m_Key: {fileID: 0}
-  m_CooldownOverlay: {fileID: 2534600286783461457}
-  m_Cooldown: {fileID: 0}
-  m_Description: {fileID: 0}
-  m_Ingredients: {fileID: 0}
-  m_BuyPrice: {fileID: 0}
 --- !u!224 &5229261455365589508
 RectTransform:
   m_ObjectHideFlags: 0
@@ -43604,19 +43043,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d4d70931d8ad9478920245a476327b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates: []
-  m_ItemName: {fileID: 0}
-  m_UseRarityColor: 0
-  "m_\xCDcon": {fileID: 2343111063621949490}
-  m_Stack: {fileID: 2177902925798030124}
-  restrictions: []
-  m_UseKey: 0
-  m_Key: {fileID: 0}
-  m_CooldownOverlay: {fileID: 7236208215841431281}
-  m_Cooldown: {fileID: 0}
-  m_Description: {fileID: 0}
-  m_Ingredients: {fileID: 0}
-  m_BuyPrice: {fileID: 0}
 --- !u!222 &5506974437920262484
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -44190,19 +43616,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d4d70931d8ad9478920245a476327b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates: []
-  m_ItemName: {fileID: 0}
-  m_UseRarityColor: 0
-  "m_\xCDcon": {fileID: 1236621048577518114}
-  m_Stack: {fileID: 5835912787535789129}
-  restrictions: []
-  m_UseKey: 0
-  m_Key: {fileID: 0}
-  m_CooldownOverlay: {fileID: 4271882079942208802}
-  m_Cooldown: {fileID: 0}
-  m_Description: {fileID: 0}
-  m_Ingredients: {fileID: 0}
-  m_BuyPrice: {fileID: 0}
 --- !u!1001 &5948541598024664952
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44369,14 +43782,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d19d2c4eff3cad489e4e29cb6a6f58e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates: []
-  m_ItemName: {fileID: 0}
-  m_UseRarityColor: 0
-  "m_\xCDcon": {fileID: 6009655351638618699}
-  m_Stack: {fileID: 6009655351826326229}
-  restrictions: []
-  m_Currency: {fileID: -8859189835947310016, guid: 1ae57b994efcab048a1bb130d4e11d83, type: 2}
-  m_HideEmptySlot: 0
 --- !u!224 &6009655351260717488
 RectTransform:
   m_ObjectHideFlags: 0
@@ -44514,19 +43919,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d4d70931d8ad9478920245a476327b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates: []
-  m_ItemName: {fileID: 0}
-  m_UseRarityColor: 0
-  "m_\xCDcon": {fileID: 6009655351703943290}
-  m_Stack: {fileID: 6009655353090298701}
-  restrictions: []
-  m_UseKey: 0
-  m_Key: {fileID: 0}
-  m_CooldownOverlay: {fileID: 6009655352307888305}
-  m_Cooldown: {fileID: 0}
-  m_Description: {fileID: 0}
-  m_Ingredients: {fileID: 0}
-  m_BuyPrice: {fileID: 0}
 --- !u!1 &6009655351435150646
 GameObject:
   m_ObjectHideFlags: 0
@@ -44798,14 +44190,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d19d2c4eff3cad489e4e29cb6a6f58e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates: []
-  m_ItemName: {fileID: 0}
-  m_UseRarityColor: 0
-  "m_\xCDcon": {fileID: 6009655351559290610}
-  m_Stack: {fileID: 6009655352598899261}
-  restrictions: []
-  m_Currency: {fileID: -6442420119529586086, guid: 1ae57b994efcab048a1bb130d4e11d83, type: 2}
-  m_HideEmptySlot: 0
 --- !u!224 &6009655351638618696
 RectTransform:
   m_ObjectHideFlags: 0
@@ -45243,14 +44627,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d19d2c4eff3cad489e4e29cb6a6f58e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates: []
-  m_ItemName: {fileID: 0}
-  m_UseRarityColor: 0
-  "m_\xCDcon": {fileID: 6009655353074636502}
-  m_Stack: {fileID: 6009655352326473357}
-  restrictions: []
-  m_Currency: {fileID: -2811142919616601772, guid: 1ae57b994efcab048a1bb130d4e11d83, type: 2}
-  m_HideEmptySlot: 0
 --- !u!224 &6009655351988819893
 RectTransform:
   m_ObjectHideFlags: 0
@@ -45630,76 +45006,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb22b138ec68f14884edf560442aaf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates:
-  - eventID: OnAddItem
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: PlayOneShot
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: 9ef5b527d90acaa428b516bbd9fc2cc4, type: 3}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: OnRemoveItem
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: PlayOneShot
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: 9ef5b527d90acaa428b516bbd9fc2cc4, type: 3}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  name: Inventory
-  priority: 0
-  m_KeyCode: 105
-  m_EaseType: 28
-  m_Duration: 0.7
-  m_IgnoreTimeScale: 1
-  m_ShowSound: {fileID: 0}
-  m_CloseSound: {fileID: 0}
-  m_Focus: 1
-  m_DeactivateOnClose: 1
-  m_ShowAndHideCursor: 1
-  m_CloseOnMove: 1
-  m_Deactivate: 306
-  m_FocusPlayer: 1
-  useButton: 2
-  m_DynamicContainer: 0
-  m_SlotParent: {fileID: 6009655351532678476}
-  m_SlotPrefab: {fileID: 0}
-  m_UseReferences: 0
-  m_CanDragIn: 1
-  m_CanDragOut: 1
-  m_CanDropItems: 1
-  m_CanReferenceItems: 1
-  m_CanSellItems: 1
-  m_CanUseItems: 1
-  m_UseContextMenu: 0
-  m_ShowTooltips: 1
-  m_MoveUsedItem: 1
-  moveItemConditions:
-  - window: Chest
-    requiresVisibility: 0
-  - window: Bank
-    requiresVisibility: 0
-  - window: Equipment
-    requiresVisibility: 0
-  restrictions:
-  - {fileID: 2954321715857102076}
 --- !u!224 &6009655352497773019
 RectTransform:
   m_ObjectHideFlags: 0
@@ -45737,21 +45043,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68165cdf1896c89479a91b2478670c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveable: 1
-  m_Items: []
-  m_Amounts: 
-  m_Modifiers:
-  - modifiers: []
-  - modifiers:
-    - {fileID: 11400000, guid: 3451d08e25b81ff4eb586aa4fb61a191, type: 2}
-  - modifiers: []
-  - modifiers: []
-  - modifiers: []
-  - modifiers: []
-  - modifiers: []
-  onChange:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!225 &6009655352497773021
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -47525,8 +46816,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef38f6e1a427f4846975cf6009a8141f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Key: {fileID: 6303617610242724274}
-  m_Value: {fileID: 6303617610652830126}
 --- !u!224 &6303617610461310977
 RectTransform:
   m_ObjectHideFlags: 0
@@ -48881,37 +48170,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb22b138ec68f14884edf560442aaf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates: []
-  name: Sell Price Tooltip
-  priority: 0
-  m_KeyCode: 0
-  m_EaseType: 28
-  m_Duration: 0
-  m_IgnoreTimeScale: 1
-  m_ShowSound: {fileID: 0}
-  m_CloseSound: {fileID: 0}
-  m_Focus: 1
-  m_DeactivateOnClose: 1
-  m_ShowAndHideCursor: 0
-  m_CloseOnMove: 1
-  m_Deactivate: 306
-  m_FocusPlayer: 0
-  useButton: 0
-  m_DynamicContainer: 0
-  m_SlotParent: {fileID: 0}
-  m_SlotPrefab: {fileID: 0}
-  m_UseReferences: 0
-  m_CanDragIn: 0
-  m_CanDragOut: 0
-  m_CanDropItems: 0
-  m_CanReferenceItems: 0
-  m_CanSellItems: 0
-  m_CanUseItems: 0
-  m_UseContextMenu: 0
-  m_ShowTooltips: 0
-  m_MoveUsedItem: 0
-  moveItemConditions: []
-  restrictions: []
 --- !u!114 &6496722853404895293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48973,19 +48231,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d4d70931d8ad9478920245a476327b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates: []
-  m_ItemName: {fileID: 0}
-  m_UseRarityColor: 0
-  "m_\xCDcon": {fileID: 3997121105944755259}
-  m_Stack: {fileID: 7128164850215435883}
-  restrictions: []
-  m_UseKey: 0
-  m_Key: {fileID: 0}
-  m_CooldownOverlay: {fileID: 4873719996093700466}
-  m_Cooldown: {fileID: 0}
-  m_Description: {fileID: 0}
-  m_Ingredients: {fileID: 0}
-  m_BuyPrice: {fileID: 0}
 --- !u!114 &6503028959433299003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49152,19 +48397,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d4d70931d8ad9478920245a476327b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates: []
-  m_ItemName: {fileID: 0}
-  m_UseRarityColor: 0
-  "m_\xCDcon": {fileID: 1491895423487061361}
-  m_Stack: {fileID: 8747000390311272199}
-  restrictions: []
-  m_UseKey: 0
-  m_Key: {fileID: 0}
-  m_CooldownOverlay: {fileID: 2266243103101080171}
-  m_Cooldown: {fileID: 0}
-  m_Description: {fileID: 0}
-  m_Ingredients: {fileID: 0}
-  m_BuyPrice: {fileID: 0}
 --- !u!222 &6561390659370828822
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -49237,13 +48469,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68165cdf1896c89479a91b2478670c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveable: 0
-  m_Items: []
-  m_Amounts: 
-  m_Modifiers: []
-  onChange:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!222 &6670035591630782843
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -49722,26 +48947,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 144d27305b1d0474bb91be570831330c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates: []
-  name: Dialog Box
-  priority: 0
-  m_KeyCode: 0
-  m_EaseType: 28
-  m_Duration: 0.7
-  m_IgnoreTimeScale: 1
-  m_ShowSound: {fileID: 0}
-  m_CloseSound: {fileID: 0}
-  m_Focus: 1
-  m_DeactivateOnClose: 1
-  m_ShowAndHideCursor: 1
-  m_CloseOnMove: 1
-  m_Deactivate: 306
-  m_FocusPlayer: 0
-  autoClose: 1
-  title: {fileID: 1333354597822672355}
-  text: {fileID: 7667486567912734325}
-  icon: {fileID: 2209793727829549326}
-  button: {fileID: 5204943528897367371}
 --- !u!222 &7077475391913587722
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -50133,19 +49338,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d4d70931d8ad9478920245a476327b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates: []
-  m_ItemName: {fileID: 0}
-  m_UseRarityColor: 0
-  "m_\xCDcon": {fileID: 4098018539737211232}
-  m_Stack: {fileID: 2676687591085525910}
-  restrictions: []
-  m_UseKey: 0
-  m_Key: {fileID: 0}
-  m_CooldownOverlay: {fileID: 5632388074648116820}
-  m_Cooldown: {fileID: 0}
-  m_Description: {fileID: 0}
-  m_Ingredients: {fileID: 0}
-  m_BuyPrice: {fileID: 0}
 --- !u!114 &7427036727721387875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51323,19 +50515,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d4d70931d8ad9478920245a476327b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates: []
-  m_ItemName: {fileID: 0}
-  m_UseRarityColor: 0
-  "m_\xCDcon": {fileID: 2795616671692884960}
-  m_Stack: {fileID: 8252996023745744061}
-  restrictions: []
-  m_UseKey: 0
-  m_Key: {fileID: 0}
-  m_CooldownOverlay: {fileID: 8160606351106802174}
-  m_Cooldown: {fileID: 0}
-  m_Description: {fileID: 0}
-  m_Ingredients: {fileID: 0}
-  m_BuyPrice: {fileID: 0}
 --- !u!1 &8204547839816788128
 GameObject:
   m_ObjectHideFlags: 0
@@ -52362,19 +51541,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d4d70931d8ad9478920245a476327b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delegates: []
-  m_ItemName: {fileID: 0}
-  m_UseRarityColor: 0
-  "m_\xCDcon": {fileID: 3698652591405373587}
-  m_Stack: {fileID: 8782292968708150997}
-  restrictions: []
-  m_UseKey: 0
-  m_Key: {fileID: 0}
-  m_CooldownOverlay: {fileID: 4552434298626098423}
-  m_Cooldown: {fileID: 0}
-  m_Description: {fileID: 0}
-  m_Ingredients: {fileID: 0}
-  m_BuyPrice: {fileID: 0}
 --- !u!1 &9146069593814280669
 GameObject:
   m_ObjectHideFlags: 0
@@ -52486,6 +51652,3 @@ SceneRoots:
   - {fileID: 1693585944}
   - {fileID: 305283645}
   - {fileID: 8368445734869794231}
-  - {fileID: 2008679796}
-  - {fileID: 1496082261}
-  - {fileID: 476335943}
