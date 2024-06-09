@@ -22,4 +22,9 @@ public class InventorySystem
         }
 
     }
+    public bool AddToInventory(InventoryItemData itemToAdd, int amountToAdd)
+    {
+        inventorySlots[0] = new InventorySlot(itemToAdd, amountToAdd);
+        return true;
+    }
 }
