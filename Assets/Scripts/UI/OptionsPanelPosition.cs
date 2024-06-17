@@ -6,41 +6,58 @@ public class OptionsPanelPosition : MonoBehaviour
 {
     [SerializeField] private GameObject mobInfoPanel;
     [SerializeField] private GameObject generaButtonsPanel;
-    [SerializeField] private Transform startingPosition;
+    [SerializeField] private Canvas canvas;
 
-    private Vector3 generaButtonsOriginalPosition;
+    private Vector3 generaButtonsPositionWhenMobInfoInactive;
+    private Vector3 generaButtonsPositionWhenMobInfoActive;
+    private bool isFirstUpdate = true;
 
-    // Start jest wywo³ywany przed pierwsz¹ klatk¹ update
+    // Start is called before the first frame update
     void Start()
     {
-        generaButtonsOriginalPosition = generaButtonsPanel.transform.localPosition;
+        // Calculate the positions relative to the canvas
+        RectTransform canvasRect = canvas.GetComponent<RectTransform>();
+        float canvasHeight = canvasRect.rect.height;
+
+        // Set positions relative to the top of the screen
+        generaButtonsPositionWhenMobInfoInactive = new Vector3(0, -canvasHeight + (canvasHeight - 45f), 0);
+        generaButtonsPositionWhenMobInfoActive = new Vector3(0, -canvasHeight + (canvasHeight - 182.5f), 0);
+
+        // Initial position update (if needed)
         UpdateGeneraButtonsPanelPosition();
     }
 
-    // Metoda wywo³ywana, gdy obiekt jest w³¹czony
+    // Method called when the object is enabled
     void OnEnable()
     {
-        UpdateGeneraButtonsPanelPosition();
+        if (!isFirstUpdate)
+        {
+            UpdateGeneraButtonsPanelPosition();
+        }
     }
 
-    // Metoda wywo³ywana, gdy obiekt jest wy³¹czony
+    // Method called when the object is disabled
     void OnDisable()
     {
-        UpdateGeneraButtonsPanelPosition();
+        if (!isFirstUpdate)
+        {
+            UpdateGeneraButtonsPanelPosition();
+        }
+        isFirstUpdate = false; // Ensuring it is reset after the first update
     }
 
-    // Aktualizuje pozycjê GeneraButtonsPanel
+    // Updates the position of the GeneraButtonsPanel
     private void UpdateGeneraButtonsPanelPosition()
     {
+        RectTransform generaButtonsRect = generaButtonsPanel.GetComponent<RectTransform>();
+
         if (!mobInfoPanel.activeSelf)
         {
-            Vector3 position = generaButtonsPanel.transform.localPosition;
-            position.y = -45;
-            generaButtonsPanel.transform.localPosition = position;
+            generaButtonsRect.anchoredPosition = generaButtonsPositionWhenMobInfoInactive;
         }
         else
         {
-            generaButtonsPanel.transform.localPosition = generaButtonsOriginalPosition;
+            generaButtonsRect.anchoredPosition = generaButtonsPositionWhenMobInfoActive;
         }
     }
 }
