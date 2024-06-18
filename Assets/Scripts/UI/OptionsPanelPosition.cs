@@ -10,7 +10,7 @@ public class OptionsPanelPosition : MonoBehaviour
 
     private Vector3 generaButtonsPositionWhenMobInfoInactive;
     private Vector3 generaButtonsPositionWhenMobInfoActive;
-    private bool isFirstUpdate = true;
+    private bool isFirstUpdate = false;
 
     // Start is called before the first frame update
     void Start()
