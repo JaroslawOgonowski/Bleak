@@ -25,6 +25,7 @@ public class ItemPickUP : MonoBehaviour
 
         if (inventory.InventorySystem.AddToInventory(itemData, 1))
         {
+            ResTextManager.instance.ShowText($"{itemData.name} (+{itemData.stackSize})");
             Destroy(this.gameObject);
         }
     }

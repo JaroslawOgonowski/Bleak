@@ -11,5 +11,6 @@ public class InventoryItemData : ScriptableObject
     [TextArea(4,4)]
     public string description;
     public Sprite icon;
+    public int stackSize;
     public int maxStackSize;
 }
