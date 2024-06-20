@@ -13,7 +13,7 @@ public class StaticInventoryDisplay : InventoryDisplay
         if(inventoryHolder != null)
         {
            inventorySystem = inventoryHolder.InventorySystem;
-           inventorySystem.OnInventorySlotChanged += UpdatedSlot;
+           inventorySystem.OnInventorySlotChanged += UpdateSlot;
         }
         else
         {

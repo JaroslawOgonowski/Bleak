@@ -16,4 +16,4 @@ MonoBehaviour:
   displayName: Itemas
   description: asdasdasd
   icon: {fileID: 21300000, guid: 561e5bc70c5cfc0e78f526d29d5f7ab2, type: 3}
-  maxStackSize: 100
+  maxStackSize: 2
