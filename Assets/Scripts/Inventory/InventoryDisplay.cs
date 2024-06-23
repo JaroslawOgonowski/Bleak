@@ -36,5 +36,13 @@ public abstract class InventoryDisplay : MonoBehaviour
             clickedUISlot.ClearSlot();
             return;
         }
+
+        if(clickedUISlot.AssignedInventorySlot.ItemData == null && mouseInventoryItem.AssingnedInventorySlot.ItemData != null)
+        {
+            clickedUISlot.AssignedInventorySlot.AssignItem(mouseInventoryItem.AssingnedInventorySlot);
+            clickedUISlot.UpdateUISlot();
+
+            mouseInventoryItem.ClearSlot();
+        }
     }
 }
