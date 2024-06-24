@@ -49,10 +49,25 @@ public class MouseItemData : MonoBehaviour
     public static bool IsPointerOverUIObject()
     {
         PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
-        eventDataCurrentPosition.position = Mouse.current.position.ReadValue();
+
+        if (Input.touchCount > 0)
+        {
+            // Kod dla platformy mobilnej
+            eventDataCurrentPosition.position = Input.GetTouch(0).position;
+        }
+        else if (Input.GetMouseButtonDown(0))
+        {
+            // Kod dla platformy PC oraz symulatora
+            eventDataCurrentPosition.position = Input.mousePosition;
+        }
+        else
+        {
+            return false;
+        }
+
         List<RaycastResult> results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
         Debug.Log(results.Count);
-        return results.Count > 4;
+        return results.Count > 0;
     }
 }
