@@ -68,6 +68,6 @@ public class MouseItemData : MonoBehaviour
         List<RaycastResult> results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
         Debug.Log(results.Count);
-        return results.Count > 0;
+        return results.Count > 4;
     }
 }
