@@ -10,7 +10,7 @@ public class MouseItemData : MonoBehaviour
 {
     public Image itemSprite;
     public TextMeshProUGUI itemCount;
-    public InventorySlot AssingnedInventorySlot;
+    public InventorySlot AssingnedInventorySlot { get; private set; }
 
     private void Awake()
     {
