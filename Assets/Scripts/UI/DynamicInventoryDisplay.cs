@@ -9,27 +9,19 @@ public class DynamicInventoryDisplay : InventoryDisplay
 
     protected override void Start()
     {
-        InventoryHolder.OnDynamicInventoryDisplayRequested += RefreshDynamicInventory;
         base.Start();
-
-        AssignSlot(inventorySystem);
-
     }
 
-    private void OnDestroy()
-    {
-        InventoryHolder.OnDynamicInventoryDisplayRequested -= RefreshDynamicInventory;
-    }
 
     public void RefreshDynamicInventory(InventorySystem invToDisplay)
     {
+        ClearSlots();
         inventorySystem = invToDisplay;
+        AssignSlot(invToDisplay);
     }
 
     public override void AssignSlot(InventorySystem invToDisplay)
     {
-        ClearSlots();
-
         slotDictionary = new Dictionary<InventorySlot_UI, InventorySlot>();
 
         if (invToDisplay == null) return;
