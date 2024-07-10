@@ -6,17 +6,17 @@ using UnityEngine.Events;
 public class ChestInventory : InventoryHolder, IInteractable
 {
 
-    UnityAction<IInteractable> IInteractable.OnInteractionComplete { get;  set; }
+    public UnityAction<IInteractable> OnInteractionComplete { get;  set; }
 
 
-    void IInteractable.Interact(Interactor interactor, out bool interactSuccessful)
+    public void Interact(Interactor interactor, out bool interactSuccessful)
     {
         OnDynamicInventoryDisplayRequested?.Invoke(inventorySystem);
         interactSuccessful = true;
     }
 
 
-    void IInteractable.EndInteraction()
+    public void EndInteraction()
     {
         
     }
