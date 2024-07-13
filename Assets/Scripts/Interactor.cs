@@ -12,7 +12,7 @@ public class Interactor : MonoBehaviour
 
     private void Update()
     {
-        var colliders = Physics.OverlapSphere(InteractionPoint.position, InteractionLayer);
+        var colliders = Physics.OverlapSphere(InteractionPoint.position, InteractionPointRadius, InteractionLayer);
 
         if (Keyboard.current.eKey.wasPressedThisFrame)
         {
@@ -20,13 +20,14 @@ public class Interactor : MonoBehaviour
             {
                 var interactable = colliders[i].GetComponent<IInteractable>();
 
-                if(interactable != null)
+                if (interactable != null)
                 {
+                    Debug.Log("Interacting with: " + colliders[i].name);
                     StartInteraction(interactable);
                 }
             }
         }
-    }                                              
+    }
 
     void StartInteraction(IInteractable interactable)
     {
