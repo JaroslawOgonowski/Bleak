@@ -6,6 +6,7 @@ public class ObstacleAvoidance : MonoBehaviour
     public float detectionDistance = 2.0f;
     public float avoidanceStrength = 1.0f;
     public LayerMask obstacleMask;
+    public float rotationSpeed = 2.0f; // Nowa zmienna do kontrolowania szybkoœci obrotu
 
     private Vector3 direction;
 
@@ -31,10 +32,11 @@ public class ObstacleAvoidance : MonoBehaviour
         // Aktualizacja pozycji
         transform.position += direction * speed * Time.deltaTime;
 
-        // Aktualizacja rotacji w kierunku ruchu
+        // P³ynne obracanie w kierunku ruchu
         if (direction != Vector3.zero)
         {
-            transform.rotation = Quaternion.LookRotation(direction);
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
     }
 }
