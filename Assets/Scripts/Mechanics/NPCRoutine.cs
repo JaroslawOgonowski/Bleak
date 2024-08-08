@@ -15,9 +15,13 @@ public class NPCRoutine : MonoBehaviour
 
     void Start()
     {
+        int layer1 = LayerMask.NameToLayer("NPC");
+        int layer2 = LayerMask.NameToLayer("NPC");
+        Physics.IgnoreLayerCollision(layer1, layer2, true);
+
         poiNPCs = NPCPOIManager.Instance.poiNPCs;
         nav = GetComponent<NavMeshAgent>();
-
+        nav.avoidancePriority = Random.Range(0, 100);
         // Check if poiNPCs is not null and has elements
         if (poiNPCs != null && poiNPCs.Count > 0)
         {
@@ -66,6 +70,7 @@ public class NPCRoutine : MonoBehaviour
             {
                 Debug.LogWarning("CalculateNextPOI() returned null.");
             }
+
         }
     }
 
