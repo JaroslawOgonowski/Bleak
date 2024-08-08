@@ -9,7 +9,7 @@ public class NPCRoutine : MonoBehaviour
     private NavMeshAgent nav;
     private List<GameObject> poiNPCs;
     private GameObject destinationPOI;
-    public GameObject currentPOI;
+    private GameObject currentPOI;
 
     public float proximityThreshold = 2.0f; // Odleg³oœæ, przy której uznajemy punkt za osi¹gniêty
 
@@ -51,7 +51,9 @@ public class NPCRoutine : MonoBehaviour
         float distanceToDestination = Vector3.Distance(transform.position, destinationPOI.transform.position);
         if (distanceToDestination <= proximityThreshold)
         {
-            // Update current POI to the destination
+
+
+            Debug.Log(destinationPOI.GetComponent<POIusage>().usage);
             currentPOI = destinationPOI;
 
             // Calculate new destination
@@ -96,7 +98,7 @@ public class NPCRoutine : MonoBehaviour
         }
 
         // If we have less than three, just return a random one from available
-        int randomIndex = Random.Range(0, closestPOIs.Count);
+        int randomIndex = Random.Range(1, 3);
 
         return closestPOIs[randomIndex];
     }
