@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerInteract : MonoBehaviour
 {
     [SerializeField] float interactRange = 3f;
+    [SerializeField] GatheringPanelManager gatheringManager;
 
     private void Update()
     {
@@ -16,6 +17,10 @@ public class PlayerInteract : MonoBehaviour
                 if(collider.TryGetComponent(out NPCInteractable npcInteractable))
                 {
                     npcInteractable.Interact();
+                }
+                if(collider.TryGetComponent(out GatheringObject gatheringObject))
+                {
+                    gatheringManager.OpenGatheringPanel(gatheringObject.gameObject);
                 }
             }
         }

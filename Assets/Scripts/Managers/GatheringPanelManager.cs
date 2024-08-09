@@ -48,6 +48,7 @@ public class GatheringPanelManager : MonoBehaviour
             GatheringObject targetInfo = target.GetComponent<GatheringObject>();
             gatheringPanelTitle.text = targetInfo.name;
             gatheringPanelContent.text = $"Requirements: {targetInfo.firstSkillReqName}: {targetInfo.firstSkillReq}, Tool: {targetInfo.toolReq}";
+            gatheringButton.GetComponentInChildren<TextMeshProUGUI>().text = "Get";
 
             if (targetInfo.type == 1)
             {
