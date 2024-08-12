@@ -24,13 +24,13 @@ public class PlayerInteractUI : MonoBehaviour
         }
     }
 
-    private void Show(NPCInteractable npcInteractable)
+    private void Show(IClickInteract iteractable)
     {
         interactPanel.SetActive(true);
-        interactText.text= npcInteractable.GetInteractText();
-        icon.sprite = npcInteractable.GetInteractIcon();
-        buttonText.text= npcInteractable.GetInteractButtonText();
-        reqText.text = npcInteractable.GetInteractReqText();
+        interactText.text= iteractable.GetInteractText();
+        icon.sprite = iteractable.GetInteractIcon();
+        buttonText.text= iteractable.GetInteractButtonText();
+        reqText.text = iteractable.GetInteractReqText();
     }
 
     private void Hide()

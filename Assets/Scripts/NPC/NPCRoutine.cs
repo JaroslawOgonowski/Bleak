@@ -138,11 +138,12 @@ public class NPCRoutine : MonoBehaviour
         {
             // Obrót w stronê gracza
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * nav.speed);
-            yield return null; // Czekaj jedn¹ klatkê
         }
 
         // Rozpoczêcie animacji rozmowy po zakoñczeniu obrotu
         animator.SetTrigger("talk");
         courtineInProgress = false;
+
+        return null;
     }
 }
