@@ -7,13 +7,13 @@ using UnityEngine.UI;
 public class GatheringObject : MonoBehaviour, IPointerClickHandler, IClickInteract
 {
     public string name;
-    [Tooltip("1 - Mining,\n2 - Lumber\n3 - Harvesting")]
-    public byte type;
+    [Tooltip("1 - Mining,\n2 - Lumber\n3 - Harvesting\n4 - Picklock")]
+    public GatherSkillList type;
     [Space(5)]
-    public string firstSkillReqName;
+    public GatherSkillList firstSkillReqName;
     public float firstSkillReq;
     [Space(5)]
-    public string secSkillReqName;
+    public GatherSkillList secSkillReqName;
     public float secSkillReq;
     [Space(5)]
     public string toolReq;
@@ -30,7 +30,17 @@ public class GatheringObject : MonoBehaviour, IPointerClickHandler, IClickIntera
 
     public string GetInteractReqText()
     {
-        return $"Requaied: {firstSkillReqName}: {firstSkillReq}, {secSkillReqName}: {secSkillReq}.";
+        string sndSkill;
+
+        if(secSkillReq==0 || secSkillReq == null)
+        {
+            sndSkill = ".";
+        } else
+        {
+            sndSkill = $", {secSkillReqName}: {secSkillReq}.";
+        }
+
+        return $"Requaied: {firstSkillReqName}: {firstSkillReq}{sndSkill}";
     }
 
     public string GetInteractText()
@@ -45,7 +55,7 @@ public class GatheringObject : MonoBehaviour, IPointerClickHandler, IClickIntera
 
     public void Interact(Transform interactorTransform)
     {
-        throw new System.NotImplementedException();
+       Gather.instance.GatherByType(gameObject, type);
     }
 
     public void OnPointerClick(PointerEventData eventData)

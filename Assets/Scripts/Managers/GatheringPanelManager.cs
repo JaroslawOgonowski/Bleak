@@ -50,25 +50,8 @@ public class GatheringPanelManager : MonoBehaviour
             gatheringPanelContent.text = $"Requirements: {targetInfo.firstSkillReqName}: {targetInfo.firstSkillReq}, Tool: {targetInfo.toolReq}";
             gatheringButton.GetComponentInChildren<TextMeshProUGUI>().text = "Get";
 
-            if (targetInfo.type == 1)
-            {
-                gatheringImage.sprite = minningSprite;
-                gatheringButton.onClick.AddListener(() => Gather.instance.onMiningButtonClick(target));
-            }
-            else if (targetInfo.type == 2)
-            {
-                gatheringImage.sprite = lumberSprite;
-                gatheringButton.onClick.AddListener(() => Gather.instance.onLumberButtonClick(target));
-            }
-            else if (targetInfo.type == 3)
-            {
-                gatheringImage.sprite = harvestingSprite;
-                gatheringButton.onClick.AddListener(() => Gather.instance.onHarvestButtonClick(target));
-            }
-            else
-            {
-                Debug.LogError("Bad type");
-            }
+          
+            
             gatheringPanel.SetActive(true);
         }
     }

@@ -2,6 +2,15 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum GatherSkillList
+{
+    Mining,
+    Lumber,
+    Harvest,
+    Picklock,
+
+}
+
 public class Gather : MonoBehaviour
 {
     public static Gather instance;
@@ -27,21 +36,13 @@ public class Gather : MonoBehaviour
         characterController = character.GetComponent<CharacterController>();
     }
 
-    public void onMiningButtonClick(GameObject target)
+    public void GatherByType(GameObject target, GatherSkillList type)
     {
-        CheckDistance(target, "Mining");
+        CheckDistance(target, type); 
     }
 
-    public void onLumberButtonClick(GameObject target)
-    {
-        CheckDistance(target, "Lumber");
-    }
 
-    public void onHarvestButtonClick(GameObject target)
-    {
-        CheckDistance(target, "Harvest");
-    }
-    private void CheckDistance(GameObject target, string animationTrigger)
+    private void CheckDistance(GameObject target, GatherSkillList animationTrigger)
     {
         float currentDistance = Vector3.Distance(target.transform.position, character.transform.position);
         if (currentDistance < minimalDistance)
@@ -53,7 +54,7 @@ public class Gather : MonoBehaviour
             StartCoroutine(GatheringPanelManager.instance.FarAwayPanelOpen());
         }
     }
-    IEnumerator MoveCharacterToTarget(GameObject target, string animationTrigger)
+    IEnumerator MoveCharacterToTarget(GameObject target, GatherSkillList animationTrigger)
     {
         GatheringPanelManager.instance.gatheringPanel.SetActive(false);
         if (!gatherProcess)
@@ -71,6 +72,7 @@ public class Gather : MonoBehaviour
                 character.transform.rotation = Quaternion.Slerp(character.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
                 // SprawdŸ odleg³oœæ od celu
+
                 if (currentDistance > distance + 0.1f)
                 {
                     Debug.Log("Poruszanie siê bli¿ej celu");
@@ -99,13 +101,14 @@ public class Gather : MonoBehaviour
                         Debug.Log("Postaæ jest w odpowiedniej odleg³oœci od celu.");
                         animator.SetBool("RunBackward", false);
                         animator.SetBool("RunForward", false);
-                        if (animationTrigger == "Lumber")
+                        string aT = animationTrigger.ToString();
+                        if (aT == "Lumber")
                         {
                             direction.y = 10; // Uwzglêdniaj tylko kierunek poziomy
                             Quaternion pos = Quaternion.LookRotation(direction);
                             character.transform.rotation = Quaternion.Slerp(character.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
                         }
-                        animator.SetBool(animationTrigger, true);
+                        animator.SetBool(aT, true);
                         currentTarget = target;
                         yield break;
                     }

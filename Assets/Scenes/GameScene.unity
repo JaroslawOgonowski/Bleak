@@ -1485,7 +1485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactText: Red
-  icon: {fileID: 21300000, guid: 15f529c2f0b066d48982287c08c3ec81, type: 3}
+  icon: {fileID: 21300000, guid: c8be0438ed70c4548ae7a577fc9b9748, type: 3}
   buttonText: Talk
   reqText: Strange Villager
 --- !u!114 &139422195
@@ -7822,6 +7822,26 @@ MonoBehaviour:
   inventorySize: 8
   inventorySystem:
     inventorySlots: []
+--- !u!114 &906466036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906466031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d97119d6b27a81348b2125e0a764678e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Chest
+  type: 3
+  firstSkillReqName: 3
+  firstSkillReq: 25
+  secSkillReqName: 0
+  secSkillReq: 0
+  toolReq: 
+  sprite: {fileID: 21300000, guid: b3818f18bcc20754f90bf48db6882c13, type: 3}
 --- !u!1001 &926829951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8541,11 +8561,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Birch-tree
   type: 2
-  firstSkillReqName: LumberJAck
+  firstSkillReqName: 0
   firstSkillReq: 25.3
-  secSkillReqName: 
+  secSkillReqName: 0
   secSkillReq: 0
   toolReq: Axe
+  sprite: {fileID: 21300000, guid: 8ec67da0a21803e4689a810620ddc5db, type: 3}
 --- !u!1 &1039582805
 GameObject:
   m_ObjectHideFlags: 0
@@ -9625,6 +9646,31 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc284fd65aa168948ae77b039a0cbae0, type: 3}
+--- !u!1 &1146101050 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9154215057541871321, guid: 2554008d6447a2540b44e55f0c0b576e, type: 3}
+  m_PrefabInstance: {fileID: 1693585944}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1146101055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146101050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d97119d6b27a81348b2125e0a764678e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Birch-tree
+  type: 1
+  firstSkillReqName: 1
+  firstSkillReq: 25.3
+  secSkillReqName: 0
+  secSkillReq: 0
+  toolReq: Axe
+  sprite: {fileID: 21300000, guid: 8ec67da0a21803e4689a810620ddc5db, type: 3}
 --- !u!4 &1152598496 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5978098292254872176, guid: 5503806d74cc9a34eb09093384f91fe6, type: 3}
@@ -9901,7 +9947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactText: Blue
-  icon: {fileID: 21300000, guid: 15f529c2f0b066d48982287c08c3ec81, type: 3}
+  icon: {fileID: 21300000, guid: c8be0438ed70c4548ae7a577fc9b9748, type: 3}
   buttonText: Talk
   reqText: Villager
 --- !u!4 &1181681988 stripped
@@ -10613,12 +10659,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Birch-tree
-  type: 2
-  firstSkillReqName: LumberJAck
+  type: 1
+  firstSkillReqName: 1
   firstSkillReq: 25.3
-  secSkillReqName: 
+  secSkillReqName: 0
   secSkillReq: 0
   toolReq: Axe
+  sprite: {fileID: 21300000, guid: 8ec67da0a21803e4689a810620ddc5db, type: 3}
 --- !u!1 &1265484165
 GameObject:
   m_ObjectHideFlags: 0
@@ -11018,11 +11065,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Birch-tree
   type: 2
-  firstSkillReqName: LumberJAck
+  firstSkillReqName: 0
   firstSkillReq: 25.3
-  secSkillReqName: 
+  secSkillReqName: 0
   secSkillReq: 0
   toolReq: Axe
+  sprite: {fileID: 21300000, guid: 8ec67da0a21803e4689a810620ddc5db, type: 3}
 --- !u!208 &1304311440
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -11241,11 +11289,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Pine
   type: 2
-  firstSkillReqName: Lumber
+  firstSkillReqName: 0
   firstSkillReq: 12
-  secSkillReqName: 
+  secSkillReqName: 0
   secSkillReq: 0
   toolReq: 
+  sprite: {fileID: 21300000, guid: 8ec67da0a21803e4689a810620ddc5db, type: 3}
 --- !u!4 &1334528186 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4041509113231645508, guid: 5503806d74cc9a34eb09093384f91fe6, type: 3}
@@ -12696,11 +12745,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Pine
   type: 2
-  firstSkillReqName: Lumber
+  firstSkillReqName: 0
   firstSkillReq: 12
-  secSkillReqName: 
+  secSkillReqName: 0
   secSkillReq: 0
   toolReq: 
+  sprite: {fileID: 21300000, guid: 8ec67da0a21803e4689a810620ddc5db, type: 3}
 --- !u!4 &1487537919 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5814549885552758072, guid: 5503806d74cc9a34eb09093384f91fe6, type: 3}
@@ -14435,11 +14485,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Pine
   type: 2
-  firstSkillReqName: Lumber
+  firstSkillReqName: 0
   firstSkillReq: 12
-  secSkillReqName: 
+  secSkillReqName: 0
   secSkillReq: 0
   toolReq: 
+  sprite: {fileID: 21300000, guid: 8ec67da0a21803e4689a810620ddc5db, type: 3}
 --- !u!4 &1669227861 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3333115116217482465, guid: 5503806d74cc9a34eb09093384f91fe6, type: 3}
@@ -14770,6 +14821,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 9b6c3d01c33718b45bf7737e8c87415d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 906466033}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 9b6c3d01c33718b45bf7737e8c87415d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 906466036}
     - targetCorrespondingSourceObject: {fileID: 100004, guid: 9b6c3d01c33718b45bf7737e8c87415d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 26071644}
@@ -15244,7 +15298,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9154215057541871321, guid: 2554008d6447a2540b44e55f0c0b576e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1146101055}
   m_SourcePrefab: {fileID: 100100000, guid: 2554008d6447a2540b44e55f0c0b576e, type: 3}
 --- !u!4 &1696600362 stripped
 Transform:
@@ -16083,8 +16140,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab66e62a31c248042b92f73c9db7a256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactRange: 3
-  gatheringManager: {fileID: 1797723718}
+  interactRange: 6
+  actionButton: {fileID: 769013346}
+  interactor: {fileID: 464930186}
 --- !u!224 &1813678296 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9071620094526793676, guid: fc284fd65aa168948ae77b039a0cbae0, type: 3}
@@ -19554,7 +19612,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2523218391455035984, guid: fd98d1350cd6fe14e9a0abd03d86516a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 252.23
+      value: 307.6
       objectReference: {fileID: 0}
     - target: {fileID: 2523218391455035984, guid: fd98d1350cd6fe14e9a0abd03d86516a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -19562,7 +19620,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2523218391455035984, guid: fd98d1350cd6fe14e9a0abd03d86516a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 557.9
+      value: 534
       objectReference: {fileID: 0}
     - target: {fileID: 2523218391455035984, guid: fd98d1350cd6fe14e9a0abd03d86516a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -19591,6 +19649,18 @@ PrefabInstance:
     - target: {fileID: 2523218391455035984, guid: fd98d1350cd6fe14e9a0abd03d86516a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6925021997387068171, guid: fd98d1350cd6fe14e9a0abd03d86516a, type: 3}
+      propertyPath: type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6925021997387068171, guid: fd98d1350cd6fe14e9a0abd03d86516a, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 93005ab95b012f347afb41d6ea78c37a, type: 3}
+    - target: {fileID: 6925021997387068171, guid: fd98d1350cd6fe14e9a0abd03d86516a, type: 3}
+      propertyPath: secSkillReqName
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7166514304446834244, guid: fd98d1350cd6fe14e9a0abd03d86516a, type: 3}
       propertyPath: m_Name
