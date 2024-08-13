@@ -40,5 +40,10 @@ public class NPCInteractable : MonoBehaviour, IClickInteract
     {
         return transform;
     }
+
+    public GameObject GetGameObject()
+    {
+        return gameObject;
+    }
 }
 

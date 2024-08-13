@@ -9,24 +9,13 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] Button actionButton;
     [SerializeField] GameObject interactor;
     private IClickInteract currentInteractor;
-
+    [SerializeField] LookAt lookAt;
     private void Start()
     {
+        lookAt = GetComponent<LookAt>();
         actionButton.onClick.AddListener(() => currentInteractor.Interact(transform));
+        
     }
-
-    //private void Update()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.E))
-    //    {
-    //        IClickInteract interactable = GetInteractableObject();
-    //        if(interactable != null)
-    //        {
-    //            interactable.Interact(transform);
-    //        }
-    //    }
-       
-    //}
 
     public IClickInteract GetInteractableObject()
     {
@@ -56,7 +45,10 @@ public class PlayerInteract : MonoBehaviour
                 }
             }
         }
-
+        if(currentInteractor != closestInteractable)
+        {
+            lookAt.StartMove(closestInteractable.GetGameObject());
+        }
         currentInteractor = closestInteractable;
         return closestInteractable;
 

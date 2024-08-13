@@ -53,6 +53,11 @@ public class GatheringObject : MonoBehaviour, IPointerClickHandler, IClickIntera
         return transform;
     }
 
+    public GameObject GetGameObject()
+    {
+        return gameObject;
+    }
+
     public void Interact(Transform interactorTransform)
     {
        Gather.instance.GatherByType(gameObject, type);
