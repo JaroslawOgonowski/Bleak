@@ -27,7 +27,6 @@ public class PlayerInteract : MonoBehaviour
             if (collider.TryGetComponent(out IClickInteract interactable))
             {
                 interactables.Add(interactable);
-                Debug.Log(interactable);
             }
         }
 
@@ -45,10 +44,7 @@ public class PlayerInteract : MonoBehaviour
                 }
             }
         }
-        if(currentInteractor != closestInteractable)
-        {
-            lookAt.StartMove(closestInteractable.GetGameObject());
-        }
+
         currentInteractor = closestInteractable;
         return closestInteractable;
 

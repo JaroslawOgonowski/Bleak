@@ -10,6 +10,7 @@ public class Interactor : MonoBehaviour
     public float InteractionPointRadius = 1f;
     public bool IsInteracting { get; private set; }
 
+
     private void Start()
     {
         InvokeRepeating("InteractionSearch", 0, 0.5f);

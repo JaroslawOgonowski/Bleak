@@ -12,29 +12,47 @@ public class PlayerInteractUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI buttonText;
     [SerializeField] private TextMeshProUGUI reqText;
     [SerializeField] private Image icon;
+    private GameObject currentInteractableObject;
 
-    private void Update()
+    private void Start()
     {
-        if(playerInteract.GetInteractableObject() != null)
+        InvokeRepeating("Search", 0, 0.2f);
+    }
+
+    private void Search()
+    {
+        if (playerInteract.GetInteractableObject() != null)
         {
-            Show(playerInteract.GetInteractableObject());
-        } else
+            if(currentInteractableObject != playerInteract.GetInteractableObject().GetGameObject())
+            {
+                currentInteractableObject = playerInteract.GetInteractableObject().GetGameObject();
+                Show(playerInteract.GetInteractableObject());
+            }
+        }
+        else
         {
+            currentInteractableObject = null;
             Hide();
         }
     }
 
     private void Show(IClickInteract iteractable)
     {
+        Debug.Log("show");
         interactPanel.SetActive(true);
         interactText.text= iteractable.GetInteractText();
         icon.sprite = iteractable.GetInteractIcon();
         buttonText.text= iteractable.GetInteractButtonText();
         reqText.text = iteractable.GetInteractReqText();
+        LookAt.instance.StartMove(iteractable.GetGameObject());
+
     }
 
     private void Hide()
     {
+        Debug.Log("hide");
         interactPanel.SetActive(false);
+        LookAt.instance.ReturnToStart();
+
     }
 }
