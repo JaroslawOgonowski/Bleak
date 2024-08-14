@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class GatheringObject : MonoBehaviour, IPointerClickHandler, IClickInteract
+public class GatheringObject : MonoBehaviour, IClickInteract
 {
     public string name;
     [Tooltip("1 - Mining,\n2 - Lumber\n3 - Harvesting\n4 - Picklock")]
@@ -63,10 +63,4 @@ public class GatheringObject : MonoBehaviour, IPointerClickHandler, IClickIntera
        Gather.instance.GatherByType(gameObject, type);
     }
 
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        GameObject myGameObject = this.gameObject;
-        Debug.Log("Click detected!");
-        GatheringPanelManager.instance.OpenGatheringPanel(myGameObject);
-    }
 }
