@@ -12,8 +12,9 @@ public class NPCRoutine : MonoBehaviour
     private GameObject currentPOI;
     private Animator animator;
 
-    public float proximityThreshold = 2.0f; // Odleg³oœæ, przy której uznajemy punkt za osi¹gniêty
+    public float proximityThreshold = 2.0f;
     private GameObject player;
+    private bool courtineInProgress = false;
     void Start()
     {
         player = GameObject.FindWithTag("Player");
@@ -22,25 +23,7 @@ public class NPCRoutine : MonoBehaviour
         nav = GetComponent<NavMeshAgent>();
         nav.avoidancePriority = Random.Range(0, 100);
         nav.speed = Random.Range(2, 5);
-        // Check if poiNPCs is not null and has elements
-        if (poiNPCs != null && poiNPCs.Count > 0)
-        {
-            // Start from the closest POI
-            destinationPOI = CalculateClosestPOI();
-            if (destinationPOI != null)
-            {
-                nav.SetDestination(destinationPOI.transform.position);
-                animator.SetBool("move", true);
-            }
-            else
-            {
-                Debug.LogError("CalculateClosestPOI() returned null.");
-            }
-        }
-        else
-        {
-            Debug.LogError("poiNPCs is null or empty. Ensure NPCPOIManager is initialized correctly.");
-        }
+        StartWalking();
     }
 
     void Update()
@@ -72,6 +55,28 @@ public class NPCRoutine : MonoBehaviour
                 Debug.LogWarning("CalculateNextPOI() returned null.");
             }
 
+        }
+    }
+
+    void StartWalking()
+    {
+        if (poiNPCs != null && poiNPCs.Count > 0)
+        {
+            // Start from the closest POI
+            destinationPOI = CalculateClosestPOI();
+            if (destinationPOI != null)
+            {
+                nav.SetDestination(destinationPOI.transform.position);
+                animator.SetBool("move", true);
+            }
+            else
+            {
+                Debug.LogError("CalculateClosestPOI() returned null.");
+            }
+        }
+        else
+        {
+            Debug.LogError("poiNPCs is null or empty. Ensure NPCPOIManager is initialized correctly.");
         }
     }
 
@@ -108,8 +113,6 @@ public class NPCRoutine : MonoBehaviour
 
         return closestPOIs[randomIndex];
     }
-    
-    bool courtineInProgress = false;
 
     public void StopAndTalk()
     {
@@ -122,28 +125,20 @@ public class NPCRoutine : MonoBehaviour
     private IEnumerator StopAndTalkProcess()
     {
         courtineInProgress= true;
-        // Zatrzymanie poruszania siê
         nav.Stop();
         animator.SetBool("move", false);
-
-        // Obliczanie kierunku do gracza
         Vector3 direction = player.transform.position - transform.position;
-        direction.y = 0; // Opcjonalnie zablokuj obrót w osi Y, jeœli to potrzebne
+        direction.y = 0;
 
-        // Docelowa rotacja w stronê gracza
         Quaternion targetRotation = Quaternion.LookRotation(direction);
-
-        // Dopóki obrót nie jest kompletny, wykonuj obrót
         while (Quaternion.Angle(transform.rotation, targetRotation) > 0.1f)
         {
-            // Obrót w stronê gracza
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * nav.speed);
         }
-
-        // Rozpoczêcie animacji rozmowy po zakoñczeniu obrotu
         animator.SetTrigger("talk");
         courtineInProgress = false;
 
-        return null;
+       yield return new WaitForSeconds(5);
+        StartWalking();
     }
 }
