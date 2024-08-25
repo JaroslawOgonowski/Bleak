@@ -2,13 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 public class InventoryUIControler : MonoBehaviour
 {
     public DynamicInventoryDisplay inventoryPanel;
-
+    [SerializeField] private Button closeButton;
     private void Awake()
     {
         inventoryPanel.gameObject.SetActive(false);
+        closeButton.gameObject.SetActive(false);
+    }
+
+    private void Start()
+    {
+        closeButton.onClick.AddListener(() => CloseInventory());
     }
     private void OnEnable()
     {
@@ -23,15 +30,24 @@ public class InventoryUIControler : MonoBehaviour
     // Update is called once per frame
     void Update()      
     {
-        //if (Keyboard.current.bKey.wasPressedThisFrame) DisplayInventory(new InventorySystem(Random.Range(10, 20)));
+    //if (Keyboard.current.bKey.wasPressedThisFrame) DisplayInventory(new InventorySystem(Random.Range(10, 20)));
 
         if (inventoryPanel.gameObject.activeInHierarchy && Keyboard.current.escapeKey.wasPressedThisFrame)
-            inventoryPanel.gameObject.SetActive(false);           //close inventory
+            inventoryPanel.gameObject.SetActive(false);
+            closeButton.gameObject.SetActive(false);//close inventory
     }
 
     void DisplayInventory(InventorySystem invToDisplay)
     {
         inventoryPanel.gameObject.SetActive(true);
-        inventoryPanel.RefreshDynamicInventory(invToDisplay);
+
+        inventoryPanel.RefreshDynamicInventory(invToDisplay); 
+        closeButton.gameObject.SetActive(true);
+    }
+
+   void CloseInventory()
+    {
+        inventoryPanel.gameObject.SetActive(false);
+        closeButton.gameObject.SetActive(false);
     }
 }

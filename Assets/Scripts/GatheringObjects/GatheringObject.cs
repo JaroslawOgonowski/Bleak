@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GatheringObject : MonoBehaviour, IClickInteract
 {
     public string name;
-    [Tooltip("1 - Mining,\n2 - Lumber\n3 - Harvesting\n4 - Picklock")]
+    [Tooltip("1 - Mining,\n2 - Lumber\n3 - Harvesting")]
     public GatherSkillList type;
     [Space(5)]
     public GatherSkillList firstSkillReqName;
