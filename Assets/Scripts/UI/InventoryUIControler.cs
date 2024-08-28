@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class InventoryUIControler : MonoBehaviour
 {
     public DynamicInventoryDisplay inventoryPanel;
+
     public static InventoryUIControler instance; 
     private void Awake()
     {

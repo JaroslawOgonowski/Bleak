@@ -726,7 +726,7 @@ GameObject:
   - component: {fileID: 73718446}
   - component: {fileID: 73718445}
   m_Layer: 5
-  m_Name: ChestInventory
+  m_Name: ChestInv
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11057,8 +11057,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 137.40002, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0.000015259, y: -0.000061035}
+  m_SizeDelta: {x: 160, y: 157.9543}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1313643278
 MonoBehaviour:
