@@ -53,6 +53,7 @@ public class PlayerInteractUI : MonoBehaviour
         Debug.Log("hide");
         interactPanel.SetActive(false);
         LookAt.instance.ReturnToStart();
+        InventoryUIControler.instance.inventoryPanel.gameObject.SetActive(false);
 
     }
 }

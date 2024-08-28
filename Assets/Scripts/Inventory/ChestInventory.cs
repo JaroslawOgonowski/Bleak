@@ -18,6 +18,6 @@ public class ChestInventory : InventoryHolder, IInteractable
 
     public void EndInteraction()
     {
-        
+        //InventoryUIControler.instance.inventoryPanel.gameObject.SetActive(false);
     }
 }

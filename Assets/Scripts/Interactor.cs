@@ -2,26 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class Interactor : MonoBehaviour
 {
     public Transform InteractionPoint;
     public LayerMask InteractionLayer;
     public float InteractionPointRadius = 1f;
+    public Button actionButton;
     public bool IsInteracting { get; private set; }
+    public static Interactor Instance { get; private set; }
 
-    private void Update()
+    private void Awake()
     {
-        InteractionSearch();
+        Instance = this;
     }
-    void InteractionSearch()
+
+    public void InteractionSearch()
     {
         var colliders = Physics.OverlapSphere(InteractionPoint.position, InteractionPointRadius, InteractionLayer);
         IInteractable currentInteractable = null;
-        
 
-        if (Keyboard.current.eKey.wasPressedThisFrame)
-        {
             for (int i = 0; i < colliders.Length; i++)
             {
                 var interactable = colliders[i].GetComponent<IInteractable>();
@@ -33,7 +34,7 @@ public class Interactor : MonoBehaviour
                     StartInteraction(interactable);
                 }
             }
-        }
+        
         bool stillInRange = false;
         for (int i = 0; i < colliders.Length; i++)
         {

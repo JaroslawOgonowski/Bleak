@@ -6,16 +6,15 @@ using UnityEngine.UI;
 public class InventoryUIControler : MonoBehaviour
 {
     public DynamicInventoryDisplay inventoryPanel;
-    [SerializeField] private Button closeButton;
+    public static InventoryUIControler instance; 
     private void Awake()
     {
+        instance = this;
         inventoryPanel.gameObject.SetActive(false);
-        closeButton.gameObject.SetActive(false);
     }
 
     private void Start()
     {
-        closeButton.onClick.AddListener(() => CloseInventory());
     }
     private void OnEnable()
     {
@@ -34,20 +33,17 @@ public class InventoryUIControler : MonoBehaviour
 
         if (inventoryPanel.gameObject.activeInHierarchy && Keyboard.current.escapeKey.wasPressedThisFrame)
             inventoryPanel.gameObject.SetActive(false);
-            closeButton.gameObject.SetActive(false);//close inventory
     }
 
     void DisplayInventory(InventorySystem invToDisplay)
     {
         inventoryPanel.gameObject.SetActive(true);
-
         inventoryPanel.RefreshDynamicInventory(invToDisplay); 
-        closeButton.gameObject.SetActive(true);
     }
 
    void CloseInventory()
     {
         inventoryPanel.gameObject.SetActive(false);
-        closeButton.gameObject.SetActive(false);
+
     }
 }
