@@ -2866,6 +2866,7 @@ MonoBehaviour:
   buttonText: {fileID: 2091763291}
   reqText: {fileID: 169095034}
   icon: {fileID: 1709612521}
+  inventoryCloseButton: {fileID: 1313643276}
 --- !u!1 &360293718
 GameObject:
   m_ObjectHideFlags: 0
@@ -6331,8 +6332,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -152, y: 49.359}
-  m_SizeDelta: {x: 169.791, y: 56.6775}
+  m_AnchoredPosition: {x: -177, y: 50.918}
+  m_SizeDelta: {x: 169.791, y: 70.842}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &778369915
 GameObject:
@@ -10716,7 +10717,7 @@ GameObject:
   - component: {fileID: 1313643279}
   - component: {fileID: 1313643278}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: CloseButton (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15424,6 +15425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryPanel: {fileID: 491320657}
+  closeInvButton: {fileID: 1313643278}
 --- !u!1 &1797723716
 GameObject:
   m_ObjectHideFlags: 0
