@@ -67,7 +67,11 @@ public class GatheringObject : MonoBehaviour, IClickInteract
         else
         {
             Debug.Log("picklock");
+
+            Gather.instance.GatherByType(gameObject, type);
+            
             Interactor.Instance.InteractionSearch();
+            
         }
 
 
