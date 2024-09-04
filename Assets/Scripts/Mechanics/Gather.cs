@@ -1,6 +1,9 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.Apple;
 using UnityEngine.UI;
+using UnityEngine.AI;
 
 public enum GatherSkillList
 {
@@ -128,5 +131,49 @@ public class Gather : MonoBehaviour
         currentTarget = null;
         gatherProcess = false;
         CharacterMotion.instance.gatheringMove = false;
+    }
+
+
+    private IEnumerator ChestOpening(Transform chest)
+    {
+        gatherProcess = true;
+
+        NavMeshObstacle obstacleSelf = GetComponent<NavMeshObstacle>();
+        NavMeshAgent nav = GetComponent<NavMeshAgent>();
+        CharacterController cc = GetComponent<CharacterController>();
+
+        obstacleSelf.enabled = false;
+        nav.enabled = true;
+        cc.enabled = false;
+
+        Vector3 destinyPos = chest.Find("openPosition").position;
+        nav.SetDestination(destinyPos);
+
+        while (Vector3.Distance(transform.position, destinyPos) > nav.stoppingDistance)
+        {
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        nav.enabled = false;
+
+        Vector3 direction = (chest.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+
+        // Pêtla obracaj¹ca postaæ w kierunku skrzyni
+        while (Quaternion.Angle(transform.rotation, lookRotation) > 0.1f)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 2f);
+            yield return null; // Czeka na nastêpn¹ klatkê
+        }
+
+        obstacleSelf.enabled = true;
+        gatherProcess = false;
+        cc.enabled = true;
+    }
+
+
+    public void OpenChest(Transform chest)
+    {
+        StartCoroutine(ChestOpening(chest));
     }
 }

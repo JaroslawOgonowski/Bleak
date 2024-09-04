@@ -8,6 +8,7 @@ TagManager:
   - Tree
   - POINPC
   - OpeningPos
+  - AllPlayer
   layers:
   - Default
   - TransparentFX
