@@ -148,7 +148,7 @@ public class Gather : MonoBehaviour
 
         Vector3 destinyPos = chest.Find("openPosition").position;
         nav.SetDestination(destinyPos);
-
+        animator.SetBool("RunForward", true);
         while (Vector3.Distance(transform.position, destinyPos) > nav.stoppingDistance)
         {
             yield return new WaitForSeconds(0.1f);
@@ -158,7 +158,7 @@ public class Gather : MonoBehaviour
 
         Vector3 direction = (chest.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-
+        animator.SetBool("RunForward", false);
         // Pêtla obracaj¹ca postaæ w kierunku skrzyni
         while (Quaternion.Angle(transform.rotation, lookRotation) > 0.1f)
         {
