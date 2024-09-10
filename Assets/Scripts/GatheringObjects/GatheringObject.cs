@@ -71,7 +71,7 @@ public class GatheringObject : MonoBehaviour, IClickInteract
             //Gather.instance.GatherByType(gameObject, type);
             Gather.instance.OpenChest(gameObject.transform);
             //Interactor.Instance.InteractionSearch();
-            
+
         }
 
 

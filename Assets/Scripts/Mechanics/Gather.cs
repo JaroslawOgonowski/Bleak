@@ -169,7 +169,14 @@ public class Gather : MonoBehaviour
         obstacleSelf.enabled = true;
         gatherProcess = false;
         cc.enabled = true;
+
+        animator.SetBool("OpenChest", true);
+        chest.GetComponent<ChestOpening>().OpenChest();
+        Interactor.Instance.InteractionSearch();
     }
+
+    //add functions to animator
+    //open=>animation=>open phy chest => open inv => loop => closeInv => anim => close phy chest
 
 
     public void OpenChest(Transform chest)

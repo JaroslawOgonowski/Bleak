@@ -9,11 +9,20 @@ public class ChestOpening : MonoBehaviour
     void Start()
     {
         // Znajduje pokrywê skrzyni jako dziecko tego obiektu
-        chestCover = GetComponent<Transform>();
+        chestCover = transform.Find("Chest_cover");
+    }
+
+    public void OpenChest()
+    {
         StartCoroutine(ChestOpener());
     }
 
-    public IEnumerator ChestOpener()
+    public void CloseChest()
+    {
+        StartCoroutine(ChestCloser());
+    }
+
+    private IEnumerator ChestOpener()
     {
         // Pocz¹tkowa rotacja
         Quaternion startRotation = chestCover.localRotation;
@@ -40,7 +49,7 @@ public class ChestOpening : MonoBehaviour
         chestCover.localRotation = endRotation;
     }
 
-    public IEnumerator ChestCloser()
+    private IEnumerator ChestCloser()
     {
         // Pocz¹tkowa rotacja
         Quaternion startRotation = chestCover.localRotation;
