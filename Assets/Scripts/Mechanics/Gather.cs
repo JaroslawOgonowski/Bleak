@@ -133,9 +133,11 @@ public class Gather : MonoBehaviour
         CharacterMotion.instance.gatheringMove = false;
     }
 
-
+    private GameObject currentChest = null;
     private IEnumerator ChestOpening(Transform chest)
     {
+        currentChest = chest.gameObject;
+
         gatherProcess = true;
 
         NavMeshObstacle obstacleSelf = GetComponent<NavMeshObstacle>();
@@ -162,7 +164,7 @@ public class Gather : MonoBehaviour
         // Pêtla obracaj¹ca postaæ w kierunku skrzyni
         while (Quaternion.Angle(transform.rotation, lookRotation) > 0.1f)
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 2f);
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime );
             yield return null; // Czeka na nastêpn¹ klatkê
         }
 
@@ -171,10 +173,15 @@ public class Gather : MonoBehaviour
         cc.enabled = true;
 
         animator.SetBool("OpenChest", true);
-        chest.GetComponent<ChestOpening>().OpenChest();
+        //
         Interactor.Instance.InteractionSearch();
     }
 
+    public void OnChestOpening()
+    {
+        if(currentChest!=null)
+        currentChest.GetComponent<ChestOpening>().OpenChest();
+    }
     //add functions to animator
     //open=>animation=>open phy chest => open inv => loop => closeInv => anim => close phy chest
 
