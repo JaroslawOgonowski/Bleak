@@ -29,7 +29,7 @@ public class ChestOpening : MonoBehaviour
         // Koñcowa rotacja
         Quaternion endRotation = Quaternion.Euler(-100, 0, 0);
 
-        float duration = 2.0f; // Czas trwania animacji w sekundach
+        float duration = 0.4f; // Czas trwania animacji w sekundach
         float elapsed = 0.0f;
 
         while (elapsed < duration)
@@ -56,7 +56,7 @@ public class ChestOpening : MonoBehaviour
         // Koñcowa rotacja
         Quaternion endRotation = Quaternion.Euler(0, 0, 0);
 
-        float duration = 2.0f; // Czas trwania animacji w sekundach
+        float duration = 0.8f; // Czas trwania animacji w sekundach
         float elapsed = 0.0f;
 
         while (elapsed < duration)

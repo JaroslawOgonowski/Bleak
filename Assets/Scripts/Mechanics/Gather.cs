@@ -133,10 +133,10 @@ public class Gather : MonoBehaviour
         CharacterMotion.instance.gatheringMove = false;
     }
 
-    private GameObject currentChest = null;
+    private Transform currentChest = null;
     private IEnumerator ChestOpening(Transform chest)
     {
-        currentChest = chest.gameObject;
+        currentChest = chest;
 
         gatherProcess = true;
 
@@ -153,7 +153,7 @@ public class Gather : MonoBehaviour
         animator.SetBool("RunForward", true);
         while (Vector3.Distance(transform.position, destinyPos) > nav.stoppingDistance)
         {
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForEndOfFrame();
         }
 
         nav.enabled = false;
@@ -161,26 +161,25 @@ public class Gather : MonoBehaviour
         Vector3 direction = (chest.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         animator.SetBool("RunForward", false);
-        // Pêtla obracaj¹ca postaæ w kierunku skrzyni
         while (Quaternion.Angle(transform.rotation, lookRotation) > 0.1f)
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime );
-            yield return null; // Czeka na nastêpn¹ klatkê
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime*5);
+            yield return null; 
         }
 
         obstacleSelf.enabled = true;
         gatherProcess = false;
         cc.enabled = true;
+        nav.enabled = false;
 
         animator.SetBool("OpenChest", true);
-        //
-        Interactor.Instance.InteractionSearch();
     }
 
     public void OnChestOpening()
     {
-        if(currentChest!=null)
-        currentChest.GetComponent<ChestOpening>().OpenChest();
+        if (currentChest != null)  // Check if the currentChest is not null
+            currentChest .GetComponent<ChestOpening>() // Get the 'ChestOpening' component on that child object
+                         .OpenChest(); // Call the 'OpenChest' method in the ChestOpening script
     }
     //add functions to animator
     //open=>animation=>open phy chest => open inv => loop => closeInv => anim => close phy chest
@@ -189,5 +188,21 @@ public class Gather : MonoBehaviour
     public void OpenChest(Transform chest)
     {
         StartCoroutine(ChestOpening(chest));
+    }
+
+    public void ChestIsOpen()
+    {
+        Interactor.Instance.InteractionSearch();
+    }
+
+    public void CloseChest()
+    {
+        animator.SetBool("OpenChest", false);
+       
+    }
+
+    public void OnChestClosing()
+    {
+        currentChest.GetComponent<ChestOpening>().CloseChest();
     }
 }
