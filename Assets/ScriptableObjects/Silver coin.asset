@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 97e6ce8da1a53314e85818779d195583, type: 3}
-  m_Name: Common sword
+  m_Name: Silver coin
   m_EditorClassIdentifier: 
-  ID: 1
-  displayName: Itemas
-  description: asdasdasd
-  icon: {fileID: 21300000, guid: d4297cd6c89c64d478db0cdbef8a6256, type: 3}
-  stackSize: 0
-  maxStackSize: 15
-  prefab: {fileID: 8991650495919872524, guid: 7a90d239cfd3b4a628055c13971eac88, type: 3}
+  ID: 55
+  displayName: Silver coin
+  description: 
+  icon: {fileID: 21300000, guid: 6940e47ce192fb8ab9ab7dd56f4616c5, type: 3}
+  stackSize: 1
+  maxStackSize: 100
+  prefab: {fileID: 100000, guid: e40fa0edf8a05e246b4f2025b5acdf75, type: 3}

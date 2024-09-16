@@ -18,3 +18,4 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: d07b55133660a21fe8776750aa359417, type: 3}
   stackSize: 1
   maxStackSize: 1
+  prefab: {fileID: 100000, guid: 3db1170ae21441341803e03681e5a951, type: 3}
