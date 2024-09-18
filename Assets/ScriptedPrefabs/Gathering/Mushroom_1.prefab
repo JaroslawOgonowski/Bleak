@@ -213,9 +213,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Mushroom
-  type: 3
-  firstSkillReqName: Harvesting
+  type: 0
+  firstSkillReqName: 0
   firstSkillReq: 10
-  secSkillReqName: 
+  secSkillReqName: 0
   secSkillReq: 0
   toolReq: 
+  sprite: {fileID: 0}

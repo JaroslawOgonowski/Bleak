@@ -120,9 +120,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Verite
-  type: 1
-  firstSkillReqName: Mining
+  type: 0
+  firstSkillReqName: 0
   firstSkillReq: 95.1
-  secSkillReqName: 
+  secSkillReqName: 0
   secSkillReq: 0
   toolReq: Pickaxe
+  sprite: {fileID: 0}

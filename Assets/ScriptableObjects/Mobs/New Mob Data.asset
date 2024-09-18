@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62ce6d1cb077dc741b2b4ad7c7ac0723, type: 3}
+  m_Name: New Mob Data
+  m_EditorClassIdentifier: 
+  ID: 0
+  displayName: Black Bear
+  icon: {fileID: 0}
+  prefab: {fileID: 0}
+  name: 
+  rarity: 
+  group: 
+  hp: 0
+  maxhp: 0
+  armor: 0
+  magicArmor: 0
+  minDmg: 0
+  maxDmg: 0
+  speed: 0
+  tameable: 0
+  tameDificult: 0
+  owner: 
+  legend: 0
+  loot: []
