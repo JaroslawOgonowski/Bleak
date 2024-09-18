@@ -10,24 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62ce6d1cb077dc741b2b4ad7c7ac0723, type: 3}
-  m_Name: New Mob Data
+  m_Name: White Chicken
   m_EditorClassIdentifier: 
-  ID: 0
-  displayName: Black Bear
+  ID: 1
+  displayName: White Chicken
   icon: {fileID: 0}
-  prefab: {fileID: 0}
-  name: 
-  rarity: 
-  group: 
-  hp: 0
-  maxhp: 0
-  armor: 0
+  prefab: {fileID: 4787460235417147530, guid: df7ffb0a00d6f2048bb0ecfd89355054, type: 3}
+  name: White Chicken
+  rarity: 0
+  group: 0
+  hp: 20
+  maxhp: 20
+  armor: 1
   magicArmor: 0
-  minDmg: 0
-  maxDmg: 0
-  speed: 0
-  tameable: 0
-  tameDificult: 0
-  owner: 
-  legend: 0
+  minDmg: 2
+  maxDmg: 3
+  speed: 5
+  tameable: 1
+  tameDificult: 10
   loot: []

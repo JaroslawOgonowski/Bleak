@@ -3,6 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum Rarity
+{
+    Common,
+    Uncommon,
+    Rare,
+    Epic,
+    Legendary,
+    Mythic,
+    Unique
+}
+
+public enum MobGroup
+{
+    Animals,
+    Beasts,
+    Humanoids,
+    Undead,
+    Elementals,
+    Demons,
+    Boss,
+    Constructs,
+    Giants,
+    Aberrations,
+    Plants,
+    Reptiles,
+    Insects,
+    Celestials
+}
+
 [CreateAssetMenu(menuName = "MyAssets/New Mob")]
 public class MobData : ScriptableObject
 {
@@ -12,8 +41,8 @@ public class MobData : ScriptableObject
     public Sprite icon;
     public GameObject prefab;
     public string name;
-    public string rarity;
-    public string group;
+    public Rarity rarity;
+    public MobGroup group;
     public int hp;
     public int maxhp;
     public int armor;
@@ -23,7 +52,5 @@ public class MobData : ScriptableObject
     public int speed;
     public bool tameable;
     public int tameDificult;
-    public string owner;
-    public bool legend;
     public GameObject[] loot;
 }
