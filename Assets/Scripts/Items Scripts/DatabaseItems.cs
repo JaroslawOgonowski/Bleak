@@ -47,4 +47,9 @@ public class DatabaseItems : ScriptableObject
         }
 
     }
+
+    public InventoryItemData GetItem(int id)
+    {
+        return _itemDatabase.Find(i=>i.ID == id);   
+    }
 }

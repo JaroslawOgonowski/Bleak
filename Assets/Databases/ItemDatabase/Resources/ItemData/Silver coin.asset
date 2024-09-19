@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97e6ce8da1a53314e85818779d195583, type: 3}
   m_Name: Silver coin
   m_EditorClassIdentifier: 
-  ID: 55
+  ID: -1
   displayName: Silver coin
   description: 
   icon: {fileID: 21300000, guid: 6940e47ce192fb8ab9ab7dd56f4616c5, type: 3}

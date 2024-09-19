@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97e6ce8da1a53314e85818779d195583, type: 3}
   m_Name: Gold coin
   m_EditorClassIdentifier: 
-  ID: 56
+  ID: -1
   displayName: Gold coin
   description: 
   icon: {fileID: 0}
