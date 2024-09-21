@@ -23,4 +23,18 @@ public class PlayerInventoryHolder : InventoryHolder
             OnDynamicInventoryDisplayRequested?.Invoke(secondaryInventorySystem); 
         }
     }
+
+    public bool AddToInventory(InventoryItemData data, int ammount)
+    {
+        if(primaryInventorySystem.AddToInventory(data, ammount))
+        {
+            return true;
+        }
+        else if(secondaryInventorySystem.AddToInventory(data, ammount))
+        {
+            return true;
+        }
+
+        return false;
+    }
 }

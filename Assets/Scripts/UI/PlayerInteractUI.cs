@@ -34,7 +34,7 @@ public class PlayerInteractUI : MonoBehaviour
         else
         {
             currentInteractableObject = null;
-            Hide();
+            //Hide();
         }
     }
 
