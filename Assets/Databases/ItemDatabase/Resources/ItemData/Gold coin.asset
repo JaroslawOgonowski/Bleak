@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: -1
   displayName: Gold coin
   description: 
-  icon: {fileID: 0}
-  stackSize: 1
+  icon: {fileID: 21300000, guid: f987e839acbf0486983570fc57ac4e72, type: 3}
+  stackSize: 15
   maxStackSize: 2137483647
   prefab: {fileID: 100000, guid: e40fa0edf8a05e246b4f2025b5acdf75, type: 3}

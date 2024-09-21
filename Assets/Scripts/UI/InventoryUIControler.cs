@@ -5,28 +5,34 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 public class InventoryUIControler : MonoBehaviour
 {
-    public DynamicInventoryDisplay inventoryPanel;
-    [SerializeField] private Button closeInvButton;
+    public DynamicInventoryDisplay chestPanel;
+    [SerializeField] private Button closeInvButtonChestPanel;
+    public DynamicInventoryDisplay playerBackpack;
+    [SerializeField] private Button closeInvButtonPlayerBackpack;
 
     public static InventoryUIControler instance; 
     private void Awake()
     {
         instance = this;
-        inventoryPanel.gameObject.SetActive(false);
+        chestPanel.gameObject.SetActive(false);
+        playerBackpack.gameObject.SetActive(false);
     }
 
     private void Start()
     {
-        closeInvButton.gameObject.SetActive(false);
+        closeInvButtonChestPanel.gameObject.SetActive(false);
+        closeInvButtonPlayerBackpack.gameObject.SetActive(false);
+
     }
     private void OnEnable()
     {
         InventoryHolder.OnDynamicInventoryDisplayRequested += DisplayInventory;
+        PlayerInventoryHolder.OnPlayerBackpackDisplayRequested += DisplayPlayerBackpack;
     }
     private void OnDisable()
     {
         InventoryHolder.OnDynamicInventoryDisplayRequested -= DisplayInventory;
-
+        PlayerInventoryHolder.OnPlayerBackpackDisplayRequested -= DisplayPlayerBackpack;
     }
 
     // Update is called once per frame
@@ -34,25 +40,37 @@ public class InventoryUIControler : MonoBehaviour
     {
     //if (Keyboard.current.bKey.wasPressedThisFrame) DisplayInventory(new InventorySystem(Random.Range(10, 20)));
 
-        if (inventoryPanel.gameObject.activeInHierarchy && Keyboard.current.escapeKey.wasPressedThisFrame)
+        if (chestPanel.gameObject.activeInHierarchy && Keyboard.current.escapeKey.wasPressedThisFrame)
         {
-            inventoryPanel.gameObject.SetActive(false);
-            closeInvButton.gameObject.SetActive(false);
+            chestPanel.gameObject.SetActive(false);
+            closeInvButtonChestPanel.gameObject.SetActive(false);
         }
-       
+        if (playerBackpack.gameObject.activeInHierarchy && Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            playerBackpack.gameObject.SetActive(false);
+            closeInvButtonPlayerBackpack.gameObject.SetActive(false);
+        }
+
     }
 
     void DisplayInventory(InventorySystem invToDisplay)
     {
-        inventoryPanel.gameObject.SetActive(true);
-        inventoryPanel.RefreshDynamicInventory(invToDisplay);
-        closeInvButton.gameObject.SetActive(true);
+        chestPanel.gameObject.SetActive(true);
+        chestPanel.RefreshDynamicInventory(invToDisplay);
+        closeInvButtonChestPanel.gameObject.SetActive(true);
     }
 
    void CloseInventory()
     {
-        inventoryPanel.gameObject.SetActive(false);
-        closeInvButton.gameObject.SetActive(false);
+        chestPanel.gameObject.SetActive(false);
+        closeInvButtonChestPanel.gameObject.SetActive(false);
 
+    }
+
+    void DisplayPlayerBackpack(InventorySystem invToDisplay)
+    {
+        playerBackpack.gameObject.SetActive(true);
+        playerBackpack.RefreshDynamicInventory(invToDisplay);
+        closeInvButtonPlayerBackpack.gameObject.SetActive(true);
     }
 }

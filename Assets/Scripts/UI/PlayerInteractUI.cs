@@ -60,7 +60,7 @@ public class PlayerInteractUI : MonoBehaviour
 
     private void CloseInvByButton()
     {
-        InventoryUIControler.instance.inventoryPanel.gameObject.SetActive(false);
+        InventoryUIControler.instance.chestPanel.gameObject.SetActive(false);
         inventoryCloseButton.SetActive(false);
         Gather.instance.CloseChest();
     }
