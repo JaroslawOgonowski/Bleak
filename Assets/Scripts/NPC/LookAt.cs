@@ -29,45 +29,52 @@ public class LookAt : MonoBehaviour
 
     public void StartMove(GameObject target)
     {
-        if (moveCoroutine != null)
-            StopCoroutine(moveCoroutine);
+        if(target != null)
+        {
+            if (moveCoroutine != null)
+                StopCoroutine(moveCoroutine);
 
-        moveCoroutine = StartCoroutine(SmoothFollowTarget(target));
+            moveCoroutine = StartCoroutine(SmoothFollowTarget(target));
+        }
     }
 
     private IEnumerator SmoothFollowTarget(GameObject target)
     {
-        Vector3 directionToTarget = target.transform.position - transform.position;
-        float distanceToTarget = directionToTarget.magnitude;
-        float angleToTarget = Vector3.Angle(transform.forward, directionToTarget);
-
-        // Check if the target is within the allowed distance and angle range
-        if (distanceToTarget <= maxDistance && angleToTarget <= maxAngle)
+        if (target != null)
         {
-            Bounds targetBounds = target.GetComponent<Renderer>()?.bounds ?? default;
-            Vector3 targetPosition = targetBounds.center;
-            float heightOffset = Mathf.Lerp(targetBounds.min.y, targetBounds.max.y, lookAtHeightPercentage / 100f);
-            targetPosition.y = heightOffset;
+            Vector3 directionToTarget = target.transform.position - transform.position;
+            float distanceToTarget = directionToTarget.magnitude;
+            float angleToTarget = Vector3.Angle(transform.forward, directionToTarget);
 
-            // Calculate the position behind the target based on minDistance
-            Vector3 directionFromPlayerToTarget = (targetPosition - transform.position).normalized;
-            Vector3 minDistancePosition = targetPosition - directionFromPlayerToTarget * minDistance; 
-
-            while (true)
+            // Check if the target is within the allowed distance and angle range
+            if (distanceToTarget <= maxDistance && angleToTarget <= maxAngle)
             {
-                // Smoothly move the secondary aim towards the minDistancePosition
-                secondaryAim.transform.position = Vector3.Lerp(secondaryAim.transform.position, minDistancePosition, Time.deltaTime * transitionDuration);             
+                Bounds targetBounds = target.GetComponent<Renderer>()?.bounds ?? default;
+                Vector3 targetPosition = targetBounds.center;
+                float heightOffset = Mathf.Lerp(targetBounds.min.y, targetBounds.max.y, lookAtHeightPercentage / 100f);
+                targetPosition.y = heightOffset;
 
-                // Main aim follows the secondary aim
-                aim.transform.position = Vector3.Lerp(aim.transform.position, secondaryAim.transform.position, Time.deltaTime * transitionDuration);
+                // Calculate the position behind the target based on minDistance
+                Vector3 directionFromPlayerToTarget = (targetPosition - transform.position).normalized;
+                Vector3 minDistancePosition = targetPosition - directionFromPlayerToTarget * minDistance;
 
-                yield return null;
+                while (true)
+                {
+                    // Smoothly move the secondary aim towards the minDistancePosition
+                    secondaryAim.transform.position = Vector3.Lerp(secondaryAim.transform.position, minDistancePosition, Time.deltaTime * transitionDuration);
+
+                    // Main aim follows the secondary aim
+                    aim.transform.position = Vector3.Lerp(aim.transform.position, secondaryAim.transform.position, Time.deltaTime * transitionDuration);
+
+                    yield return null;
+                }
+            }
+            else
+            {
+                ReturnToStart();
             }
         }
-        else
-        {
-            ReturnToStart();
-        }
+     
     }
 
 

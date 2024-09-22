@@ -13,12 +13,14 @@ public class PlayerInteractUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI reqText;
     [SerializeField] private Image icon;
     [SerializeField] private GameObject inventoryCloseButton;
+    [SerializeField] private GameObject backpackCloseButton;
     private GameObject currentInteractableObject;
 
     private void Start()
     {
         InvokeRepeating("Search", 0, 0.2f);
         inventoryCloseButton.GetComponent<Button>().onClick.AddListener(()=>CloseInvByButton());
+        backpackCloseButton.GetComponent<Button>().onClick.AddListener(() => CloseBackpackByButton());
     }
 
     private void Search()
@@ -63,5 +65,11 @@ public class PlayerInteractUI : MonoBehaviour
         InventoryUIControler.instance.chestPanel.gameObject.SetActive(false);
         inventoryCloseButton.SetActive(false);
         Gather.instance.CloseChest();
+    }
+
+    private void CloseBackpackByButton()
+    {
+        InventoryUIControler.instance.playerBackpack.gameObject.SetActive(false);
+        backpackCloseButton.SetActive(false);
     }
 }
