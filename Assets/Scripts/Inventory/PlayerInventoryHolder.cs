@@ -10,21 +10,19 @@ public class PlayerInventoryHolder : InventoryHolder
 
     public InventorySystem SecondaryInventorySystem=> secondaryInventorySystem;
     public static UnityAction<InventorySystem> OnPlayerBackpackDisplayRequested;
-
+    public static PlayerInventoryHolder instance;
     protected override void Awake()
     {
         base.Awake();
 
         secondaryInventorySystem = new InventorySystem(secondaryInventorySize);
+        instance = this;
     }
-    void Update()
+   
+    public void OpenBackpack()
     {
-         if(Keyboard.current.bKey.wasPressedThisFrame)
-        {
-            OnPlayerBackpackDisplayRequested?.Invoke(secondaryInventorySystem); 
-        }
+        OnPlayerBackpackDisplayRequested?.Invoke(secondaryInventorySystem);
     }
-
     public bool AddToInventory(InventoryItemData data, int ammount)
     {
         if(primaryInventorySystem.AddToInventory(data, ammount))

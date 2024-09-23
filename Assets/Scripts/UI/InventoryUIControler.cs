@@ -9,8 +9,8 @@ public class InventoryUIControler : MonoBehaviour
     [SerializeField] private Button closeInvButtonChestPanel;
     public DynamicInventoryDisplay playerBackpack;
     [SerializeField] private Button closeInvButtonPlayerBackpack;
-
-    public static InventoryUIControler instance; 
+    [SerializeField] private Button backpackButton;
+    public static InventoryUIControler instance;
     private void Awake()
     {
         instance = this;
@@ -22,7 +22,7 @@ public class InventoryUIControler : MonoBehaviour
     {
         closeInvButtonChestPanel.gameObject.SetActive(false);
         closeInvButtonPlayerBackpack.gameObject.SetActive(false);
-
+        backpackButton.onClick.AddListener(() => BackpackCheck());
     }
     private void OnEnable()
     {
@@ -35,6 +35,18 @@ public class InventoryUIControler : MonoBehaviour
         PlayerInventoryHolder.OnPlayerBackpackDisplayRequested -= DisplayPlayerBackpack;
     }
 
+    private void BackpackCheck()
+    {
+        if (playerBackpack.gameObject.activeInHierarchy)
+        {
+            playerBackpack.gameObject.SetActive(false);
+            closeInvButtonPlayerBackpack.gameObject.SetActive(false);
+        }
+        else
+        {
+            PlayerInventoryHolder.instance.OpenBackpack();
+        }
+    }
     // Update is called once per frame
     void Update()      
     {
@@ -49,8 +61,8 @@ public class InventoryUIControler : MonoBehaviour
         {
             playerBackpack.gameObject.SetActive(false);
             closeInvButtonPlayerBackpack.gameObject.SetActive(false);
-        }
 
+        }
     }
 
     void DisplayInventory(InventorySystem invToDisplay)
