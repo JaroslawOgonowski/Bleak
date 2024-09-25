@@ -10,11 +10,11 @@ using UnityEngine.UI;
 
 namespace Esper.ESave.Example
 {
-    public class SaveLoadURPExample : MonoBehaviour
+    public class SaveLoadManager: MonoBehaviour
     {
         // Const data IDs 
         private const string playerPositionDataKey = "PlayerPosition";
-
+        private const string eqDataKey = "eq";
 
         [SerializeField]
         private CharacterController characterController;
@@ -23,7 +23,6 @@ namespace Esper.ESave.Example
         private SaveFile saveFile;
         [SerializeField] Button SaveButton;
         private Vector3 prevPlayerPosition;
-
 
         private void Start()
         {
@@ -69,6 +68,7 @@ namespace Esper.ESave.Example
         /// </summary>
         public void SaveGame()
         {
+
             saveFile.AddOrUpdateData(playerPositionDataKey, characterController.transform);
             saveFile.Save();
 
