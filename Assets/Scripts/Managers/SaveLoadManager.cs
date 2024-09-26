@@ -14,7 +14,7 @@ namespace Esper.ESave.Example
     {
         // Const data IDs 
         private const string playerPositionDataKey = "PlayerPosition";
-        private const string eqDataKey = "eq";
+        private const string invHolderDataKey = "PlayerInvHolder";
 
         [SerializeField]
         private CharacterController characterController;
@@ -61,6 +61,8 @@ namespace Esper.ESave.Example
             characterController.enabled = true;
 
             Debug.Log("Loaded game.");
+
+
         }
 
         /// <summary>
@@ -68,7 +70,7 @@ namespace Esper.ESave.Example
         /// </summary>
         public void SaveGame()
         {
-
+            saveFile.AddOrUpdateData(invHolderDataKey, PlayerInventoryHolder.instance);
             saveFile.AddOrUpdateData(playerPositionDataKey, characterController.transform);
             saveFile.Save();
 
