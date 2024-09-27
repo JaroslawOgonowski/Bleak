@@ -1,3 +1,4 @@
+using Esper.ESave.Example;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,15 @@ public class ChestInventory : InventoryHolder, IInteractable
 {
 
     public UnityAction<IInteractable> OnInteractionComplete { get;  set; }
+
+    protected override void Awake()
+    {
+        base.Awake();
+        SaveLoad.OnLoadGame += LoadInventory();
+
+    }
+
+
 
 
     public void Interact(Interactor interactor, out bool interactSuccessful)
@@ -18,6 +28,21 @@ public class ChestInventory : InventoryHolder, IInteractable
 
     public void EndInteraction()
     {
-        //InventoryUIControler.instance.inventoryPanel.gameObject.SetActive(false);
+    }
+}
+
+
+[System.Serializable]
+public struct ChestSaveData
+{
+    public InventorySystem invSystem;
+    public Vector3 position;
+    public Quaternion rotation;
+
+    public ChestSaveData(InventorySystem _invSystem, Vector3 _position, Quaternion _rotation)
+    {
+        invSystem = _invSystem;
+        position = _position;
+        rotation = _rotation;
     }
 }
