@@ -1,4 +1,4 @@
-using Esper.ESave.Example;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,12 +12,15 @@ public class ChestInventory : InventoryHolder, IInteractable
     protected override void Awake()
     {
         base.Awake();
-        SaveLoad.OnLoadGame += LoadInventory();
+        //SaveLoad.OnLoadGame += LoadInventory();
+
 
     }
 
-
-
+    private void LoadInventory(SaveData data)
+    {
+        throw new NotImplementedException();
+    }
 
     public void Interact(Interactor interactor, out bool interactSuccessful)
     {
