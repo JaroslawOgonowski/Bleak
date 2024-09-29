@@ -12,14 +12,25 @@ public class ChestInventory : InventoryHolder, IInteractable
     protected override void Awake()
     {
         base.Awake();
-        //SaveLoad.OnLoadGame += LoadInventory();
+        SaveLoad.OnLoadGame += LoadInventory;
 
 
     }
 
+    private void Start()
+    {
+        var chestSaveData = new ChestSaveData(primaryInventorySystem, transform.position, transform.rotation);
+
+        SaveGameManager.data.chestDictionary.Add(GetComponent<UniqueID>().ID, chestSaveData);
+    }
     private void LoadInventory(SaveData data)
     {
-        throw new NotImplementedException();
+        if(data.chestDictionary.TryGetValue(GetComponent<UniqueID>().ID, out ChestSaveData chestData))
+        {
+           this.primaryInventorySystem = chestData.invSystem;
+           this.transform.position = chestData.position;
+           this.transform.rotation = chestData.rotation;
+        } 
     }
 
     public void Interact(Interactor interactor, out bool interactSuccessful)

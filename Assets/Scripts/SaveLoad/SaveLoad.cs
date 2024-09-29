@@ -56,4 +56,10 @@ public static class SaveLoad
         return data;
     }
 
+    public static void DeleteSaveData()
+    {
+        string fullPath = Application.persistentDataPath + directory + fileName;
+
+        if (File.Exists(fullPath)) File.Delete(fullPath);
+    }
 }
