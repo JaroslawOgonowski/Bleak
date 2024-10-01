@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Windows;
+using static UnityEditor.Timeline.TimelinePlaybackControls;
 using Directory = System.IO.Directory;
 using File = System.IO.File;
 
@@ -21,14 +23,22 @@ public static class SaveLoad
 
         string dir = Application.persistentDataPath + directory;
 
+        GUIUtility.systemCopyBuffer = dir;
+
         if(!Directory.Exists(dir))
         {
            Directory.CreateDirectory(dir); 
         }
         string json = JsonUtility.ToJson(data, true);
         
-        File.WriteAllText(dir, json);
-
+        try
+        {
+            File.WriteAllText(dir, json);
+        }
+        catch (UnauthorizedAccessException ex)
+        {
+            Debug.LogError("Access denied: " + ex.Message);
+        }
 
         Debug.Log("SaveGame");
 
