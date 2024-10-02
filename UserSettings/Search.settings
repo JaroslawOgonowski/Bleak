@@ -49,13 +49,33 @@ providers = {
 		defaultAction = null
 	}
 	adb = {
-		active = false
+		active = true
 		priority = 2500
 		defaultAction = null
 	}
 	asset = {
 		active = true
 		priority = 25
+		defaultAction = null
+	}
+	menu = {
+		active = true
+		priority = 80
+		defaultAction = null
+	}
+	settings = {
+		active = true
+		priority = 100
+		defaultAction = null
+	}
+	calculator = {
+		active = true
+		priority = 10
+		defaultAction = null
+	}
+	static_methods = {
+		active = true
+		priority = 85
 		defaultAction = null
 	}
 }

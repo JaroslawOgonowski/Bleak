@@ -22,6 +22,7 @@ public static class SaveLoad
         OnSaveGame?.Invoke();
 
         string dir = Application.persistentDataPath + directory;
+        Debug.Log(dir);
 
         GUIUtility.systemCopyBuffer = dir;
 
@@ -30,10 +31,10 @@ public static class SaveLoad
            Directory.CreateDirectory(dir); 
         }
         string json = JsonUtility.ToJson(data, true);
-        
+        string fullPath = dir  + fileName;
         try
         {
-            File.WriteAllText(dir, json);
+            File.WriteAllText(fullPath, json);
         }
         catch (UnauthorizedAccessException ex)
         {
@@ -50,8 +51,8 @@ public static class SaveLoad
     {
         string fullPath = Application.persistentDataPath + directory + fileName;
         SaveData data = new SaveData();
-        
-        if(File.Exists(fullPath))
+        Debug.Log(fullPath);
+        if (File.Exists(fullPath))
         {
             string json = File.ReadAllText(fullPath);
             data = JsonUtility.FromJson<SaveData>(json);

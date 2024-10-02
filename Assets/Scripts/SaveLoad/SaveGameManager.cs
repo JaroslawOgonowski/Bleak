@@ -15,6 +15,7 @@ public class SaveGameManager : MonoBehaviour
 
     private void Awake()
     {
+        data = new SaveData();
         SaveLoad.OnLoadGame += LoadData;
     }
 
