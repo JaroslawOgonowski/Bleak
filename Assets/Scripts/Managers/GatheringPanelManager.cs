@@ -10,7 +10,6 @@ public class GatheringPanelManager : MonoBehaviour
     public static GatheringPanelManager instance;
     public GameObject farAwayPanel;
     [SerializeField] public GameObject gatheringPanel;
-    [SerializeField] private Button gatheringPanelCloseButton;
     [SerializeField] private TextMeshProUGUI gatheringPanelTitle;
     [SerializeField] private TextMeshProUGUI gatheringPanelContent;
     [SerializeField] public Button gatheringButton;
@@ -27,8 +26,6 @@ public class GatheringPanelManager : MonoBehaviour
     {
         farAwayPanel.SetActive(false);
         gatheringPanel.SetActive(false);
-        gatheringPanelCloseButton.onClick.AddListener(() => closeGatheringPanel());
-        
     }
     
     private void closeGatheringPanel()
