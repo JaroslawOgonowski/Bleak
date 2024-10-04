@@ -5,23 +5,27 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 public class PlayerInventoryHolder : InventoryHolder
 {
-    [SerializeField] protected int secondaryInventorySize;
-    [SerializeField] protected InventorySystem secondaryInventorySystem;
 
-    public InventorySystem SecondaryInventorySystem=> secondaryInventorySystem;
-    public static UnityAction<InventorySystem> OnPlayerBackpackDisplayRequested;
+    public static UnityAction OnPlayerInventoryChanged;
     public static PlayerInventoryHolder instance;
     protected override void Awake()
     {
-        base.Awake();
 
-        secondaryInventorySystem = new InventorySystem(secondaryInventorySize);
         instance = this;
     }
-   
+
+    protected override void LoadInventory(SaveData data)
+    {
+        if (data.playerInventory.InvSystem!=null)
+        {
+            this.primaryInventorySystem = data.playerInventory.InvSystem;
+            OnPlayerInventoryChanged?.Invoke();
+        }
+    }
+
     public void OpenBackpack()
     {
-        OnPlayerBackpackDisplayRequested?.Invoke(secondaryInventorySystem);
+        OnDynamicInventoryDisplayRequested?.Invoke(primaryInventorySystem, 6);  //slots number
     }
     public bool AddToInventory(InventoryItemData data, int ammount)
     {
@@ -29,11 +33,6 @@ public class PlayerInventoryHolder : InventoryHolder
         {
             return true;
         }
-        else if(secondaryInventorySystem.AddToInventory(data, ammount))
-        {
-            return true;
-        }
-
         return false;
     }
 }

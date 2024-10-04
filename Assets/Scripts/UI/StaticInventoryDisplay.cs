@@ -19,9 +19,9 @@ public class StaticInventoryDisplay : InventoryDisplay
         {
             Debug.LogWarning($"No inventory assigned to {this.gameObject}");
         }
-        AssignSlot(inventorySystem);
+        AssignSlot(inventorySystem, 0);
     }
-    public override void AssignSlot(InventorySystem invToDisplay)
+    public override void AssignSlot(InventorySystem invToDisplay, int offset)
     {
         slotDictionary = new Dictionary<InventorySlot_UI, InventorySlot>();
         
