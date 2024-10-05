@@ -8,6 +8,9 @@ public abstract class InventoryHolder : MonoBehaviour
 {
     [SerializeField] private int inventorySize;
     [SerializeField] protected InventorySystem primaryInventorySystem;
+    [SerializeField] protected int offset = 6;
+
+    public int Offset => offset;
 
     public InventorySystem PrimaryInventorySystem=>primaryInventorySystem;
 

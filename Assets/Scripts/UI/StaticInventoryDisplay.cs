@@ -25,11 +25,7 @@ public class StaticInventoryDisplay : InventoryDisplay
     {
         slotDictionary = new Dictionary<InventorySlot_UI, InventorySlot>();
         
-        if(slots.Length != inventorySystem.InventorySize)
-        {
-            Debug.LogWarning($"Inventory slots out of sync on {this.gameObject}");
-        }
-        for (int i = 0; i< inventorySystem.InventorySize; i++)
+        for (int i = 0; i< inventoryHolder.Offset; i++)
         {
             SlotDictionary.Add(slots[i], inventorySystem.InventorySlots[i]);
             slots[i].Init(InventorySystem.InventorySlots[i]);

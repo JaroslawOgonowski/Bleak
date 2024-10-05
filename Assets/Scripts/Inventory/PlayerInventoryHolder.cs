@@ -5,7 +5,7 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 public class PlayerInventoryHolder : InventoryHolder
 {
-
+  
     public static UnityAction OnPlayerInventoryChanged;
     public static PlayerInventoryHolder instance;
     protected override void Awake()
@@ -14,6 +14,10 @@ public class PlayerInventoryHolder : InventoryHolder
         instance = this;
     }
 
+    private void Start()
+    {
+        SaveGameManager.data.playerInventory = new InventorySaveData(primaryInventorySystem);
+    }
     protected override void LoadInventory(SaveData data)
     {
         if (data.playerInventory.InvSystem!=null)
@@ -25,8 +29,9 @@ public class PlayerInventoryHolder : InventoryHolder
 
     public void OpenBackpack()
     {
-        OnDynamicInventoryDisplayRequested?.Invoke(primaryInventorySystem, 6);  //slots number
+        OnDynamicInventoryDisplayRequested?.Invoke(primaryInventorySystem, offset);  //slots number
     }
+
     public bool AddToInventory(InventoryItemData data, int ammount)
     {
         if(primaryInventorySystem.AddToInventory(data, ammount))
