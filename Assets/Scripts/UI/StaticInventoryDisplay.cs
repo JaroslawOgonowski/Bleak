@@ -6,14 +6,23 @@ public class StaticInventoryDisplay : InventoryDisplay
 {
     [SerializeField] private InventoryHolder inventoryHolder;
     [SerializeField] private InventorySlot_UI[] slots;
-    protected override void Start()
-    {
-        base.Start();
 
-        if(inventoryHolder != null)
+    private void OnEnable()
+    {
+        PlayerInventoryHolder.OnPlayerInventoryChanged += RefreshStaticDisplay;
+    }
+    private void OnDisable()
+    {
+        PlayerInventoryHolder.OnPlayerInventoryChanged -= RefreshStaticDisplay;
+    }
+
+    private void RefreshStaticDisplay()
+    {
+        Debug.Log("RefStaticDisp");
+         if(inventoryHolder != null)
         {
-           inventorySystem = inventoryHolder.PrimaryInventorySystem;
-           inventorySystem.OnInventorySlotChanged += UpdateSlot;
+            inventorySystem = inventoryHolder.PrimaryInventorySystem;
+            inventorySystem.OnInventorySlotChanged += UpdateSlot;
         }
         else
         {
@@ -21,13 +30,19 @@ public class StaticInventoryDisplay : InventoryDisplay
         }
         AssignSlot(inventorySystem, 0);
     }
+    protected override void Start()
+    {
+        base.Start();
+
+        RefreshStaticDisplay();
+    }
     public override void AssignSlot(InventorySystem invToDisplay, int offset)
     {
         slotDictionary = new Dictionary<InventorySlot_UI, InventorySlot>();
         
         for (int i = 0; i< inventoryHolder.Offset; i++)
         {
-            SlotDictionary.Add(slots[i], inventorySystem.InventorySlots[i]);
+            slotDictionary.Add(slots[i], inventorySystem.InventorySlots[i]);
             slots[i].Init(InventorySystem.InventorySlots[i]);
         }
     }
