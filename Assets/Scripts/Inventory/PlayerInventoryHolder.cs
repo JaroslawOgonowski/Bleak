@@ -20,7 +20,7 @@ public class PlayerInventoryHolder : InventoryHolder
     }
     protected override void LoadInventory(SaveData data)
     {
-        if (data.playerInventory.InvSystem!=null)
+        if (data.playerInventory.InvSystem != null)
         {
             this.primaryInventorySystem = data.playerInventory.InvSystem;
             OnPlayerInventoryChanged?.Invoke();

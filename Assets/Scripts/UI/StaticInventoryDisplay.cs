@@ -18,7 +18,6 @@ public class StaticInventoryDisplay : InventoryDisplay
 
     private void RefreshStaticDisplay()
     {
-        Debug.Log("RefStaticDisp");
          if(inventoryHolder != null)
         {
             inventorySystem = inventoryHolder.PrimaryInventorySystem;

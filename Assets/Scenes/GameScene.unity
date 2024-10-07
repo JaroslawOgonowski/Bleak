@@ -8234,6 +8234,7 @@ MonoBehaviour:
   inventorySize: 8
   primaryInventorySystem:
     inventorySlots: []
+  offset: 6
 --- !u!23 &906466038
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17067,6 +17068,7 @@ MonoBehaviour:
   inventorySize: 8
   primaryInventorySystem:
     inventorySlots: []
+  offset: 6
 --- !u!114 &1760265048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17173,7 +17175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a73be80a615a1f4f9eb2a976dc5e94a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chestPanel: {fileID: 491320657}
+  inventoryPanel: {fileID: 491320657}
   closeInvButtonChestPanel: {fileID: 1313643278}
   playerBackpack: {fileID: 486774338}
   closeInvButtonPlayerBackpack: {fileID: 316963823}
@@ -17832,10 +17834,56 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventorySize: 6
   primaryInventorySystem:
-    inventorySlots: []
-  secondaryInventorySize: 16
-  secondaryInventorySystem:
-    inventorySlots: []
+    inventorySlots:
+    - itemData: {fileID: 0}
+      stackSize: 0
+    - itemData: {fileID: 0}
+      stackSize: 0
+    - itemData: {fileID: 0}
+      stackSize: 0
+    - itemData: {fileID: 0}
+      stackSize: 0
+    - itemData: {fileID: 0}
+      stackSize: 0
+    - itemData: {fileID: 0}
+      stackSize: 0
+    - itemData: {fileID: 0}
+      stackSize: 0
+    - itemData: {fileID: 0}
+      stackSize: 0
+    - itemData: {fileID: 0}
+      stackSize: 0
+    - itemData: {fileID: 0}
+      stackSize: 0
+    - itemData: {fileID: 0}
+      stackSize: 0
+    - itemData: {fileID: 0}
+      stackSize: 0
+    - itemData: {fileID: 0}
+      stackSize: 0
+    - itemData: {fileID: 0}
+      stackSize: 0
+    - itemData: {fileID: 0}
+      stackSize: 0
+    - itemData: {fileID: 0}
+      stackSize: 0
+    - itemData: {fileID: 0}
+      stackSize: 0
+    - itemData: {fileID: 0}
+      stackSize: 0
+    - itemData: {fileID: 0}
+      stackSize: 0
+    - itemData: {fileID: 0}
+      stackSize: 0
+    - itemData: {fileID: 0}
+      stackSize: 0
+    - itemData: {fileID: 0}
+      stackSize: 0
+    - itemData: {fileID: 0}
+      stackSize: 0
+    - itemData: {fileID: 0}
+      stackSize: 0
+  offset: 6
 --- !u!224 &1813678296 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9071620094526793676, guid: fc284fd65aa168948ae77b039a0cbae0, type: 3}

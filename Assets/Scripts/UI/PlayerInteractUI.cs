@@ -36,7 +36,7 @@ public class PlayerInteractUI : MonoBehaviour
         else
         {
             currentInteractableObject = null;
-            //Hide();
+            Hide();
         }
     }
 
@@ -57,7 +57,6 @@ public class PlayerInteractUI : MonoBehaviour
         Debug.Log("hide");
         interactPanel.SetActive(false);
         LookAt.instance.ReturnToStart();
-        CloseInvByButton();
     }
 
     private void CloseInvByButton()
