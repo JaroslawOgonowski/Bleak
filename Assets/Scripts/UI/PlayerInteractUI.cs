@@ -42,7 +42,6 @@ public class PlayerInteractUI : MonoBehaviour
 
     private void Show(IClickInteract iteractable)
     {
-        Debug.Log("show");
         interactPanel.SetActive(true);
         interactText.text= iteractable.GetInteractText();
         icon.sprite = iteractable.GetInteractIcon();
@@ -54,7 +53,6 @@ public class PlayerInteractUI : MonoBehaviour
 
     private void Hide()
     {
-        Debug.Log("hide");
         interactPanel.SetActive(false);
         LookAt.instance.ReturnToStart();
     }

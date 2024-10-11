@@ -22,7 +22,7 @@ public class PlayerInventoryHolder : InventoryHolder
     {
         if (data.playerInventory.InvSystem != null)
         {
-            this.primaryInventorySystem = data.playerInventory.InvSystem;
+            this.primaryInventorySystem = data.playerInventory.InvSystem; 
             OnPlayerInventoryChanged?.Invoke();
         }
     }

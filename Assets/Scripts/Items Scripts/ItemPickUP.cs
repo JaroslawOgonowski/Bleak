@@ -23,6 +23,10 @@ public class ItemPickUP : MonoBehaviour
         myCollider.isTrigger = true;
         myCollider.radius = pickUpRadius;
     }
+    private void Start()
+    {
+        SaveGameManager.data.activeItems.Add(id, itemSaveData);
+    }
 
     private void LoadGame(SaveData data)
     {
@@ -34,11 +38,7 @@ public class ItemPickUP : MonoBehaviour
         if(SaveGameManager.data.activeItems.ContainsKey(id)) SaveGameManager.data.activeItems.Remove(id);
         SaveLoad.OnLoadGame -= LoadGame;
     }
-    private void Start()
-    {
-        SaveGameManager.data.activeItems.Add(id, itemSaveData);  
-    }
-
+  
     private void OnTriggerEnter(Collider other)
     {
         var inventory = other.transform.GetComponent<PlayerInventoryHolder>();
