@@ -8,11 +8,11 @@ public class PlayerInventoryHolder : InventoryHolder
   
     public static UnityAction OnPlayerInventoryChanged;
     public static PlayerInventoryHolder instance;
-    protected override void Awake()
-    {
+    //protected override void Awake()
+    //{
 
-        instance = this;
-    }
+    //    instance = this;
+    //}
 
     private void Start()
     {
