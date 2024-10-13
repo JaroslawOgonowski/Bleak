@@ -2863,7 +2863,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &316963822
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4149,7 +4149,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &486774336
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4264,7 +4264,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &491320653
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17728,6 +17728,7 @@ MonoBehaviour:
   playerBackpack: {fileID: 486774338}
   closeInvButtonPlayerBackpack: {fileID: 316963823}
   backpackButton: {fileID: 1208847787}
+  playerInventoryHolder: {fileID: 1812839157}
 --- !u!1 &1797723716
 GameObject:
   m_ObjectHideFlags: 0
@@ -18380,57 +18381,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 575ac08a4470827448bd15695efd6da8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventorySize: 6
+  inventorySize: 24
   primaryInventorySystem:
-    inventorySlots:
-    - itemData: {fileID: 0}
-      stackSize: 0
-    - itemData: {fileID: 0}
-      stackSize: 0
-    - itemData: {fileID: 0}
-      stackSize: 0
-    - itemData: {fileID: 0}
-      stackSize: 0
-    - itemData: {fileID: 0}
-      stackSize: 0
-    - itemData: {fileID: 0}
-      stackSize: 0
-    - itemData: {fileID: 0}
-      stackSize: 0
-    - itemData: {fileID: 0}
-      stackSize: 0
-    - itemData: {fileID: 0}
-      stackSize: 0
-    - itemData: {fileID: 0}
-      stackSize: 0
-    - itemData: {fileID: 0}
-      stackSize: 0
-    - itemData: {fileID: 0}
-      stackSize: 0
-    - itemData: {fileID: 0}
-      stackSize: 0
-    - itemData: {fileID: 0}
-      stackSize: 0
-    - itemData: {fileID: 0}
-      stackSize: 0
-    - itemData: {fileID: 0}
-      stackSize: 0
-    - itemData: {fileID: 0}
-      stackSize: 0
-    - itemData: {fileID: 0}
-      stackSize: 0
-    - itemData: {fileID: 0}
-      stackSize: 0
-    - itemData: {fileID: 0}
-      stackSize: 0
-    - itemData: {fileID: 0}
-      stackSize: 0
-    - itemData: {fileID: 0}
-      stackSize: 0
-    - itemData: {fileID: 0}
-      stackSize: 0
-    - itemData: {fileID: 0}
-      stackSize: 0
+    inventorySlots: []
   offset: 6
 --- !u!224 &1813678296 stripped
 RectTransform:

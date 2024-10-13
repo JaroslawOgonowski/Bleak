@@ -11,6 +11,7 @@ public class InventoryUIControler : MonoBehaviour
     [SerializeField] private Button closeInvButtonPlayerBackpack;
     [SerializeField] private Button backpackButton;
     public static InventoryUIControler instance;
+    [SerializeField] PlayerInventoryHolder playerInventoryHolder;
     private void Awake()
     {
         instance = this;
@@ -42,7 +43,7 @@ public class InventoryUIControler : MonoBehaviour
         }
         else
         {
-            PlayerInventoryHolder.instance.OpenBackpack();            
+            playerInventoryHolder.OpenBackpack();            
         }
     }
     // Update is called once per frame
