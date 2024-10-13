@@ -8,6 +8,8 @@ public class PlayerInventoryHolder : InventoryHolder
   
     public static UnityAction OnPlayerInventoryChanged;
     public static PlayerInventoryHolder instance;
+
+    public static UnityAction<InventorySystem, int> OnPlayerInventoryDisplayRequested;
     //protected override void Awake()
     //{
 
@@ -29,7 +31,7 @@ public class PlayerInventoryHolder : InventoryHolder
 
     public void OpenBackpack()
     {
-        OnDynamicInventoryDisplayRequested?.Invoke(primaryInventorySystem, offset);  //slots number
+        OnPlayerInventoryDisplayRequested?.Invoke(primaryInventorySystem, offset);  //slots number
     }
 
     public bool AddToInventory(InventoryItemData data, int ammount)
