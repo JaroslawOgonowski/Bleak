@@ -80,15 +80,9 @@ public class InventoryUIControler : MonoBehaviour
     }
     void CloseInventory()
     {
-        inventoryPanel.gameObject.SetActive(false);
-        closeInvButtonChestPanel.gameObject.SetActive(false);
+        playerBackpack.gameObject.SetActive(false);
+        closeInvButtonPlayerBackpack.gameObject.SetActive(false);
 
     }
 
-    void DisplayPlayerBackpack(InventorySystem invToDisplay, int offset)
-    {
-        playerBackpack.gameObject.SetActive(true);
-        playerBackpack.RefreshDynamicInventory(invToDisplay, offset);
-        closeInvButtonPlayerBackpack.gameObject.SetActive(true);
-    }
 }

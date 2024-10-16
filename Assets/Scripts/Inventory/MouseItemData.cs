@@ -13,10 +13,14 @@ public class MouseItemData : MonoBehaviour
     public InventorySlot AssingnedInventorySlot;
     private bool isDragging = false;
     private Vector3 offset;
+    private Transform _playerTransform;
+    [SerializeField] private float throwDist = 8f;
     private void Awake()
     {
         itemSprite.color = Color.clear;
         itemCount.text = "";
+        itemSprite.preserveAspect = true;
+        _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     public void UpdateMouseSlot(InventorySlot invSlot)
@@ -54,6 +58,7 @@ public class MouseItemData : MonoBehaviour
 
             if (Mouse.current.leftButton.wasPressedThisFrame && !IsPointerOverUIObject())
             {
+                if(AssingnedInventorySlot.ItemData.prefab != null) Instantiate(AssingnedInventorySlot.ItemData.prefab, _playerTransform.position + _playerTransform.forward * throwDist, Quaternion.identity);
                 ClearSlot();
             }
         }
@@ -72,12 +77,12 @@ public class MouseItemData : MonoBehaviour
 
         if (Input.touchCount > 0)
         {
-            // Kod dla platformy mobilnej
+            // Mobile
             eventDataCurrentPosition.position = Input.GetTouch(0).position;
         }
         else if (Input.GetMouseButtonDown(0))
         {
-            // Kod dla platformy PC oraz symulatora
+            //PC
             eventDataCurrentPosition.position = Input.mousePosition;
         }
         else
