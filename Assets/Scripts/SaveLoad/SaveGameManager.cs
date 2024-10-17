@@ -19,7 +19,6 @@ public class SaveGameManager : MonoBehaviour
 
     private void Start()
     {
-        // Podpiêcie przycisków do metod
         saveGameButton.onClick.AddListener(() => SaveData());
         loadGameButton.onClick.AddListener(() => TryLoadGame());
         deleteSaveButton.onClick.AddListener(() => DeleteData());
@@ -27,28 +26,22 @@ public class SaveGameManager : MonoBehaviour
 
     public void DeleteData()
     {
-        // Usuwanie zapisanych danych
         SaveLoad.DeleteSaveData();
     }
 
     public static void SaveData()
     {
-        // Zapisanie obecnych danych
         SaveLoad.Save(data);
     }
 
     private void LoadData(SaveData _data)
     {
-        // Wczytywanie danych
         data = _data;
-
-        // Odtwarzanie przedmiotów w œwiecie gry
         ItemManager.SpawnItemsFromSave(_data);
     }
 
     public static void TryLoadGame()
     {
-        // Wczytanie gry
         SaveLoad.Load();
     }
 }

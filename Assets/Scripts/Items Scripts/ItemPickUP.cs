@@ -14,7 +14,6 @@ public class ItemPickUP : MonoBehaviour
 
     private void Awake()
     {
-        // Subskrybowanie eventów ³adowania gry
         SaveLoad.OnLoadGame += LoadGame;
         myCollider = GetComponent<SphereCollider>();
         myCollider.isTrigger = true;
@@ -34,7 +33,6 @@ public class ItemPickUP : MonoBehaviour
     {
         itemSaveData = new ItemPickUpSaveData(itemData, transform.position, transform.rotation);
 
-        // Dodanie przedmiotu do activeItems tylko jeœli go tam nie ma
         if (!SaveGameManager.data.activeItems.ContainsKey(id))
         {
             SaveGameManager.data.activeItems.Add(id, itemSaveData);
@@ -43,7 +41,6 @@ public class ItemPickUP : MonoBehaviour
 
     private void LoadGame(SaveData data)
     {
-        // Jeœli przedmiot zosta³ podniesiony, usuñ go
         if (data.collectedItems.Contains(id))
         {
             Destroy(this.gameObject);
@@ -52,7 +49,6 @@ public class ItemPickUP : MonoBehaviour
 
     private void OnDestroy()
     {
-        // Odsubskrybowanie eventów i usuniêcie przedmiotu z aktywnych po zniszczeniu
         SaveLoad.OnLoadGame -= LoadGame;
         if (SaveGameManager.data.activeItems.ContainsKey(id))
         {
@@ -68,10 +64,7 @@ public class ItemPickUP : MonoBehaviour
 
         if (inventory.AddToInventory(itemData, 1))
         {
-            // Komunikat o zebraniu przedmiotu
             ResTextManager.instance.ShowText($"{itemData.name} (+{itemData.stackSize})");
-
-            // Dodanie przedmiotu do collectedItems
             SaveGameManager.data.collectedItems.Add(id);
             Destroy(this.gameObject);
         }
