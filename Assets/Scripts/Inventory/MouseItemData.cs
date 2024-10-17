@@ -26,8 +26,13 @@ public class MouseItemData : MonoBehaviour
     public void UpdateMouseSlot(InventorySlot invSlot)
     {
         AssingnedInventorySlot.AssignItem(invSlot);
-        itemSprite.sprite = invSlot.ItemData.icon;
-        itemCount.text = invSlot.StackSize.ToString();
+        UpdateMouseSlot();
+    }
+
+    public void UpdateMouseSlot()
+    {
+        itemSprite.sprite = AssingnedInventorySlot.ItemData.icon;
+        itemCount.text = AssingnedInventorySlot.StackSize.ToString();
         itemSprite.color = Color.white;
     }
 
@@ -59,7 +64,17 @@ public class MouseItemData : MonoBehaviour
             if (Mouse.current.leftButton.wasPressedThisFrame && !IsPointerOverUIObject())
             {
                 if(AssingnedInventorySlot.ItemData.prefab != null) Instantiate(AssingnedInventorySlot.ItemData.prefab, _playerTransform.position + _playerTransform.forward * throwDist, Quaternion.identity);
-                ClearSlot();
+                
+                if(AssingnedInventorySlot.StackSize > 1)
+                {
+                    AssingnedInventorySlot.AddToStack(-1);
+                    UpdateMouseSlot();
+                }
+                else
+                {
+                    ClearSlot();
+                }
+             
             }
         }
     }
