@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShopItemList : MonoBehaviour
+[CreateAssetMenu(menuName = "Shop System/ Shop Item List")]
+public class ShopItemList : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private List<ShopInventoryItem> _items;
+    [SerializeField] private int _maxAllowedGold;
+    [SerializeField] private float _sellMarkUp;
+    [SerializeField] private float _buyMarkUp;
+}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+[System.Serializable]
+
+public struct ShopInventoryItem
+{
+    public InventoryItemData ItemData;
+    public int Amount;
 }
