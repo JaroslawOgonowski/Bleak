@@ -15,7 +15,7 @@ public class InventorySlot : ItemSlot
 
     public InventorySlot()
     {
-ClearSlot();
+        ClearSlot();
     }
 
   

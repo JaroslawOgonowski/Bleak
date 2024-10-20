@@ -74,6 +74,7 @@ public class InventoryUIControler : MonoBehaviour
     }
     void DisplayPlayerInventory(InventorySystem invToDisplay, int offset)        //backpack
     {
+        playerBackpack.gameObject.SetActive(false);
         playerBackpack.gameObject.SetActive(true);
         playerBackpack.RefreshDynamicInventory(invToDisplay, offset);
         closeInvButtonPlayerBackpack.gameObject.SetActive(true);
