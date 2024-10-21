@@ -11,6 +11,16 @@ public class ShopKeeper : MonoBehaviour, IInteractable
     private ShopSystem _shopSystem;
     public UnityAction<IInteractable> OnInteractionComplete { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
+    private void Awake()
+    {
+        _shopSystem = new ShopSystem(_shopItemsHeld.Items.Count,
+            _shopItemsHeld.MaxAllowedGold, _shopItemsHeld.BuyMarkUp, _shopItemsHeld.SellMarkUp);
+
+        foreach(var item in _shopItemsHeld.Items)
+        {
+            _shopSystem.AddToShop(item.ItemData, item.Amount);
+        }
+    }
     public void EndInteraction()
     {
         throw new System.NotImplementedException();
