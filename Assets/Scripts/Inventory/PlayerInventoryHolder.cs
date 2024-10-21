@@ -26,6 +26,7 @@ public class PlayerInventoryHolder : InventoryHolder
         {
             this.primaryInventorySystem = data.playerInventory.InvSystem; 
             OnPlayerInventoryChanged?.Invoke();
+            InventoryUIControler.instance.CloseBackpack();
         }
     }
 
