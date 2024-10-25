@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+[System.Serializable]
 public class ShopSystem
 {
-    private List<ShopSlot> _shopInventory;
-    private int _avaibleGold;
-    private float _buyMarkUp;
-    private float _sellMarkup;
+    [SerializeField] private List<ShopSlot> _shopInventory;
+    [SerializeField] private int _avaibleGold;
+    [SerializeField] private float _buyMarkUp;
+    [SerializeField] private float _sellMarkup;
 
     public ShopSystem(int size, int gold, float buyMarkUp, float sellMarkUp)
     {

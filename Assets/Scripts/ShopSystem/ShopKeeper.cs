@@ -8,7 +8,7 @@ using UnityEngine.Events;
 public class ShopKeeper : MonoBehaviour, IInteractable
 {
     [SerializeField] private ShopItemList _shopItemsHeld;
-    private ShopSystem _shopSystem;
+    [SerializeField] private ShopSystem _shopSystem;
     public UnityAction<IInteractable> OnInteractionComplete { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
     private void Awake()
@@ -18,6 +18,7 @@ public class ShopKeeper : MonoBehaviour, IInteractable
 
         foreach(var item in _shopItemsHeld.Items)
         {
+            Debug.Log($"{ item.ItemData.displayName}: { item.Amount}");
             _shopSystem.AddToShop(item.ItemData, item.Amount);
         }
     }

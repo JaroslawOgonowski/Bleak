@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97e6ce8da1a53314e85818779d195583, type: 3}
   m_Name: Bow
   m_EditorClassIdentifier: 
-  ID: -1
+  ID: 15
   displayName: Bow
   description: 
-  icon: {fileID: 21300000, guid: e4fbc8de336e56742a04f50e50538d22, type: 3}
+  icon: {fileID: 21300000, guid: e7fcda3bfe790d04bbbe3bbba6d59213, type: 3}
   stackSize: 1
   maxStackSize: 1
   prefab: {fileID: 919132149155446097, guid: f657521cba7d2f44ab34f8d004ef0159, type: 3}

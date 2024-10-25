@@ -31,31 +31,33 @@ public class NPCRoutine : MonoBehaviour
         // Ensure destinationPOI is not null before using it
         if (destinationPOI == null)
         {
-            Debug.LogWarning("destinationPOI is null in Update(). Skipping update logic.");
             return;
+        }  else
+        {
+            float distanceToDestination = Vector3.Distance(transform.position, destinationPOI.transform.position);
+            if (distanceToDestination <= proximityThreshold)
+            {
+
+
+                //Debug.Log(destinationPOI.GetComponent<POIusage>().usage);
+                currentPOI = destinationPOI;
+
+                // Calculate new destination
+                destinationPOI = CalculateNextPOI();
+                if (destinationPOI != null)
+                {
+                    nav.SetDestination(destinationPOI.transform.position);
+                }
+                else
+                {
+                    Debug.LogWarning("CalculateNextPOI() returned null.");
+                }
+
+            }
         }
 
         // Check if the NPC is within proximity of the destination
-        float distanceToDestination = Vector3.Distance(transform.position, destinationPOI.transform.position);
-        if (distanceToDestination <= proximityThreshold)
-        {
-
-
-            //Debug.Log(destinationPOI.GetComponent<POIusage>().usage);
-            currentPOI = destinationPOI;
-
-            // Calculate new destination
-            destinationPOI = CalculateNextPOI();
-            if (destinationPOI != null)
-            {
-                nav.SetDestination(destinationPOI.transform.position);
-            }
-            else
-            {
-                Debug.LogWarning("CalculateNextPOI() returned null.");
-            }
-
-        }
+      
     }
 
     void StartWalking()
