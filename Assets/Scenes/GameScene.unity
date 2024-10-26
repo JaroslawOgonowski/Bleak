@@ -16116,6 +16116,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 479855481}
     m_Modifications:
+    - target: {fileID: 135256694995936858, guid: d3f87f114f86a3b4f88996e8d2e99fd8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 68598b6652b949341bb6d9b20c8be287, type: 2}
+    - target: {fileID: 463893720210880955, guid: d3f87f114f86a3b4f88996e8d2e99fd8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 68598b6652b949341bb6d9b20c8be287, type: 2}
+    - target: {fileID: 2220831965269605127, guid: d3f87f114f86a3b4f88996e8d2e99fd8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 68598b6652b949341bb6d9b20c8be287, type: 2}
     - target: {fileID: 2784561854437792545, guid: d3f87f114f86a3b4f88996e8d2e99fd8, type: 3}
       propertyPath: m_Name
       value: ShopKeeper
