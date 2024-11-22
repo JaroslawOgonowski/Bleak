@@ -9,8 +9,8 @@ public class ShopKeeper : MonoBehaviour, IInteractable
 {
     [SerializeField] private ShopItemList _shopItemsHeld;
     [SerializeField] private ShopSystem _shopSystem;
-    public UnityAction<IInteractable> OnInteractionComplete { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-
+    public UnityAction<IInteractable> OnInteractionComplete { get; set; }
+    public static UnityAction<ShopSystem, PlayerInventoryHolder> OnShopWindowRequest;
     private void Awake()
     {
         _shopSystem = new ShopSystem(_shopItemsHeld.Items.Count,

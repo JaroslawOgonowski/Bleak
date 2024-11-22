@@ -6,7 +6,9 @@ using TMPro;
 
 public class ShopKeeperDisplay : MonoBehaviour
 {
-[SerializeField] private ShopSlotUI _shopSlotPrefab;
+    [SerializeField] private ShopSlotUI _shopSlotPrefab;
+    [SerializeField] private ShopingCartItemUI _shopingCartItemPrefab;
+
     [SerializeField] private Button _buyTab;
     [SerializeField] private Button _sellTab;
 
