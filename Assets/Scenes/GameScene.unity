@@ -3125,6 +3125,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 222091278}
   m_CullTransparentMesh: 1
+--- !u!1 &242631349
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 242631350}
+  - component: {fileID: 242631351}
+  m_Layer: 0
+  m_Name: UIController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &242631350
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242631349}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 994298015}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &242631351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242631349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34283050ff0ff464dbaca7da6908ae1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shopKeeperDisplay: {fileID: 1173530443}
 --- !u!4 &248805616 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5870893184530398822, guid: 5503806d74cc9a34eb09093384f91fe6, type: 3}
@@ -11045,6 +11090,7 @@ Transform:
   - {fileID: 75782941}
   - {fileID: 1263990846}
   - {fileID: 448536563}
+  - {fileID: 242631350}
   m_Father: {fileID: 1252224202}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &994914753 stripped
@@ -13175,6 +13221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shopSlotPrefab: {fileID: -2816263814533231492, guid: 49af3cbb2532cb34386751f39aabe30d, type: 3}
+  _shopingCartItemPrefab: {fileID: -4308565387679356452, guid: 64f82a03b7fe8e04eb6597d9abc782fb, type: 3}
   _buyTab: {fileID: 322876612}
   _sellTab: {fileID: 1427002486}
   _basketTotalText: {fileID: 1447893489}

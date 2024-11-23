@@ -10,7 +10,7 @@ public class ShopKeeper : MonoBehaviour, IInteractable
     [SerializeField] private ShopItemList _shopItemsHeld;
     [SerializeField] private ShopSystem _shopSystem;
     public UnityAction<IInteractable> OnInteractionComplete { get; set; }
-    public static UnityAction<ShopSystem, PlayerInventoryHolder> OnShopWindowRequest;
+    public static UnityAction<ShopSystem, PlayerInventoryHolder> OnShopWindowRequested;
     private void Awake()
     {
         _shopSystem = new ShopSystem(_shopItemsHeld.Items.Count,
@@ -24,11 +24,22 @@ public class ShopKeeper : MonoBehaviour, IInteractable
     }
     public void EndInteraction()
     {
-        throw new System.NotImplementedException();
+
     }
 
     public void Interact(Interactor interactor, out bool interactSuccessful)
     {
-        throw new System.NotImplementedException();
+        var playerInv = interactor.GetComponent<PlayerInventoryHolder>();
+        
+        if(playerInv != null)
+        {
+           OnShopWindowRequested?.Invoke(_shopSystem, playerInv);
+            interactSuccessful = true;
+        }
+        else
+        {
+            interactSuccessful = false;
+            Debug.LogError("Player inv not found");
+        }
     }
 }
