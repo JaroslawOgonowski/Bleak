@@ -11,6 +11,7 @@ public class ShopSystem
     [SerializeField] private float _buyMarkUp;
     [SerializeField] private float _sellMarkup;
 
+    public int AvaibleGold => _avaibleGold;
     public ShopSystem(int size, int gold, float buyMarkUp, float sellMarkUp)
     {
         _avaibleGold = gold;

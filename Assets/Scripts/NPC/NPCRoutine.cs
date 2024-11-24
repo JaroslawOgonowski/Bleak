@@ -20,11 +20,22 @@ public class NPCRoutine : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         animator = GetComponent<Animator>();
         poiNPCs = NPCPOIManager.Instance.poiNPCs;
+
         nav = GetComponent<NavMeshAgent>();
-        nav.avoidancePriority = Random.Range(0, 100);
-        nav.speed = Random.Range(2, 5);
-        StartWalking();
+
+        // Sprawdzenie, czy nav nie jest nullem
+        if (nav != null)
+        {
+            nav.avoidancePriority = Random.Range(0, 100);
+            nav.speed = Random.Range(2, 5);
+            StartWalking();
+        }
+        else
+        {
+         return;
+        }
     }
+
 
     void Update()
     {
