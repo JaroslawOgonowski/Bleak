@@ -12,7 +12,28 @@ public class NPCInteractable : MonoBehaviour, IClickInteract
 
     public void Interact(Transform interactorTransform)
     {
-        GetComponent<NPCRoutine>().StopAndTalk();
+        // Pobranie komponentu Interactor z obiektu interaguj¹cego (np. gracza)
+        Interactor interactor = interactorTransform.GetComponent<Interactor>();
+
+        if (interactor != null)
+        {
+            // Wywo³anie metody Interact w ShopKeeper
+            bool interactSuccessful;
+            GetComponent<ShopKeeper>().Interact(interactor, out interactSuccessful);
+
+            if (interactSuccessful)
+            {
+                Debug.Log("Interakcja zakoñczona sukcesem!");
+            }
+            else
+            {
+                Debug.Log("Interakcja nie powiod³a siê.");
+            }
+        }
+        else
+        {
+            Debug.LogError("Nie znaleziono komponentu Interactor na obiekcie.");
+        }
     }
 
     public string GetInteractText()

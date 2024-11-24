@@ -11,6 +11,7 @@ public class ShopKeeperDisplay : MonoBehaviour
 
     [SerializeField] private Button _buyTab;
     [SerializeField] private Button _sellTab;
+    [SerializeField] private Button _closeShopWindow;
 
     [Header("Shopping cart")]
     [SerializeField] private TextMeshProUGUI _basketTotalText;
@@ -26,4 +27,10 @@ public class ShopKeeperDisplay : MonoBehaviour
 
     [SerializeField] private GameObject _itemListContentPanel;
     [SerializeField] private GameObject _shoppingCartContentPanel;
+
+    [SerializeField] private UIController _uiController;
+    private void Start()
+    {
+        _closeShopWindow.onClick.AddListener(() => _uiController.CloseShopWindow());
+    }
 }

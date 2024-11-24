@@ -25,4 +25,9 @@ public class UIController : MonoBehaviour
     {
         _shopKeeperDisplay.gameObject.SetActive(true);
     }
+
+    public void CloseShopWindow()
+    {
+        _shopKeeperDisplay.gameObject.SetActive(false);
+    }
 }
