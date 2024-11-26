@@ -39,6 +39,11 @@ public class ShopKeeperDisplay : MonoBehaviour
     private Dictionary<InventoryItemData, int> _shoppingCart = new Dictionary<InventoryItemData, int>();
     private Dictionary<InventoryItemData, ShopingCartItemUI> _shoppingCartUI = new Dictionary<InventoryItemData, ShopingCartItemUI>();
 
+    private void Start()
+    {
+        _closeShopWindow.onClick.AddListener(() => _uiController.CloseShopWindow());
+    }
+
     public void DisplayShopWindow(ShopSystem shopSystem, PlayerInventoryHolder playerInventoryHolder)
     {
         _shopSystem = shopSystem;
@@ -56,6 +61,8 @@ public class ShopKeeperDisplay : MonoBehaviour
         _basketTotal = 0;
         _playerGoldText.text = _playerInventoryHolder.PrimaryInventorySystem.Gold.ToString();
         _shopGoldText.text = _shopSystem.AvaibleGold.ToString();
+
+        DisplayShopInventory();
     }
 
     private void ClearSlots()
@@ -67,8 +74,21 @@ public class ShopKeeperDisplay : MonoBehaviour
             Destroy(item.gameObject);
         }
     }
-    private void Start()
+
+
+    private void DisplayShopInventory()
     {
-        _closeShopWindow.onClick.AddListener(() => _uiController.CloseShopWindow());
+       foreach(var item in _shopSystem.ShopInventory)
+        {
+            if(item.ItemData == null) continue;
+
+            var shopSlot = Instantiate(_shopSlotPrefab, _itemListContentPanel.transform );
+            shopSlot.Init(item, _shopSystem.BuyMarkUp);
+        }
+    }
+
+    private void DisplayPlayerInventory()
+    {
+
     }
 }
