@@ -19,3 +19,4 @@ MonoBehaviour:
   stackSize: 1
   maxStackSize: 1
   prefab: {fileID: 919132149155446097, guid: f657521cba7d2f44ab34f8d004ef0159, type: 3}
+  GoldValue: 300

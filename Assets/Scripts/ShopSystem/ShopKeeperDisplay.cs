@@ -69,7 +69,12 @@ public class ShopKeeperDisplay : MonoBehaviour
     {
         _shoppingCart = new Dictionary<InventoryItemData, int>();
         _shoppingCartUI = new Dictionary<InventoryItemData, ShopingCartItemUI>();
+        
         foreach(var item in _itemListContentPanel.transform.Cast<Transform>())
+        {
+            Destroy(item.gameObject);
+        }
+        foreach (var item in _shoppingCartContentPanel.transform.Cast<Transform>())
         {
             Destroy(item.gameObject);
         }

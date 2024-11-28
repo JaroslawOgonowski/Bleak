@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _items:
   - ItemData: {fileID: 11400000, guid: dfccf2c2053b2274494ca9f823496431, type: 2}
-    Amount: 1
+    Amount: 2
   - ItemData: {fileID: 11400000, guid: 4ffda1f80395b794284d8c42bec722ec, type: 2}
     Amount: 1
+  - ItemData: {fileID: 11400000, guid: 47159d6d831e03d44a05dbd341f2307d, type: 2}
+    Amount: 100
   _maxAllowedGold: 1000
   _sellMarkUp: 0.25
   _buyMarkUp: 1
