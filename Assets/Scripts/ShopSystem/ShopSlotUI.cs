@@ -19,6 +19,7 @@ public class ShopSlotUI : MonoBehaviour
     [SerializeField] private Button _addItemToCartButton;
     [SerializeField] private Button _removeItemFromCartButton;
 
+    private int _tempAmount;
     public ShopKeeperDisplay ParentDisplay { get; private set; }
     public float MarkUp {  get; private set; }
     private void Awake()
@@ -34,20 +35,11 @@ public class ShopSlotUI : MonoBehaviour
         ParentDisplay = transform.parent.GetComponentInParent<ShopKeeperDisplay>();
     }
 
-    private void RemoveItemFromCart()
-    {
-        Debug.Log("RemoveItemFromCart");
-    }
-
-    private void AddItemToCart()
-    {
-        Debug.Log("AddItemToCart");
-    }
-
     public void Init(ShopSlot slot, float markUp)
     {
-      _assignedItemSlot = slot;
+        _assignedItemSlot = slot;
         MarkUp = markUp;
+        _tempAmount = slot.StackSize;
         UpdateUISlot();
     }
 
@@ -72,5 +64,26 @@ public class ShopSlotUI : MonoBehaviour
             _itemCount.text = "";
             _goldValue.text = "";
         }
+    }
+
+    private void RemoveItemFromCart()
+    {
+       Debug.Log(_assignedItemSlot.StackSize);
+       if(_tempAmount == _assignedItemSlot.StackSize) return;
+
+        _tempAmount++;
+        ParentDisplay.RemoveItemFromCart(this);
+        _itemCount.text = "x"+ _tempAmount.ToString();
+    }
+
+    private void AddItemToCart()
+    {
+        Debug.Log(_tempAmount);
+        if (_tempAmount <= 0) return;
+
+        _tempAmount--;
+        ParentDisplay.AddItemToCart(this);
+        _itemCount.text = "x" + _tempAmount.ToString();
+        
     }
 }

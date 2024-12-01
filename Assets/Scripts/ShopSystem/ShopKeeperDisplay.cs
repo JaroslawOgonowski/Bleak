@@ -96,4 +96,14 @@ public class ShopKeeperDisplay : MonoBehaviour
     {
 
     }
+
+    public void AddItemToCart(ShopSlotUI shopSlotUI)
+    {
+
+    }
+
+    public void RemoveItemFromCart(ShopSlotUI shopSlotUI)
+    {
+
+    }
 }
