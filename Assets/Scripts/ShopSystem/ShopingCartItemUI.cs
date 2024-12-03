@@ -15,4 +15,9 @@ public class ShopingCartItemUI : MonoBehaviour
     {
         
     }
+
+    public void SetPriceText(string priceText)
+    {
+
+    }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Linq;
+using System;
 
 public class ShopKeeperDisplay : MonoBehaviour
 {
@@ -98,6 +99,29 @@ public class ShopKeeperDisplay : MonoBehaviour
     }
 
     public void AddItemToCart(ShopSlotUI shopSlotUI)
+    {
+        var data = shopSlotUI.AssignedItemSlot.ItemData;
+
+        UpdateItemPreview(shopSlotUI);
+
+        if (_shoppingCart.ContainsKey(data))
+        {
+            _shoppingCart[data]++;
+            var price = GetModifiedPrice(data, 1, shopSlotUI.MarkUp);
+            var newString = $"{price}";
+            _shoppingCartUI[data].SetPriceText(newString);
+        }
+    }
+
+    private static int GetModifiedPrice(InventoryItemData data, int amount, float markUp)
+    {
+        var baseValue = data.GoldValue * amount;
+
+        return Mathf.RoundToInt(baseValue + baseValue * markUp);
+
+    }
+
+    private void UpdateItemPreview(ShopSlotUI shopSlotUI)
     {
 
     }

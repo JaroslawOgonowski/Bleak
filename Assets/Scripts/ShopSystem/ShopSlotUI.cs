@@ -15,13 +15,14 @@ public class ShopSlotUI : MonoBehaviour
     [SerializeField] private ShopSlot _assignedItemSlot;
     [SerializeField] private TextMeshProUGUI _goldValue;
 
+    public ShopSlot AssignedItemSlot => _assignedItemSlot;
 
     [SerializeField] private Button _addItemToCartButton;
     [SerializeField] private Button _removeItemFromCartButton;
 
     private int _tempAmount;
     public ShopKeeperDisplay ParentDisplay { get; private set; }
-    public float MarkUp {  get; private set; }
+    public float MarkUp {  get; private set; }  
     private void Awake()
     {
         _itemSprite.sprite = null;
