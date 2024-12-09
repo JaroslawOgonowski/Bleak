@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 97e6ce8da1a53314e85818779d195583, type: 3}
-  m_Name: HP Potion
+  m_Name: ManaPotion
   m_EditorClassIdentifier: 
   ID: -1
-  displayName: HP Potion
-  description: Uber shield!
-  icon: {fileID: 21300000, guid: 3c1a17a61142d69568169110d9b82a9e, type: 3}
+  displayName: Mana Potion
+  description: Spirit force for weak brains.
+  icon: {fileID: 21300000, guid: c4acf9370c3181f98912418bb7f1b5ee, type: 3}
   stackSize: 1
-  maxStackSize: 5
-  prefab: {fileID: 1626188119280818743, guid: 17ae7ad985366374caf0ec5581ea5d5d, type: 3}
-  GoldValue: 25
+  maxStackSize: 10
+  prefab: {fileID: 2987599477158452749, guid: 57bf93f76af22114bab95ed23cf37398, type: 3}
+  GoldValue: 45
