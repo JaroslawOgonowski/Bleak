@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a22a6d026fef09e4aa86da925330407f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: 
+  _id: 1744cfac-8353-483e-b31d-27ec53abc32e
 --- !u!114 &7165552002042984103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,7 +370,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0b288b03da9c72b428d8397183f11126, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.2880001
+      value: 0.627
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0b288b03da9c72b428d8397183f11126, type: 3}
       propertyPath: m_LocalPosition.z
@@ -418,7 +418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 0b288b03da9c72b428d8397183f11126, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 0b288b03da9c72b428d8397183f11126, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
@@ -430,11 +430,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 0b288b03da9c72b428d8397183f11126, type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0
+      value: 0.3844987
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 0b288b03da9c72b428d8397183f11126, type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.038573265
+      value: 0.3820755
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
